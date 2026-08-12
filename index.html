@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Yonca Baharat | Doğal ve Güvenilir Ürünler</title>
+<title>Yonca Baharat | Doğadan Gelen Lezzetler</title>
 
 <meta name="description"
-content="Yonca Baharat - Baharat, bitkisel ürünler, çaylar ve doğal ürünler.">
+content="Yonca Baharat - Baharat, bitkisel ürünler, doğal lezzetler ve seçkin ürünler.">
 
 <style>
 
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f6f8f4;
-    color: #24352a;
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f8f7f2;
+    color:#24352b;
 }
 
 /* =========================
-   KAMPANYA BANDI
+   KAMPANYA
 ========================= */
 
-.kampanya {
-    background: #d89a18;
-    color: white;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 10px 0;
-    font-size: 14px;
-    font-weight: 700;
+.kampanya{
+    height:38px;
+    background:#173f27;
+    color:#fff;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    white-space:nowrap;
+    font-size:13px;
+    font-weight:700;
 }
 
-.kampanya-yazi {
-    display: inline-block;
-    padding-left: 100%;
-    animation: kayanYazi 20s linear infinite;
+.kampanya-yazi{
+    display:inline-block;
+    padding-left:100%;
+    animation:kaydir 22s linear infinite;
 }
 
-@keyframes kayanYazi {
+@keyframes kaydir{
 
-    from {
-        transform: translateX(0);
+    from{
+        transform:translateX(0);
     }
 
-    to {
-        transform: translateX(-100%);
+    to{
+        transform:translateX(-100%);
     }
 
 }
@@ -62,568 +65,923 @@ body {
    HEADER
 ========================= */
 
-header {
-    background: #174d2b;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 3px 15px rgba(0,0,0,.08);
+header{
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid #e8e8df;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(12px);
 }
 
-.header-ic {
-    max-width: 1200px;
-    margin: auto;
-    padding: 16px 20px;
+.header-ic{
+    max-width:1250px;
+    margin:auto;
+    min-height:74px;
+    padding:0 22px;
 
-    display: flex;
-    align-items: center;
-    gap: 25px;
+    display:flex;
+    align-items:center;
+    gap:30px;
 }
 
-.logo {
-    text-decoration: none;
-    color: white;
-    font-size: 25px;
-    font-weight: 800;
-    white-space: nowrap;
+.logo{
+    text-decoration:none;
+    color:#173f27;
+    font-size:24px;
+    font-weight:900;
+    white-space:nowrap;
 }
 
-.logo span {
-    color: #cde49f;
+.logo span{
+    color:#789653;
 }
 
-.nav {
-    display: flex;
-    gap: 7px;
-    margin-left: auto;
+.nav{
+    display:flex;
+    gap:4px;
 }
 
-.nav a {
-    color: white;
-    text-decoration: none;
-    padding: 9px 13px;
-    border-radius: 8px;
+.nav a{
+    text-decoration:none;
+    color:#455249;
+    padding:11px 14px;
+    border-radius:9px;
+    font-size:14px;
+    font-weight:600;
 }
 
-.nav a:hover {
-    background: rgba(255,255,255,.12);
+.nav a:hover{
+    background:#f0f3eb;
+    color:#173f27;
 }
 
-.header-ikonlar {
-    display: flex;
-    gap: 8px;
+.header-sag{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
 
-.header-ikonlar a {
-    text-decoration: none;
-    color: white;
-    background: rgba(255,255,255,.12);
-    padding: 10px;
-    border-radius: 9px;
+.arama{
+    width:210px;
+    height:40px;
+    border:1px solid #dfe3db;
+    background:#f8f9f6;
+    border-radius:22px;
+    padding:0 15px;
+    outline:none;
+}
+
+.arama:focus{
+    border-color:#789653;
+    background:#fff;
+}
+
+.header-buton{
+    width:40px;
+    height:40px;
+    border:0;
+    border-radius:50%;
+    background:#f0f3eb;
+    cursor:pointer;
+    font-size:17px;
+}
+
+.sepet-buton{
+    position:relative;
+}
+
+.sepet-sayi{
+    position:absolute;
+    top:-3px;
+    right:-3px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#c88b23;
+    color:white;
+    font-size:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
 }
 
 /* =========================
    HERO
 ========================= */
 
-.hero {
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 20px;
+.hero{
+    max-width:1250px;
+    margin:25px auto 0;
+    padding:0 22px;
 }
 
-.hero-kutu {
-    min-height: 430px;
-    border-radius: 24px;
-    padding: 55px;
+.hero-kutu{
+    min-height:520px;
+    border-radius:28px;
+    overflow:hidden;
+    position:relative;
 
     background:
-        linear-gradient(
-            90deg,
-            rgba(20,70,38,.96),
-            rgba(20,70,38,.72),
-            rgba(20,70,38,.18)
-        ),
-        linear-gradient(135deg,#315d3c,#9caf86);
-
-    color: white;
-
-    display: flex;
-    align-items: center;
-}
-
-.hero-icerik {
-    max-width: 600px;
-}
-
-.hero-etiket {
-    display: inline-block;
-    background: rgba(255,255,255,.15);
-    padding: 8px 13px;
-    border-radius: 30px;
-    margin-bottom: 18px;
-    font-size: 14px;
-}
-
-.hero h1 {
-    font-size: clamp(35px,5vw,58px);
-    line-height: 1.05;
-    margin: 0 0 20px;
-}
-
-.hero p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #eef5eb;
-}
-
-.hero-butonlar {
-    display: flex;
-    gap: 10px;
-    margin-top: 25px;
-    flex-wrap: wrap;
-}
-
-.buton {
-    display: inline-block;
-    padding: 14px 22px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.buton-yesil {
-    background: white;
-    color: #174d2b;
-}
-
-.buton-seffaf {
-    color: white;
-    border: 1px solid rgba(255,255,255,.5);
-}
-
-/* =========================
-   GENEL
-========================= */
-
-.bolum {
-    max-width: 1200px;
-    margin: 55px auto;
-    padding: 0 20px;
-}
-
-.bolum-baslik {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.bolum-baslik h2 {
-    margin: 0;
-    font-size: 28px;
-}
-
-.bolum-baslik a {
-    color: #174d2b;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-/* =========================
-   AVANTAJLAR
-========================= */
-
-.avantajlar {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 15px;
-}
-
-.avantaj {
-    background: white;
-    padding: 22px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,.04);
-}
-
-.avantaj-icon {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.avantaj strong {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.avantaj small {
-    color: #737b75;
-}
-
-/* =========================
-   KATEGORİ
-========================= */
-
-.kategoriler {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 15px;
-}
-
-.kategori {
-    min-height: 150px;
-    border-radius: 16px;
-    padding: 22px;
-
-    text-decoration: none;
-    color: white;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-
-    background: linear-gradient(
+    linear-gradient(
+        90deg,
+        rgba(18,58,34,.96) 0%,
+        rgba(18,58,34,.83) 43%,
+        rgba(18,58,34,.18) 100%
+    ),
+    linear-gradient(
         135deg,
-        #315e3d,
-        #78956f
+        #355f40,
+        #9eac84
     );
 
-    transition: .2s;
+    display:flex;
+    align-items:center;
 }
 
-.kategori:hover {
-    transform: translateY(-4px);
+.hero-icerik{
+    max-width:620px;
+    padding:60px;
+    color:white;
 }
 
-.kategori:nth-child(2) {
-    background: linear-gradient(135deg,#6b5532,#b39361);
+.hero-etiket{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+
+    padding:8px 13px;
+
+    border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.10);
+
+    border-radius:30px;
+
+    font-size:13px;
+    font-weight:700;
+
+    margin-bottom:20px;
 }
 
-.kategori:nth-child(3) {
-    background: linear-gradient(135deg,#315e51,#80a99b);
+.hero h1{
+    margin:0;
+
+    font-family:Georgia,serif;
+
+    font-size:clamp(42px,6vw,72px);
+    line-height:.98;
+    letter-spacing:-2px;
 }
 
-.kategori:nth-child(4) {
-    background: linear-gradient(135deg,#715d32,#b69b58);
+.hero h1 span{
+    color:#d4e2ae;
 }
 
-.kategori-icon {
-    font-size: 35px;
-    margin-bottom: 10px;
+.hero p{
+    max-width:540px;
+
+    font-size:17px;
+    line-height:1.7;
+
+    color:#e9eee8;
+
+    margin:25px 0;
 }
 
-.kategori strong {
-    font-size: 18px;
+.hero-butonlar{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.hero-buton{
+    text-decoration:none;
+    padding:15px 22px;
+    border-radius:10px;
+    font-weight:800;
+}
+
+.hero-buton-ana{
+    background:white;
+    color:#173f27;
+}
+
+.hero-buton-ikinci{
+    border:1px solid rgba(255,255,255,.45);
+    color:white;
+}
+
+/* =========================
+   AVANTAJ ŞERİDİ
+========================= */
+
+.avantajlar{
+    max-width:1250px;
+    margin:20px auto 0;
+    padding:0 22px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.avantaj{
+    background:white;
+    border:1px solid #e9ebe5;
+    border-radius:13px;
+    padding:17px;
+
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.avantaj-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#edf3e8;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+}
+
+.avantaj strong{
+    display:block;
+    font-size:13px;
+}
+
+.avantaj small{
+    display:block;
+    margin-top:3px;
+    color:#7a837c;
+}
+
+/* =========================
+   GENEL BÖLÜM
+========================= */
+
+.bolum{
+    max-width:1250px;
+    margin:70px auto;
+    padding:0 22px;
+}
+
+.bolum-baslik{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:25px;
+}
+
+.baslik-sol small{
+    color:#789653;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+.baslik-sol h2{
+    font-family:Georgia,serif;
+    font-size:34px;
+    margin:6px 0 0;
+}
+
+.tumunu-gor{
+    text-decoration:none;
+    color:#173f27;
+    font-size:14px;
+    font-weight:800;
+}
+
+/* =========================
+   KATEGORİLER
+========================= */
+
+.kategoriler{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.kategori{
+    min-height:190px;
+    padding:23px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+    color:white;
+
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    background:
+    linear-gradient(
+        135deg,
+        #294f34,
+        #769260
+    );
+
+    transition:.25s;
+}
+
+.kategori:hover{
+    transform:translateY(-5px);
+}
+
+.kategori:nth-child(2){
+    background:linear-gradient(135deg,#70562f,#ad9161);
+}
+
+.kategori:nth-child(3){
+    background:linear-gradient(135deg,#315d50,#82a798);
+}
+
+.kategori:nth-child(4){
+    background:linear-gradient(135deg,#59653b,#9ba36c);
+}
+
+.kategori-icon{
+    font-size:38px;
+    margin-bottom:13px;
+}
+
+.kategori strong{
+    font-size:20px;
+}
+
+.kategori small{
+    margin-top:5px;
+    opacity:.85;
 }
 
 /* =========================
    ÜRÜNLER
 ========================= */
 
-.urunler {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 18px;
+.urunler{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
 }
 
-.urun {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 5px 18px rgba(0,0,0,.05);
-    transition: .2s;
+.urun{
+    background:white;
+    border:1px solid #e9ebe5;
+    border-radius:17px;
+    overflow:hidden;
+
+    transition:.25s;
+
+    position:relative;
 }
 
-.urun:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+.urun:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(32,53,39,.10);
 }
 
-.urun-foto {
-    height: 220px;
-    background: #f5f7f3;
-    padding: 15px;
+.urun-foto{
+    height:245px;
+    background:#f5f6f1;
+    padding:18px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.urun-foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.urun-foto img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+
+    transition:.3s;
 }
 
-.urun-icerik {
-    padding: 17px;
+.urun:hover .urun-foto img{
+    transform:scale(1.04);
 }
 
-.urun-marka {
-    font-size: 12px;
-    color: #7a827c;
+.urun-etiket{
+    position:absolute;
+    top:12px;
+    left:12px;
+
+    background:#173f27;
+    color:white;
+
+    border-radius:20px;
+
+    padding:6px 9px;
+
+    font-size:11px;
+    font-weight:800;
 }
 
-.urun h3 {
-    font-size: 15px;
-    line-height: 1.4;
-    min-height: 43px;
-    margin: 7px 0;
+.urun-icerik{
+    padding:18px;
 }
 
-.urun-alt {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
+.urun-marka{
+    font-size:11px;
+    color:#8a918a;
+    text-transform:uppercase;
+    letter-spacing:.8px;
 }
 
-.urun-fiyat {
-    font-size: 20px;
-    font-weight: 800;
-    color: #174d2b;
+.urun h3{
+    margin:7px 0 14px;
+
+    font-size:15px;
+    line-height:1.45;
+
+    min-height:44px;
 }
 
-.urun-buton {
-    background: #174d2b;
-    color: white;
-    border: none;
-    padding: 9px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
+.urun-alt{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+}
+
+.urun-fiyat{
+    font-size:21px;
+    font-weight:900;
+    color:#173f27;
+}
+
+.urun-incele{
+    text-decoration:none;
+
+    background:#edf3e8;
+    color:#173f27;
+
+    padding:10px 13px;
+
+    border-radius:9px;
+
+    font-size:12px;
+    font-weight:800;
+}
+
+.urun-incele:hover{
+    background:#173f27;
+    color:white;
+}
+
+/* =========================
+   MARKA ALANI
+========================= */
+
+.marka-alani{
+    background:#edf2e9;
+    border-radius:24px;
+
+    padding:50px;
+
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:50px;
+
+    align-items:center;
+}
+
+.marka-alani h2{
+    font-family:Georgia,serif;
+    font-size:39px;
+    margin:8px 0 20px;
+}
+
+.marka-alani p{
+    color:#59635b;
+    line-height:1.8;
+    font-size:16px;
+}
+
+.marka-liste{
+    margin-top:25px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.marka-liste div{
+    background:white;
+    border-radius:10px;
+    padding:13px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.marka-gorsel{
+    min-height:320px;
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        rgba(33,70,42,.12),
+        rgba(33,70,42,.12)
+    ),
+    linear-gradient(
+        135deg,
+        #78906b,
+        #d3c29c
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:80px;
 }
 
 /* =========================
    KUPON
 ========================= */
 
-.kupon-kutu {
-    background: #fff5dc;
-    border: 1px dashed #d89a18;
-    border-radius: 18px;
-    padding: 30px;
+.kupon{
+    background:#fff7e5;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    border:1px solid #f0dfb5;
+
+    border-radius:20px;
+
+    padding:32px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
 }
 
-.kupon-kutu h2 {
-    margin: 0 0 8px;
+.kupon small{
+    color:#aa7b26;
+    font-weight:800;
 }
 
-.kupon-kutu p {
-    margin: 0;
-    color: #76633b;
+.kupon h2{
+    margin:7px 0;
+    font-family:Georgia,serif;
+    font-size:29px;
 }
 
-.kupon-kod {
-    background: white;
-    border: 1px dashed #d89a18;
-    padding: 13px 18px;
-    border-radius: 9px;
-    font-weight: 800;
-    white-space: nowrap;
+.kupon p{
+    margin:0;
+    color:#766849;
+}
+
+.kupon-kod{
+    background:white;
+
+    border:1px dashed #c99735;
+
+    border-radius:10px;
+
+    padding:14px 20px;
+
+    font-weight:900;
+    letter-spacing:1px;
+
+    white-space:nowrap;
 }
 
 /* =========================
    WHATSAPP
 ========================= */
 
-.whatsapp-kutu {
-    background: #174d2b;
-    color: white;
-    border-radius: 18px;
-    padding: 30px;
+.whatsapp{
+    background:#173f27;
+    color:white;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    border-radius:20px;
+
+    padding:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
 }
 
-.whatsapp-kutu h2 {
-    margin: 0 0 8px;
+.whatsapp h2{
+    font-family:Georgia,serif;
+    font-size:28px;
+    margin:0 0 8px;
 }
 
-.whatsapp-kutu p {
-    margin: 0;
-    color: #dcebdd;
+.whatsapp p{
+    margin:0;
+    color:#d8e4d9;
 }
 
-.whatsapp-buton {
-    background: white;
-    color: #174d2b;
-    padding: 13px 20px;
-    border-radius: 9px;
-    text-decoration: none;
-    font-weight: 700;
-    white-space: nowrap;
+.whatsapp a{
+    text-decoration:none;
+
+    background:#25D366;
+    color:white;
+
+    padding:14px 20px;
+
+    border-radius:10px;
+
+    font-weight:800;
+
+    white-space:nowrap;
 }
 
 /* =========================
    FOOTER
 ========================= */
 
-footer {
-    margin-top: 70px;
-    background: #123b21;
-    color: white;
-    padding: 45px 20px 25px;
+footer{
+    margin-top:80px;
+
+    background:#112e1d;
+    color:white;
+
+    padding:50px 22px 25px;
 }
 
-.footer-ic {
-    max-width: 1200px;
-    margin: auto;
+.footer-ic{
+    max-width:1250px;
+    margin:auto;
 
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
 }
 
-footer h3 {
-    margin-top: 0;
+.footer-ic h3{
+    margin-top:0;
 }
 
-footer p {
-    color: #c8d5ca;
-    line-height: 1.6;
+.footer-ic p{
+    color:#b8c8ba;
+    line-height:1.7;
 }
 
-footer a {
-    color: #dcebdd;
-    text-decoration: none;
-    display: block;
-    margin: 9px 0;
+.footer-ic a{
+    display:block;
+
+    color:#cdd9cf;
+
+    text-decoration:none;
+
+    margin:10px 0;
+
+    font-size:14px;
 }
 
-.footer-alt {
-    max-width: 1200px;
-    margin: 35px auto 0;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,.1);
-    color: #aebeb1;
-    font-size: 13px;
+.footer-alt{
+    max-width:1250px;
+    margin:35px auto 0;
+
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+    color:#87998b;
+
+    font-size:12px;
+}
+
+/* =========================
+   WHATSAPP SABİT
+========================= */
+
+.whatsapp-float{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:56px;
+    height:56px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    font-size:25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+
+    z-index:2000;
 }
 
 /* =========================
    MOBİL
 ========================= */
 
-@media (max-width: 900px) {
+@media(max-width:950px){
 
-    .nav {
-        display: none;
+    .arama{
+        display:none;
     }
 
-    .avantajlar {
-        grid-template-columns: repeat(2,1fr);
+    .avantajlar{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .kategoriler {
-        grid-template-columns: repeat(2,1fr);
+    .kategoriler{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .urunler {
-        grid-template-columns: repeat(2,1fr);
+    .urunler{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .footer-ic {
-        grid-template-columns: 1fr 1fr;
+    .marka-alani{
+        grid-template-columns:1fr;
     }
 
 }
 
-@media (max-width: 600px) {
+@media(max-width:650px){
 
-    .header-ic {
-        padding: 13px 15px;
+    .kampanya{
+        font-size:11px;
     }
 
-    .logo {
-        font-size: 20px;
+    .header-ic{
+        min-height:65px;
+        padding:0 15px;
     }
 
-    .hero {
-        margin-top: 18px;
+    .logo{
+        font-size:20px;
     }
 
-    .hero-kutu {
-        min-height: 500px;
-        padding: 30px 24px;
-        border-radius: 18px;
+    .nav{
+        display:none;
     }
 
-    .hero p {
-        font-size: 16px;
+    .hero{
+        margin-top:15px;
+        padding:0 12px;
     }
 
-    .avantajlar {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+    .hero-kutu{
+        min-height:530px;
+        border-radius:20px;
     }
 
-    .avantaj {
-        padding: 15px 10px;
+    .hero-icerik{
+        padding:30px 25px;
     }
 
-    .kategoriler {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+    .hero h1{
+        font-size:44px;
     }
 
-    .kategori {
-        min-height: 130px;
+    .hero p{
+        font-size:15px;
     }
 
-    .urunler {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+    .avantajlar{
+        padding:0 12px;
+        grid-template-columns:1fr 1fr;
     }
 
-    .urun-foto {
-        height: 165px;
+    .avantaj{
+        padding:12px;
+        gap:8px;
     }
 
-    .urun-icerik {
-        padding: 12px;
+    .avantaj-icon{
+        width:34px;
+        height:34px;
+        font-size:16px;
     }
 
-    .urun h3 {
-        font-size: 13px;
+    .avantaj small{
+        font-size:10px;
     }
 
-    .urun-fiyat {
-        font-size: 17px;
+    .bolum{
+        margin:50px auto;
+        padding:0 12px;
     }
 
-    .urun-alt {
-        flex-direction: column;
-        align-items: stretch;
+    .bolum-baslik{
+        align-items:center;
     }
 
-    .urun-buton {
-        text-align: center;
+    .baslik-sol h2{
+        font-size:28px;
     }
 
-    .kupon-kutu,
-    .whatsapp-kutu {
-        flex-direction: column;
-        align-items: flex-start;
+    .kategoriler{
+        gap:9px;
     }
 
-    .footer-ic {
-        grid-template-columns: 1fr;
+    .kategori{
+        min-height:145px;
+        padding:16px;
+    }
+
+    .kategori-icon{
+        font-size:30px;
+    }
+
+    .kategori strong{
+        font-size:16px;
+    }
+
+    .urunler{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .urun-foto{
+        height:170px;
+        padding:10px;
+    }
+
+    .urun-icerik{
+        padding:12px;
+    }
+
+    .urun h3{
+        font-size:13px;
+        min-height:55px;
+    }
+
+    .urun-fiyat{
+        font-size:17px;
+    }
+
+    .urun-incele{
+        padding:8px;
+    }
+
+    .marka-alani{
+        padding:25px;
+        gap:25px;
+    }
+
+    .marka-alani h2{
+        font-size:30px;
+    }
+
+    .marka-liste{
+        grid-template-columns:1fr;
+    }
+
+    .marka-gorsel{
+        min-height:200px;
+        font-size:60px;
+    }
+
+    .kupon{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:25px;
+    }
+
+    .kupon h2{
+        font-size:25px;
+    }
+
+    .whatsapp{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .footer-ic{
+        grid-template-columns:1fr;
+        gap:25px;
     }
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -633,15 +991,15 @@ footer a {
 
 <div class="kampanya">
 
-    <div class="kampanya-yazi">
+<div class="kampanya-yazi">
 
-        🚚 1.500 TL VE ÜZERİ SİPARİŞLERDE KARGO BEDAVA
-        &nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;
-        🎁 İLK ALIŞVERİŞİNİZE ÖZEL %10 İNDİRİM — KUPON: YONCA10
-        &nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp;
-        🌿 YONCA BAHARAT
+🚚 1.500 TL VE ÜZERİ SİPARİŞLERDE KARGO BEDAVA
+&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+🎁 İLK ALIŞVERİŞİNİZE ÖZEL %10 İNDİRİM — KUPON: YONCA10
+&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+🌿 YONCA BAHARAT
 
-    </div>
+</div>
 
 </div>
 
@@ -650,39 +1008,74 @@ footer a {
 
 <header>
 
-    <div class="header-ic">
-
-        <a href="index.html" class="logo">
-            🌿 Yonca <span>Baharat</span>
-        </a>
+<div class="header-ic">
 
 
-        <nav class="nav">
+<a
+href="index.html"
+class="logo">
 
-            <a href="index.html">
-                Ana Sayfa
-            </a>
+🌿 Yonca <span>Baharat</span>
 
-            <a href="urunler.html">
-                Ürünler
-            </a>
-
-        </nav>
+</a>
 
 
-        <div class="header-ikonlar">
+<nav class="nav">
 
-            <a href="urunler.html">
-                🔎
-            </a>
+<a href="index.html">
+Ana Sayfa
+</a>
 
-            <a href="sepet.html">
-                🛒
-            </a>
+<a href="urunler.html">
+Ürünler
+</a>
 
-        </div>
+<a href="#hakkimizda">
+Hakkımızda
+</a>
 
-    </div>
+</nav>
+
+
+<div class="header-sag">
+
+<input
+id="arama"
+class="arama"
+type="search"
+placeholder="Ürün ara...">
+
+
+<button
+class="header-buton"
+onclick="aramaYap()">
+
+🔎
+
+</button>
+
+
+<a
+href="sepet.html"
+class="header-buton sepet-buton"
+style="display:flex;align-items:center;justify-content:center;text-decoration:none;">
+
+🛒
+
+<span
+id="sepetSayi"
+class="sepet-sayi">
+
+0
+
+</span>
+
+</a>
+
+</div>
+
+
+</div>
 
 </header>
 
@@ -691,125 +1084,155 @@ footer a {
 
 <section class="hero">
 
-    <div class="hero-kutu">
+<div class="hero-kutu">
 
-        <div class="hero-icerik">
+<div class="hero-icerik">
 
-            <div class="hero-etiket">
-                🌿 Doğadan sofranıza
-            </div>
 
-            <h1>
-                Doğal ürünleri
-                keşfet.
-            </h1>
+<div class="hero-etiket">
 
-            <p>
-                Baharatlardan bitkisel ürünlere,
-                çaylardan doğal lezzetlere kadar
-                seçkin ürünleri Yonca Baharat
-                güvencesiyle keşfedin.
-            </p>
+🌿 Doğadan seçtik, sofranıza getirdik
 
-            <div class="hero-butonlar">
+</div>
 
-                <a
-                    href="urunler.html"
-                    class="buton buton-yesil"
-                >
-                    🛍️ Ürünleri Keşfet
-                </a>
 
-                <a
-                    href="#kampanya"
-                    class="buton buton-seffaf"
-                >
-                    🎁 Kampanyalar
-                </a>
+<h1>
 
-            </div>
+Doğal olanı
+<br>
 
-        </div>
+<span>keşfet.</span>
 
-    </div>
+</h1>
+
+
+<p>
+
+Baharatlardan bitkisel ürünlere,
+çaylardan doğal lezzetlere kadar
+özenle seçilmiş ürünleri
+Yonca Baharat güvencesiyle keşfedin.
+
+</p>
+
+
+<div class="hero-butonlar">
+
+<a
+href="urunler.html"
+class="hero-buton hero-buton-ana">
+
+🛍️ Ürünleri Keşfet
+
+</a>
+
+
+<a
+href="#coksatan"
+class="hero-buton hero-buton-ikinci">
+
+🔥 Çok Satanlara Bak
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- AVANTAJLAR -->
 
-<section class="bolum">
-
-    <div class="avantajlar">
-
-        <div class="avantaj">
-
-            <div class="avantaj-icon">
-                🚚
-            </div>
-
-            <strong>
-                1.500 TL Üzeri
-            </strong>
-
-            <small>
-                Kargo bedava
-            </small>
-
-        </div>
+<section class="avantajlar">
 
 
-        <div class="avantaj">
+<div class="avantaj">
 
-            <div class="avantaj-icon">
-                📦
-            </div>
+<div class="avantaj-icon">
+🚚
+</div>
 
-            <strong>
-                Özenli Paketleme
-            </strong>
+<div>
 
-            <small>
-                Ürünleriniz dikkatle hazırlanır
-            </small>
+<strong>
+Ücretsiz Kargo
+</strong>
 
-        </div>
+<small>
+1.500 TL üzeri
+</small>
 
+</div>
 
-        <div class="avantaj">
-
-            <div class="avantaj-icon">
-                💳
-            </div>
-
-            <strong>
-                Güvenli Ödeme
-            </strong>
-
-            <small>
-                Güvenli ödeme seçenekleri
-            </small>
-
-        </div>
+</div>
 
 
-        <div class="avantaj">
+<div class="avantaj">
 
-            <div class="avantaj-icon">
-                💬
-            </div>
+<div class="avantaj-icon">
+📦
+</div>
 
-            <strong>
-                WhatsApp Destek
-            </strong>
+<div>
 
-            <small>
-                Bize kolayca ulaşın
-            </small>
+<strong>
+Özenli Paketleme
+</strong>
 
-        </div>
+<small>
+Siparişiniz dikkatle hazırlanır
+</small>
 
-    </div>
+</div>
+
+</div>
+
+
+<div class="avantaj">
+
+<div class="avantaj-icon">
+💳
+</div>
+
+<div>
+
+<strong>
+Güvenli Ödeme
+</strong>
+
+<small>
+Farklı ödeme seçenekleri
+</small>
+
+</div>
+
+</div>
+
+
+<div class="avantaj">
+
+<div class="avantaj-icon">
+💬
+</div>
+
+<div>
+
+<strong>
+WhatsApp Destek
+</strong>
+
+<small>
+Kolayca bize ulaşın
+</small>
+
+</div>
+
+</div>
+
 
 </section>
 
@@ -818,300 +1241,462 @@ footer a {
 
 <section class="bolum">
 
-    <div class="bolum-baslik">
 
-        <h2>
-            Kategoriler
-        </h2>
+<div class="bolum-baslik">
 
-        <a href="urunler.html">
-            Tümünü Gör →
-        </a>
+<div class="baslik-sol">
 
-    </div>
+<small>
+Keşfet
+</small>
 
+<h2>
+Kategoriler
+</h2>
 
-    <div class="kategoriler">
-
-        <a href="urunler.html" class="kategori">
-
-            <div class="kategori-icon">
-                🌶️
-            </div>
-
-            <strong>
-                Baharatlar
-            </strong>
-
-        </a>
+</div>
 
 
-        <a href="urunler.html" class="kategori">
+<a
+href="urunler.html"
+class="tumunu-gor">
 
-            <div class="kategori-icon">
-                🍯
-            </div>
+Tüm ürünleri gör →
 
-            <strong>
-                Doğal Lezzetler
-            </strong>
+</a>
 
-        </a>
+</div>
 
 
-        <a href="urunler.html" class="kategori">
-
-            <div class="kategori-icon">
-                🍵
-            </div>
-
-            <strong>
-                Çaylar
-            </strong>
-
-        </a>
+<div class="kategoriler">
 
 
-        <a href="urunler.html" class="kategori">
+<a
+href="urunler.html"
+class="kategori">
 
-            <div class="kategori-icon">
-                🌿
-            </div>
+<div class="kategori-icon">
+🌶️
+</div>
 
-            <strong>
-                Bitkisel Ürünler
-            </strong>
+<strong>
+Baharatlar
+</strong>
 
-        </a>
+<small>
+Günlük mutfağın vazgeçilmezleri
+</small>
 
-    </div>
+</a>
+
+
+<a
+href="urunler.html"
+class="kategori">
+
+<div class="kategori-icon">
+🍯
+</div>
+
+<strong>
+Doğal Lezzetler
+</strong>
+
+<small>
+Doğadan gelen tatlar
+</small>
+
+</a>
+
+
+<a
+href="urunler.html"
+class="kategori">
+
+<div class="kategori-icon">
+🍵
+</div>
+
+<strong>
+Çaylar
+</strong>
+
+<small>
+Geleneksel ve özel karışımlar
+</small>
+
+</a>
+
+
+<a
+href="urunler.html"
+class="kategori">
+
+<div class="kategori-icon">
+🌿
+</div>
+
+<strong>
+Bitkisel Ürünler
+</strong>
+
+<small>
+Doğal yaşam için seçtiklerimiz
+</small>
+
+</a>
+
+
+</div>
 
 </section>
 
 
-<!-- ÜRÜNLER -->
+<!-- ÇOK SATANLAR -->
 
-<section class="bolum">
+<section
+class="bolum"
+id="coksatan">
 
-    <div class="bolum-baslik">
 
-        <h2>
-            ⭐ Öne Çıkan Ürünler
-        </h2>
+<div class="bolum-baslik">
 
-        <a href="urunler.html">
-            Tüm ürünler →
-        </a>
+<div class="baslik-sol">
 
-    </div>
+<small>
+Müşterilerimizin favorileri
+</small>
 
+<h2>
+🔥 Çok Satanlar
+</h2>
 
-    <div class="urunler">
+</div>
 
 
-        <!-- ÜRÜN 1 -->
+<a
+href="urunler.html"
+class="tumunu-gor">
 
-        <div class="urun">
+Hepsini gör →
 
-            <div class="urun-foto">
+</a>
 
-                <img
-                    src="images/holistrakt.jpg"
-                    alt="Holistrakt"
-                >
+</div>
 
-            </div>
 
-            <div class="urun-icerik">
+<div class="urunler">
 
-                <div class="urun-marka">
-                    Shiffa Home
-                </div>
 
-                <h3>
-                    HOLİSTRAKT Sıvı Ekstrat 250 ML
-                </h3>
+<!-- HOLİSTRAKT -->
 
-                <div class="urun-alt">
+<div class="urun">
 
-                    <div class="urun-fiyat">
-                        925 TL
-                    </div>
+<div class="urun-foto">
 
-                    <a
-                        href="urun.html?urun=holistrakt"
-                        class="urun-buton"
-                    >
-                        İncele
-                    </a>
+<div class="urun-etiket">
+Çok Satan
+</div>
 
-                </div>
+<img
+src="images/holistrakt.jpg"
+alt="Holistrakt">
 
-            </div>
+</div>
 
-        </div>
 
+<div class="urun-icerik">
 
-        <!-- ÜRÜN 2 -->
+<div class="urun-marka">
+Shiffa Home
+</div>
 
-        <div class="urun">
+<h3>
+HOLİSTRAKT Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML
+</h3>
 
-            <div class="urun-foto">
 
-                <img
-                    src="images/kantaroid.jpg"
-                    alt="Kanta Roit Krem"
-                >
+<div class="urun-alt">
 
-            </div>
+<div class="urun-fiyat">
+925 TL
+</div>
 
-            <div class="urun-icerik">
+<a
+href="urun.html?urun=holistrakt"
+class="urun-incele">
 
-                <div class="urun-marka">
-                    Shiffa Home
-                </div>
+İncele
 
-                <h3>
-                    KANTA ROIT KREM 20 ML
-                </h3>
+</a>
 
-                <div class="urun-alt">
+</div>
 
-                    <div class="urun-fiyat">
-                        190 TL
-                    </div>
+</div>
 
-                    <a
-                        href="urun.html?urun=kantaroid"
-                        class="urun-buton"
-                    >
-                        İncele
-                    </a>
+</div>
 
-                </div>
 
-            </div>
+<!-- KANTA ROIT -->
 
-        </div>
+<div class="urun">
 
+<div class="urun-foto">
 
-        <!-- ÜRÜN 3 -->
+<div class="urun-etiket">
+Popüler
+</div>
 
-        <div class="urun">
+<img
+src="images/kantaroid.jpg"
+alt="Kanta Roit Krem">
 
-            <div class="urun-foto">
+</div>
 
-                <img
-                    src="images/akzer.jpg"
-                    alt="Saf Nar Ekşisi"
-                >
 
-            </div>
+<div class="urun-icerik">
 
-            <div class="urun-icerik">
+<div class="urun-marka">
+Shiffa Home
+</div>
 
-                <div class="urun-marka">
-                    Akzer
-                </div>
+<h3>
+KANTA ROIT KREM 20 ML
+</h3>
 
-                <h3>
-                    Saf Nar Ekşisi
-                </h3>
 
-                <div class="urun-alt">
+<div class="urun-alt">
 
-                    <div class="urun-fiyat">
-                        349 TL
-                    </div>
+<div class="urun-fiyat">
+190 TL
+</div>
 
-                    <a
-                        href="urun.html?urun=akzer"
-                        class="urun-buton"
-                    >
-                        İncele
-                    </a>
+<a
+href="urun.html?urun=kantaroid"
+class="urun-incele">
 
-                </div>
+İncele
 
-            </div>
+</a>
 
-        </div>
+</div>
 
+</div>
 
-        <!-- ÜRÜN 4 -->
+</div>
 
-        <div class="urun">
 
-            <div class="urun-foto">
+<!-- AKZER -->
 
-                <img
-                    src="images/yeni-kudret-nari-83.jpg"
-                    alt="Kudret Narı"
-                >
+<div class="urun">
 
-            </div>
+<div class="urun-foto">
 
-            <div class="urun-icerik">
+<img
+src="images/akzer.jpg"
+alt="Akzer Saf Nar Ekşisi">
 
-                <div class="urun-marka">
-                    Aksu Vital
-                </div>
+</div>
 
-                <h3>
-                    Kudret Narı Ekstraktlı Macun 300 gr
-                </h3>
 
-                <div class="urun-alt">
+<div class="urun-icerik">
 
-                    <div class="urun-fiyat">
-                        600 TL
-                    </div>
+<div class="urun-marka">
+Akzer
+</div>
 
-                    <a
-                        href="urun.html?urun=kudretnari"
-                        class="urun-buton"
-                    >
-                        İncele
-                    </a>
+<h3>
+Saf Nar Ekşisi
+</h3>
 
-                </div>
 
-            </div>
+<div class="urun-alt">
 
-        </div>
+<div class="urun-fiyat">
+349 TL
+</div>
 
+<a
+href="urun.html?urun=akzer"
+class="urun-incele">
 
-    </div>
+İncele
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- KUDRET NARI -->
+
+<div class="urun">
+
+<div class="urun-foto">
+
+<div class="urun-etiket">
+Yeni
+</div>
+
+<img
+src="images/yeni-kudret-nari-83.jpg"
+alt="Kudret Narı">
+
+</div>
+
+
+<div class="urun-icerik">
+
+<div class="urun-marka">
+Aksu Vital
+</div>
+
+<h3>
+Kudret Narı Ekstraktlı Macun 300 gr
+</h3>
+
+
+<div class="urun-alt">
+
+<div class="urun-fiyat">
+600 TL
+</div>
+
+<a
+href="urun.html?urun=kudretnari"
+class="urun-incele">
+
+İncele
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- MARKA -->
+
+<section
+class="bolum"
+id="hakkimizda">
+
+
+<div class="marka-alani">
+
+
+<div>
+
+
+<small style="color:#789653;font-weight:800;letter-spacing:1.5px;">
+YONCA BAHARAT
+</small>
+
+
+<h2>
+Doğadan gelen
+güven.
+</h2>
+
+
+<p>
+
+Bizim için iyi bir ürün yalnızca
+satılan bir ürün değildir.
+
+Özenle seçilmeli, doğru şekilde
+sunulmalı ve müşterimize
+güven vermelidir.
+
+Yonca Baharat'ta amacımız,
+günlük hayatınızda kullanabileceğiniz
+doğal ve seçkin ürünleri
+kolay ve güvenilir bir alışveriş
+deneyimiyle buluşturmak.
+
+</p>
+
+
+<div class="marka-liste">
+
+<div>
+✓ Özenle seçilmiş ürünler
+</div>
+
+<div>
+✓ Dikkatli paketleme
+</div>
+
+<div>
+✓ Hızlı iletişim
+</div>
+
+<div>
+✓ Müşteri memnuniyeti
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="marka-gorsel">
+
+🌿
+
+</div>
+
+
+</div>
 
 </section>
 
 
 <!-- KUPON -->
 
-<section
-    class="bolum"
-    id="kampanya"
->
+<section class="bolum">
 
-    <div class="kupon-kutu">
 
-        <div>
+<div class="kupon">
 
-            <h2>
-                🎁 İlk alışverişine özel %10 indirim
-            </h2>
 
-            <p>
-                İlk siparişinde kupon kodunu kullan.
-            </p>
+<div>
 
-        </div>
+<small>
+İLK SİPARİŞİNİZE ÖZEL
+</small>
 
-        <div class="kupon-kod">
-            YONCA10
-        </div>
+<h2>
+%10 indirim fırsatını kaçırmayın.
+</h2>
 
-    </div>
+<p>
+İlk alışverişinizde kupon kodunu
+kullanarak indiriminizi yakalayın.
+</p>
+
+</div>
+
+
+<div class="kupon-kod">
+
+YONCA10
+
+</div>
+
+
+</div>
 
 </section>
 
@@ -1120,31 +1705,35 @@ footer a {
 
 <section class="bolum">
 
-    <div class="whatsapp-kutu">
 
-        <div>
+<div class="whatsapp">
 
-            <h2>
-                💬 Yardıma mı ihtiyacın var?
-            </h2>
 
-            <p>
-                Ürünler hakkında bilgi almak
-                veya sipariş vermek için
-                WhatsApp'tan bize ulaşabilirsin.
-            </p>
+<div>
 
-        </div>
+<h2>
+Bir şey mi merak ettiniz?
+</h2>
 
-        <a
-            href="#"
-            class="whatsapp-buton"
-            onclick="whatsappAc(); return false;"
-        >
-            WhatsApp'tan Yaz
-        </a>
+<p>
+Ürünler hakkında bilgi almak veya
+sipariş vermek için WhatsApp'tan
+bize ulaşabilirsiniz.
+</p>
 
-    </div>
+</div>
+
+
+<a
+href="https://wa.me/905525102881"
+target="_blank">
+
+💬 WhatsApp'tan Yaz
+
+</a>
+
+
+</div>
 
 </section>
 
@@ -1153,87 +1742,165 @@ footer a {
 
 <footer>
 
-    <div class="footer-ic">
 
-        <div>
-
-            <h3>
-                🌿 Yonca Baharat
-            </h3>
-
-            <p>
-                Doğal ürünleri, baharatları ve
-                seçkin lezzetleri sizlerle
-                buluşturuyoruz.
-            </p>
-
-        </div>
+<div class="footer-ic">
 
 
-        <div>
+<div>
 
-            <h3>
-                Hızlı Menü
-            </h3>
+<h3>
+🌿 Yonca Baharat
+</h3>
 
-            <a href="index.html">
-                Ana Sayfa
-            </a>
+<p>
+Doğadan gelen ürünleri,
+özenli hizmet ve güvenilir
+alışveriş deneyimiyle
+buluşturuyoruz.
+</p>
 
-            <a href="urunler.html">
-                Ürünler
-            </a>
-
-            <a href="sepet.html">
-                Sepetim
-            </a>
-
-        </div>
+</div>
 
 
-        <div>
+<div>
 
-            <h3>
-                Destek
-            </h3>
+<h3>
+Mağaza
+</h3>
 
-            <a href="#" onclick="whatsappAc(); return false;">
-                WhatsApp
-            </a>
+<a href="index.html">
+Ana Sayfa
+</a>
 
-            <a href="urunler.html">
-                Ürünlerimiz
-            </a>
+<a href="urunler.html">
+Tüm Ürünler
+</a>
 
-        </div>
+<a href="sepet.html">
+Sepetim
+</a>
 
-    </div>
+</div>
 
 
-    <div class="footer-alt">
+<div>
 
-        Yonca Baharat © 2026 — Tüm hakları saklıdır.
+<h3>
+Destek
+</h3>
 
-    </div>
+<a
+href="https://wa.me/905525102881"
+target="_blank">
+
+WhatsApp
+
+</a>
+
+<a href="urunler.html">
+Ürünler
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-alt">
+
+Yonca Baharat © 2026 — Tüm hakları saklıdır.
+
+</div>
+
 
 </footer>
 
 
+<!-- SABİT WHATSAPP -->
+
+<a
+href="https://wa.me/905525102881"
+target="_blank"
+class="whatsapp-float">
+
+💬
+
+</a>
+
+
 <script>
 
-function whatsappAc() {
+/* =========================
+   SEPET SAYISI
+========================= */
 
-    const telefon =
-        "905XXXXXXXXX";
+function sepetSayisiniGuncelle(){
 
-    window.open(
-        "https://wa.me/" + telefon,
-        "_blank"
-    );
+const sepet =
+JSON.parse(
+localStorage.getItem("sepet")
+) || [];
+
+
+let toplam = 0;
+
+
+sepet.forEach(item => {
+
+toplam += Number(item.adet) || 0;
+
+});
+
+
+document.getElementById(
+"sepetSayi"
+).innerText = toplam;
 
 }
 
+
+sepetSayisiniGuncelle();
+
+
+/* =========================
+   ARAMA
+========================= */
+
+function aramaYap(){
+
+const arama =
+document.getElementById("arama").value.trim();
+
+
+if(arama){
+
+window.location.href =
+"urunler.html?arama=" +
+encodeURIComponent(arama);
+
+}
+
+}
+
+
+document.getElementById(
+"arama"
+).addEventListener(
+"keydown",
+function(e){
+
+if(e.key === "Enter"){
+
+aramaYap();
+
+}
+
+});
+
+
 </script>
+
 
 </body>
 </html>
