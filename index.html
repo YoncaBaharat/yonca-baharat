@@ -15,7 +15,7 @@ background:#f7f7f2;
 color:#26372b;
 }
 
-/* KAYAN YAZI */
+/* KAYAN BİLDİRİM */
 .top{
 height:40px;
 background:#173f27;
@@ -185,7 +185,7 @@ font-weight:bold;
 text-decoration:none;
 }
 
-/* KATEGORİ */
+/* KATEGORİLER */
 .kategoriler{
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -332,6 +332,84 @@ text-decoration:none;
 z-index:2000;
 }
 
+/* INSTAGRAM BİLDİRİMİ */
+.instagram-bildirim{
+position:fixed;
+right:20px;
+bottom:90px;
+width:350px;
+background:white;
+border-radius:17px;
+padding:17px;
+box-shadow:0 12px 40px rgba(0,0,0,.20);
+display:flex;
+align-items:center;
+gap:12px;
+z-index:3000;
+animation:giris .6s ease;
+}
+
+.insta-icon{
+width:48px;
+height:48px;
+border-radius:13px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+}
+
+.insta-yazi{
+flex:1;
+display:flex;
+flex-direction:column;
+gap:4px;
+}
+
+.insta-yazi strong{
+font-size:14px;
+color:#173f27;
+}
+
+.insta-yazi span{
+font-size:11px;
+color:#777;
+}
+
+.insta-takip{
+background:#173f27;
+color:white;
+padding:9px 12px;
+border-radius:8px;
+text-decoration:none;
+font-size:11px;
+font-weight:bold;
+white-space:nowrap;
+}
+
+.insta-kapat{
+position:absolute;
+right:7px;
+top:4px;
+border:0;
+background:none;
+color:#999;
+font-size:20px;
+cursor:pointer;
+}
+
+@keyframes giris{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
 /* MOBİL */
 .mobil{
 display:none;
@@ -403,6 +481,12 @@ font-size:11px;
 padding:8px;
 }
 
+.instagram-bildirim{
+right:10px;
+bottom:75px;
+width:calc(100% - 20px);
+}
+
 .mobil{
 position:fixed;
 display:flex;
@@ -430,7 +514,7 @@ font-size:18px;
 }
 
 .whatsapp{
-bottom:75px;
+bottom:145px;
 }
 
 }
@@ -473,7 +557,7 @@ bottom:75px;
 </div>
 </header>
 
-<!-- HERO -->
+<!-- ANA ALAN -->
 <section class="hero">
 
 <div class="hero-box">
@@ -577,7 +661,6 @@ Sepete Ekle
 </div>
 </div>
 
-
 <div class="urun">
 
 <div class="foto">
@@ -603,7 +686,6 @@ Sepete Ekle
 </div>
 </div>
 
-
 <div class="urun">
 
 <div class="foto">
@@ -628,7 +710,6 @@ Sepete Ekle
 
 </div>
 </div>
-
 
 <div class="urun">
 
@@ -686,6 +767,27 @@ buluşturuyoruz.
 
 </section>
 
+<!-- INSTAGRAM BİLDİRİMİ -->
+<div id="instagramBildirim" class="instagram-bildirim">
+
+<button class="insta-kapat" onclick="instagramKapat()">×</button>
+
+<div class="insta-icon">📸</div>
+
+<div class="insta-yazi">
+<strong>Yonca Baharat</strong>
+<span>Instagram'da bizi takip et 🌿</span>
+</div>
+
+<a
+class="insta-takip"
+href="https://www.instagram.com/yonca.baharat/"
+target="_blank">
+Takip Et
+</a>
+
+</div>
+
 <!-- FOOTER -->
 <footer>
 🌿 Yonca Baharat © 2026
@@ -726,7 +828,7 @@ WhatsApp
 
 <script>
 
-const fiyatlar={
+const urunler={
 holistrakt:925,
 kantaroid:190,
 akzer:349,
@@ -774,6 +876,14 @@ toplam+=x.adet;
 });
 
 document.getElementById("sayi").innerText=toplam;
+
+}
+
+function instagramKapat(){
+
+document.getElementById(
+"instagramBildirim"
+).style.display="none";
 
 }
 
