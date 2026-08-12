@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sepetim | Yonca Baharat</title>
 
@@ -95,21 +92,21 @@ header {
     color: #707870;
 }
 
-/* LAYOUT */
+/* SEPET */
 
 .sepet-layout {
     display: grid;
-    grid-template-columns: 1fr 360px;
+    grid-template-columns: 1fr 370px;
     gap: 25px;
 }
-
-/* ÜRÜNLER */
 
 .sepet-urunler {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
+
+/* ÜRÜN */
 
 .urun {
     background: white;
@@ -128,7 +125,9 @@ header {
 .urun img {
     width: 95px;
     height: 95px;
+
     object-fit: contain;
+
     background: #f5f7f3;
     border-radius: 10px;
 }
@@ -161,10 +160,14 @@ header {
 .adet button {
     width: 32px;
     height: 32px;
+
     border: 1px solid #d8ddd8;
     background: #f4f6f3;
+
     border-radius: 7px;
+
     cursor: pointer;
+
     font-size: 18px;
 }
 
@@ -188,9 +191,12 @@ header {
 
 .sil {
     margin-top: 10px;
+
     border: none;
     background: none;
+
     color: #b53d3d;
+
     cursor: pointer;
 }
 
@@ -198,8 +204,11 @@ header {
 
 .ozet {
     background: white;
+
     border-radius: 16px;
+
     padding: 23px;
+
     box-shadow: 0 4px 18px rgba(0,0,0,.06);
 
     position: sticky;
@@ -213,6 +222,7 @@ header {
 .satir {
     display: flex;
     justify-content: space-between;
+
     margin: 14px 0;
 }
 
@@ -225,29 +235,41 @@ header {
     color: #777;
 }
 
-/* KARGO BAR */
+/* KARGO */
 
 .kargo-bilgi {
     background: #f1f6ef;
+
     border-radius: 10px;
+
     padding: 13px;
+
     margin: 18px 0;
+
     font-size: 14px;
+
     line-height: 1.5;
 }
 
 .progress {
     height: 8px;
+
     background: #dce4db;
+
     border-radius: 20px;
+
     overflow: hidden;
+
     margin-top: 9px;
 }
 
 .progress-bar {
     height: 100%;
+
     width: 0%;
+
     background: #174d2b;
+
     transition: .3s;
 }
 
@@ -259,7 +281,9 @@ header {
 
 .kupon label {
     display: block;
+
     font-weight: 700;
+
     margin-bottom: 8px;
 }
 
@@ -270,23 +294,33 @@ header {
 
 .kupon input {
     min-width: 0;
+
     flex: 1;
+
     padding: 12px;
+
     border: 1px solid #d8ddd8;
+
     border-radius: 8px;
 }
 
 .kupon button {
     border: none;
+
     background: #174d2b;
+
     color: white;
+
     padding: 0 15px;
+
     border-radius: 8px;
+
     cursor: pointer;
 }
 
 .kupon-mesaj {
     font-size: 13px;
+
     margin-top: 8px;
 }
 
@@ -294,33 +328,45 @@ header {
 
 .genel-toplam {
     border-top: 1px solid #e0e4df;
+
     padding-top: 18px;
+
     margin-top: 18px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 }
 
 .genel-toplam strong {
     font-size: 24px;
+
     color: #174d2b;
 }
 
-/* ÖDEME */
+/* BUTONLAR */
 
 .odeme {
     display: block;
+
     width: 100%;
+
     margin-top: 18px;
+
     padding: 16px;
+
     border: none;
+
     border-radius: 10px;
 
     background: #174d2b;
+
     color: white;
 
     font-size: 17px;
+
     font-weight: 800;
 
     cursor: pointer;
@@ -330,15 +376,45 @@ header {
     background: #0e3b20;
 }
 
-/* DEVAM */
+.whatsapp {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #25D366;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.whatsapp:hover {
+    opacity: .9;
+}
 
 .devam {
     display: block;
+
     text-align: center;
+
     margin-top: 15px;
 
     color: #174d2b;
+
     text-decoration: none;
+
     font-weight: 700;
 }
 
@@ -346,8 +422,11 @@ header {
 
 .bos {
     background: white;
+
     border-radius: 18px;
+
     padding: 60px 20px;
+
     text-align: center;
 }
 
@@ -365,12 +444,32 @@ header {
 
 .bos a {
     display: inline-block;
+
     margin-top: 15px;
+
     background: #174d2b;
+
     color: white;
+
     text-decoration: none;
+
     padding: 13px 22px;
+
     border-radius: 9px;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 70px;
+
+    background: #123b21;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
 }
 
 /* MOBİL */
@@ -425,6 +524,8 @@ header {
 <body>
 
 
+<!-- KAMPANYA -->
+
 <div class="kampanya">
 
 🚚 1.500 TL ÜZERİ SİPARİŞLERDE KARGO BEDAVA
@@ -433,6 +534,8 @@ header {
 
 </div>
 
+
+<!-- HEADER -->
 
 <header>
 
@@ -459,12 +562,16 @@ Ana Sayfa
 </header>
 
 
+<!-- ANA -->
+
 <div class="container">
 
 
 <div class="baslik">
 
-<h1>🛒 Sepetim</h1>
+<h1>
+🛒 Sepetim
+</h1>
 
 <p>
 Siparişinizi kontrol edin ve devam edin.
@@ -472,6 +579,8 @@ Siparişinizi kontrol edin ve devam edin.
 
 </div>
 
+
+<!-- BOŞ SEPET -->
 
 <div id="bosSepet" class="bos" style="display:none;">
 
@@ -494,15 +603,22 @@ Alışverişe Başla
 </div>
 
 
+<!-- SEPET -->
+
 <div id="sepetAlan">
 
 <div class="sepet-layout">
 
 
-<div id="urunler"
+<!-- ÜRÜNLER -->
+
+<div
+id="urunler"
 class="sepet-urunler">
 </div>
 
+
+<!-- ÖZET -->
 
 <div class="ozet">
 
@@ -555,11 +671,15 @@ Kupon İndirimi
 </div>
 
 
+<!-- KARGO BİLGİSİ -->
+
 <div
 id="kargoBilgi"
 class="kargo-bilgi">
 </div>
 
+
+<!-- KUPON -->
 
 <div class="kupon">
 
@@ -587,6 +707,8 @@ class="kupon-mesaj">
 </div>
 
 
+<!-- TOPLAM -->
+
 <div class="genel-toplam">
 
 <span>
@@ -600,11 +722,24 @@ Toplam
 </div>
 
 
+<!-- ÖDEME -->
+
 <button
 class="odeme"
 onclick="odeme()">
 
-Siparişe Devam Et →
+💳 Siparişe Devam Et →
+
+</button>
+
+
+<!-- WHATSAPP -->
+
+<button
+class="whatsapp"
+onclick="whatsappSiparis()">
+
+💬 WhatsApp'tan Sipariş Ver
 
 </button>
 
@@ -617,18 +752,32 @@ class="devam">
 
 </a>
 
-</div>
-
 
 </div>
 
+
 </div>
 
 </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+🌿 Yonca Baharat © 2026
+
+</footer>
 
 
 <script>
 
+
+/* =========================
+   ÜRÜNLER
+========================= */
 
 const urunBilgileri = {
 
@@ -683,8 +832,25 @@ foto: "images/yeni-kudret-nari-83.jpg"
 };
 
 
+/* =========================
+   AYARLAR
+========================= */
+
+const WHATSAPP =
+"905525102881";
+
+const UCRETSIZ_KARGO_LIMIT =
+1500;
+
+const KARGO_UCRETI =
+40.99;
+
 let kuponAktif = false;
 
+
+/* =========================
+   SEPET
+========================= */
 
 function sepetGetir() {
 
@@ -705,9 +871,14 @@ JSON.stringify(sepet)
 }
 
 
+/* =========================
+   SEPETİ GÖSTER
+========================= */
+
 function sepeteYazdir() {
 
-const sepet = sepetGetir();
+const sepet =
+sepetGetir();
 
 const alan =
 document.getElementById("urunler");
@@ -754,7 +925,8 @@ urun.fiyat * item.adet;
 const div =
 document.createElement("div");
 
-div.className = "urun";
+div.className =
+"urun";
 
 
 div.innerHTML = `
@@ -763,7 +935,6 @@ div.innerHTML = `
 src="${urun.foto}"
 alt="${urun.ad}"
 >
-
 
 <div class="urun-bilgi">
 
@@ -781,7 +952,8 @@ ${urun.fiyat.toLocaleString("tr-TR")} TL / adet
 
 <div class="adet">
 
-<button onclick="adetDegistir(${index},-1)">
+<button
+onclick="adetDegistir(${index},-1)">
 −
 </button>
 
@@ -789,7 +961,8 @@ ${urun.fiyat.toLocaleString("tr-TR")} TL / adet
 ${item.adet}
 </span>
 
-<button onclick="adetDegistir(${index},1)">
+<button
+onclick="adetDegistir(${index},1)">
 +
 </button>
 
@@ -797,13 +970,10 @@ ${item.adet}
 
 </div>
 
-
 <div class="urun-sag">
 
 <div class="urun-toplam">
-
 ${toplam.toLocaleString("tr-TR")} TL
-
 </div>
 
 <button
@@ -818,7 +988,6 @@ onclick="urunSil(${index})">
 
 `;
 
-
 alan.appendChild(div);
 
 });
@@ -829,11 +998,14 @@ hesapla();
 }
 
 
+/* =========================
+   ADET
+========================= */
+
 function adetDegistir(index,miktar) {
 
 const sepet =
 sepetGetir();
-
 
 sepet[index].adet += miktar;
 
@@ -852,14 +1024,16 @@ sepeteYazdir();
 }
 
 
+/* =========================
+   ÜRÜN SİL
+========================= */
+
 function urunSil(index) {
 
 const sepet =
 sepetGetir();
 
-
 sepet.splice(index,1);
-
 
 sepetKaydet(sepet);
 
@@ -868,11 +1042,14 @@ sepeteYazdir();
 }
 
 
+/* =========================
+   HESAP
+========================= */
+
 function hesapla() {
 
 const sepet =
 sepetGetir();
-
 
 let araToplam = 0;
 
@@ -894,14 +1071,20 @@ urun.fiyat * item.adet;
 
 let kargo = 0;
 
-if (araToplam > 0 && araToplam < 1500) {
 
-kargo = 40.99;
+if (
+araToplam > 0 &&
+araToplam < UCRETSIZ_KARGO_LIMIT
+) {
+
+kargo =
+KARGO_UCRETI;
 
 }
 
 
 let indirim = 0;
+
 
 if (kuponAktif) {
 
@@ -917,56 +1100,100 @@ kargo -
 indirim;
 
 
+/* ARA TOPLAM */
+
 document.getElementById(
 "araToplam"
 ).innerText =
-araToplam.toLocaleString("tr-TR",{
-minimumFractionDigits:2
-}) + " TL";
 
+araToplam.toLocaleString(
+"tr-TR",
+{
+minimumFractionDigits: 2
+}
+) + " TL";
+
+
+/* KARGO */
 
 document.getElementById(
 "kargo"
 ).innerText =
+
 kargo === 0 && araToplam > 0
+
 ? "ÜCRETSİZ"
-: kargo.toLocaleString("tr-TR",{
-minimumFractionDigits:2
-}) + " TL";
+
+:
+
+kargo.toLocaleString(
+"tr-TR",
+{
+minimumFractionDigits: 2
+}
+) + " TL";
 
 
 document.getElementById(
 "kargo"
 ).className =
+
 kargo === 0 && araToplam > 0
+
 ? "kargo-bedava"
+
 : "kargo";
 
+
+/* İNDİRİM */
 
 if (kuponAktif) {
 
 document.getElementById(
 "indirimSatiri"
-).style.display = "flex";
+).style.display =
+"flex";
 
 document.getElementById(
 "indirim"
 ).innerText =
+
 "-" +
-indirim.toLocaleString("tr-TR",{
-minimumFractionDigits:2
-}) +
+
+indirim.toLocaleString(
+"tr-TR",
+{
+minimumFractionDigits: 2
+}
+) +
+
 " TL";
 
 }
 
+else {
+
+document.getElementById(
+"indirimSatiri"
+).style.display =
+"none";
+
+}
+
+
+/* GENEL TOPLAM */
 
 document.getElementById(
 "genelToplam"
 ).innerText =
-toplam.toLocaleString("tr-TR",{
-minimumFractionDigits:2
-}) +
+
+toplam.toLocaleString(
+"tr-TR",
+{
+minimumFractionDigits: 2
+}
+) +
+
 " TL";
 
 
@@ -985,25 +1212,34 @@ bilgi.innerHTML =
 
 }
 
-else if (araToplam < 1500) {
+else if (
+araToplam < UCRETSIZ_KARGO_LIMIT
+) {
 
 const kalan =
-1500 - araToplam;
+UCRETSIZ_KARGO_LIMIT -
+araToplam;
 
 const yuzde =
 Math.min(
-(araToplam / 1500) * 100,
+(araToplam /
+UCRETSIZ_KARGO_LIMIT)
+* 100,
 100
 );
+
 
 bilgi.innerHTML = `
 
 🚚 Ücretsiz kargoya
 
 <strong>
-${kalan.toLocaleString("tr-TR",{
-minimumFractionDigits:2
-})} TL
+${kalan.toLocaleString(
+"tr-TR",
+{
+minimumFractionDigits: 2
+}
+)} TL
 </strong>
 
 kaldı!
@@ -1050,6 +1286,10 @@ style="width:100%">
 }
 
 
+/* =========================
+   KUPON
+========================= */
+
 function kuponUygula() {
 
 const input =
@@ -1064,7 +1304,9 @@ document.getElementById(
 
 
 const kod =
-input.value.trim().toUpperCase();
+input.value
+.trim()
+.toUpperCase();
 
 
 if (kod === "YONCA10") {
@@ -1098,6 +1340,180 @@ hesapla();
 }
 
 
+/* =========================
+   WHATSAPP SİPARİŞ
+========================= */
+
+function whatsappSiparis() {
+
+const sepet =
+sepetGetir();
+
+
+if (sepet.length === 0) {
+
+alert(
+"Sepetiniz boş."
+);
+
+return;
+
+}
+
+
+let araToplam = 0;
+
+let mesaj =
+"Merhaba, Yonca Baharat'tan sipariş vermek istiyorum.%0A%0A";
+
+
+sepet.forEach(item => {
+
+const urun =
+urunBilgileri[item.id];
+
+if (!urun) return;
+
+
+const toplam =
+urun.fiyat * item.adet;
+
+
+araToplam += toplam;
+
+
+mesaj +=
+"• " +
+urun.ad +
+" — " +
+item.adet +
+" adet — " +
+toplam.toLocaleString(
+"tr-TR"
+) +
+" TL%0A";
+
+});
+
+
+let kargo = 0;
+
+
+if (
+araToplam > 0 &&
+araToplam < UCRETSIZ_KARGO_LIMIT
+) {
+
+kargo =
+KARGO_UCRETI;
+
+}
+
+
+let indirim = 0;
+
+
+if (kuponAktif) {
+
+indirim =
+araToplam * 0.10;
+
+}
+
+
+const genelToplam =
+araToplam +
+kargo -
+indirim;
+
+
+mesaj +=
+"%0A";
+
+mesaj +=
+"Ara toplam: " +
+araToplam.toLocaleString(
+"tr-TR",
+{
+minimumFractionDigits: 2
+}
+) +
+" TL%0A";
+
+
+if (kargo === 0) {
+
+mesaj +=
+"Kargo: ÜCRETSİZ%0A";
+
+}
+
+else {
+
+mesaj +=
+"Kargo: " +
+kargo.toLocaleString(
+"tr-TR",
+{
+minimumFractionDigits: 2
+}
+) +
+" TL%0A";
+
+}
+
+
+if (kuponAktif) {
+
+mesaj +=
+"Kupon indirimi: -" +
+indirim.toLocaleString(
+"tr-TR",
+{
+minimumFractionDigits: 2
+}
+) +
+" TL%0A";
+
+}
+
+
+mesaj +=
+"*Toplam: " +
+genelToplam.toLocaleString(
+"tr-TR",
+{
+minimumFractionDigits: 2
+}
+) +
+" TL*%0A%0A";
+
+
+mesaj +=
+"Ad Soyad:%0A";
+
+mesaj +=
+"Adres:%0A";
+
+mesaj +=
+"Telefon:%0A";
+
+
+window.open(
+"https://wa.me/" +
+WHATSAPP +
+"?text=" +
+mesaj,
+"_blank"
+);
+
+}
+
+
+/* =========================
+   ÖDEME
+========================= */
+
 function odeme() {
 
 const sepet =
@@ -1122,11 +1538,11 @@ alert(
 }
 
 
+/* BAŞLAT */
+
 sepeteYazdir();
 
 </script>
 
-
 </body>
-
 </html>
