@@ -2,985 +2,295 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-<title>Yonca Baharat | Doğal Ürünler & Baharat</title>
-
-<meta name="description" content="Yonca Baharat - Baharat, bitkisel ürünler, doğal lezzetler ve seçkin markalar.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yonca Baharat | Doğal Ürünler</title>
 
 <style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f6f7f3;color:#26372b;font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none}
+button,input{font-family:inherit}
 
-/* =========================
-   TEMEL
-========================= */
-
-*{
-box-sizing:border-box;
+.top{
+height:38px;background:#173d26;color:white;display:flex;
+align-items:center;overflow:hidden;font-size:12px;font-weight:bold
 }
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#f7f8f4;
-color:#25362b;
-}
-
-a{
-color:inherit;
-}
-
-button{
-font-family:inherit;
-}
-
-/* =========================
-   ÜST KAMPANYA
-========================= */
-
-.topbar{
-height:38px;
-background:#163b25;
-color:#fff;
-display:flex;
-align-items:center;
-overflow:hidden;
-font-size:13px;
-font-weight:bold;
-}
-
-.topbar-track{
-white-space:nowrap;
-display:inline-block;
-padding-left:100%;
-animation:kaydir 24s linear infinite;
-}
-
-@keyframes kaydir{
-
-0%{
-transform:translateX(0);
-}
-
-100%{
-transform:translateX(-100%);
-}
-
-}
-
-/* =========================
-   HEADER
-========================= */
+.ticker{white-space:nowrap;padding-left:100%;animation:move 24s linear infinite}
+@keyframes move{to{transform:translateX(-100%)}}
 
 header{
-position:sticky;
-top:0;
-z-index:1000;
-background:rgba(255,255,255,.96);
-backdrop-filter:blur(12px);
-border-bottom:1px solid #e7e9e4;
+position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);
+backdrop-filter:blur(12px);border-bottom:1px solid #e5e8e2
 }
-
 .header{
-max-width:1250px;
-height:76px;
-margin:auto;
-padding:0 24px;
-display:flex;
-align-items:center;
-gap:35px;
+max-width:1250px;height:74px;margin:auto;padding:0 20px;
+display:flex;align-items:center;gap:28px
 }
-
-.logo{
-text-decoration:none;
-display:flex;
-align-items:center;
-gap:10px;
-}
-
+.logo{display:flex;align-items:center;gap:9px;color:#173d26}
 .logo-icon{
-width:43px;
-height:43px;
-border-radius:13px;
-background:#edf3e9;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:23px;
+width:42px;height:42px;background:#edf3e9;border-radius:12px;
+display:flex;align-items:center;justify-content:center;font-size:22px
 }
-
-.logo-text{
-font-family:Georgia,serif;
-font-size:23px;
-font-weight:bold;
-color:#173d26;
+.logo-text{font:700 23px Georgia,serif}
+.logo-text span{color:#789653}
+nav{display:flex;gap:3px}
+nav a{padding:10px 12px;border-radius:8px;color:#38483d;font-size:13px;font-weight:bold}
+nav a:hover{background:#edf3e9}
+.actions{margin-left:auto;display:flex;align-items:center;gap:10px}
+.wa-head{
+padding:10px 13px;border:1px solid #dfe5dc;border-radius:9px;
+color:#173d26;font-size:12px;font-weight:bold
 }
-
-.logo-text span{
-color:#80975d;
-}
-
-nav{
-display:flex;
-gap:4px;
-}
-
-nav a{
-text-decoration:none;
-padding:10px 13px;
-border-radius:8px;
-font-size:14px;
-font-weight:600;
-color:#37473c;
-transition:.2s;
-}
-
-nav a:hover{
-background:#edf3e9;
-color:#173d26;
-}
-
-.header-actions{
-margin-left:auto;
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.header-whatsapp{
-text-decoration:none;
-border:1px solid #dfe5dc;
-padding:10px 14px;
-border-radius:9px;
-font-size:13px;
-font-weight:bold;
-}
-
 .cart{
-position:relative;
-text-decoration:none;
-width:44px;
-height:44px;
-border-radius:10px;
-background:#173d26;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:20px;
+width:45px;height:45px;border-radius:10px;background:#173d26;color:#fff;
+display:flex;align-items:center;justify-content:center;font-size:20px;position:relative
 }
-
 .cart-count{
-position:absolute;
-right:-5px;
-top:-6px;
-width:19px;
-height:19px;
-background:#c68c2b;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:10px;
-font-weight:bold;
+position:absolute;right:-5px;top:-6px;width:19px;height:19px;border-radius:50%;
+background:#c58b29;color:white;font-size:10px;display:flex;
+align-items:center;justify-content:center;font-weight:bold
 }
 
-/* =========================
-   HERO
-========================= */
-
-.hero{
-max-width:1250px;
-margin:24px auto 0;
-padding:0 24px;
-}
-
+.hero{max-width:1250px;margin:22px auto;padding:0 20px}
 .hero-box{
-min-height:530px;
-border-radius:28px;
-overflow:hidden;
-position:relative;
-display:flex;
-align-items:center;
-background:
-linear-gradient(90deg,rgba(14,53,30,.96) 0%,rgba(22,65,39,.86) 40%,rgba(22,65,39,.25) 100%),
-linear-gradient(135deg,#6f8c67,#c9b984);
+min-height:490px;border-radius:27px;overflow:hidden;display:flex;align-items:center;
+background:linear-gradient(90deg,rgba(17,57,32,.97),rgba(23,67,39,.78),rgba(23,67,39,.2)),
+linear-gradient(135deg,#77936c,#cbbd8d)
 }
-
-.hero-content{
-padding:70px;
-max-width:700px;
-color:white;
+.hero-content{padding:55px;max-width:700px;color:#fff}
+.tag{
+display:inline-block;padding:8px 12px;border-radius:30px;
+background:#ffffff18;border:1px solid #ffffff35;font-size:11px;font-weight:bold
 }
-
-.hero-tag{
-display:inline-flex;
-padding:8px 13px;
-border-radius:30px;
-background:rgba(255,255,255,.14);
-border:1px solid rgba(255,255,255,.25);
-font-size:12px;
-font-weight:bold;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-family:Georgia,serif;
-font-size:62px;
-line-height:1.05;
-margin:0 0 20px;
-letter-spacing:-2px;
-}
-
-.hero h1 span{
-color:#dce9bd;
-}
-
-.hero p{
-font-size:17px;
-line-height:1.75;
-max-width:590px;
-color:#f1f5ed;
-}
-
-.hero-buttons{
-display:flex;
-gap:10px;
-margin-top:28px;
-flex-wrap:wrap;
-}
-
-.btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-padding:14px 21px;
-border-radius:10px;
-font-size:14px;
-font-weight:bold;
-text-decoration:none;
-transition:.2s;
-}
-
-.btn-primary{
-background:#fff;
-color:#173d26;
-}
-
-.btn-primary:hover{
-transform:translateY(-2px);
-}
-
-.btn-outline{
-border:1px solid rgba(255,255,255,.65);
-color:#fff;
-}
-
-.btn-outline:hover{
-background:rgba(255,255,255,.12);
-}
-
-/* =========================
-   GÜVEN ALANI
-========================= */
+.hero h1{font:700 58px/1.04 Georgia,serif;margin:18px 0}
+.hero h1 span{color:#dbe9bc}
+.hero p{font-size:16px;line-height:1.75;max-width:580px;color:#eef4eb}
+.buttons{display:flex;gap:10px;margin-top:25px;flex-wrap:wrap}
+.btn{padding:14px 20px;border-radius:10px;font-size:13px;font-weight:bold}
+.btn-white{background:white;color:#173d26}
+.btn-line{border:1px solid #ffffff88;color:white}
 
 .trust{
-max-width:1250px;
-margin:18px auto 0;
-padding:0 24px;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
+max-width:1250px;margin:15px auto;padding:0 20px;
+display:grid;grid-template-columns:repeat(4,1fr);gap:12px
 }
-
-.trust-card{
-background:#fff;
-border:1px solid #e5e9e2;
-border-radius:13px;
-padding:17px;
-display:flex;
-gap:12px;
-align-items:center;
+.trust-box{
+background:white;border:1px solid #e3e8e0;border-radius:13px;
+padding:15px;display:flex;align-items:center;gap:10px
 }
-
 .trust-icon{
-width:40px;
-height:40px;
-border-radius:10px;
-background:#edf3e9;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:19px;
-flex-shrink:0;
+width:38px;height:38px;border-radius:10px;background:#edf3e9;
+display:flex;align-items:center;justify-content:center;flex-shrink:0
 }
+.trust-box strong{display:block;font-size:12px}
+.trust-box small{color:#7c857e;font-size:10px}
 
-.trust-card strong{
-font-size:13px;
-display:block;
-margin-bottom:3px;
-}
+.section{max-width:1250px;margin:65px auto;padding:0 20px}
+.heading{display:flex;align-items:end;justify-content:space-between;margin-bottom:22px}
+.heading h2{font:700 32px Georgia,serif;color:#173d26;margin:0}
+.heading p{font-size:12px;color:#7b847d;margin:7px 0 0}
+.heading a{font-size:12px;font-weight:bold;color:#557344}
 
-.trust-card span{
-font-size:11px;
-color:#7a827c;
-}
-
-/* =========================
-   GENEL BÖLÜM
-========================= */
-
-.section{
-max-width:1250px;
-margin:75px auto;
-padding:0 24px;
-}
-
-.section-heading{
-display:flex;
-align-items:end;
-justify-content:space-between;
-margin-bottom:25px;
-}
-
-.section-heading h2{
-font-family:Georgia,serif;
-font-size:34px;
-margin:0;
-color:#173d26;
-}
-
-.section-heading p{
-margin:7px 0 0;
-font-size:13px;
-color:#788079;
-}
-
-.view-all{
-text-decoration:none;
-font-size:13px;
-font-weight:bold;
-color:#557344;
-}
-
-/* =========================
-   KATEGORİ
-========================= */
-
-.categories{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-}
-
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .category{
-height:185px;
-border-radius:18px;
-padding:24px;
-display:flex;
-flex-direction:column;
-justify-content:end;
-text-decoration:none;
-color:white;
-overflow:hidden;
-position:relative;
-transition:.25s;
+height:175px;border-radius:17px;padding:23px;color:white;
+display:flex;align-items:end;position:relative;overflow:hidden;transition:.25s
 }
-
-.category:hover{
-transform:translateY(-5px);
-}
-
+.category:hover{transform:translateY(-4px)}
 .category:after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(transparent,rgba(0,0,0,.42));
+content:"";position:absolute;inset:0;background:linear-gradient(transparent,#0007)
 }
+.category div{position:relative;z-index:1}
+.category i{display:block;font-style:normal;font-size:34px;margin-bottom:10px}
+.category strong{font:700 20px Georgia,serif}
+.category small{display:block;margin-top:5px;opacity:.9}
+.c1{background:linear-gradient(135deg,#315b39,#819761)}
+.c2{background:linear-gradient(135deg,#795d37,#b89a61)}
+.c3{background:linear-gradient(135deg,#315e55,#7fa497)}
+.c4{background:linear-gradient(135deg,#59663c,#a1aa70)}
 
-.category-content{
-position:relative;
-z-index:1;
+.shop-tools{
+background:white;border:1px solid #e2e7df;border-radius:16px;padding:15px;
+display:flex;gap:10px;align-items:center;margin-bottom:18px
 }
-
-.category-icon{
-font-size:34px;
-margin-bottom:12px;
+.search{
+flex:1;border:1px solid #dfe4dc;border-radius:9px;padding:12px 14px;
+outline:none;font-size:13px
 }
-
-.category strong{
-font-family:Georgia,serif;
-font-size:22px;
+.search:focus{border-color:#789653}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filter{
+border:1px solid #dfe4dc;background:white;border-radius:8px;
+padding:10px 12px;font-size:11px;cursor:pointer
 }
+.filter.active,.filter:hover{background:#173d26;color:white;border-color:#173d26}
 
-.category span{
-display:block;
-font-size:11px;
-margin-top:5px;
-opacity:.9;
-}
-
-.cat1{
-background:linear-gradient(135deg,#325f39,#7e9562);
-}
-
-.cat2{
-background:linear-gradient(135deg,#806239,#b89a61);
-}
-
-.cat3{
-background:linear-gradient(135deg,#32645b,#7fa598);
-}
-
-.cat4{
-background:linear-gradient(135deg,#59653a,#9ca56d);
-}
-
-/* =========================
-   ÜRÜNLER
-========================= */
-
-.products{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:17px;
-}
-
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .product{
-background:#fff;
-border:1px solid #e3e7e0;
-border-radius:17px;
-overflow:hidden;
-transition:.25s;
+background:white;border:1px solid #e2e7df;border-radius:16px;
+overflow:hidden;transition:.25s;position:relative
+}
+.product:hover{transform:translateY(-4px);box-shadow:0 13px 30px #173d2614}
+.pic{
+height:225px;background:#f2f4ee;padding:17px;display:flex;
+align-items:center;justify-content:center;position:relative
+}
+.pic img{width:100%;height:100%;object-fit:contain}
+.badge{
+position:absolute;top:11px;left:11px;background:#173d26;color:white;
+font-size:9px;font-weight:bold;padding:6px 8px;border-radius:6px
+}
+.info{padding:16px}
+.brand{font-size:9px;text-transform:uppercase;letter-spacing:.7px;color:#8b938d;font-weight:bold}
+.info h3{font-size:13px;line-height:1.45;min-height:57px;margin:7px 0}
+.bottom{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.price{font-size:19px;font-weight:bold;color:#173d26}
+.add{
+border:0;background:#173d26;color:white;border-radius:8px;
+padding:10px 11px;font-size:10px;font-weight:bold;cursor:pointer
+}
+.add:hover{background:#285d3c}
+.ask{
+display:block;text-align:center;color:#557344;font-size:10px;
+font-weight:bold;margin-top:10px
 }
 
-.product:hover{
-transform:translateY(-5px);
-box-shadow:0 14px 30px rgba(25,55,35,.09);
+.cart-progress{
+background:#173d26;color:white;border-radius:18px;padding:23px;margin-bottom:22px
 }
-
-.product-image{
-height:230px;
-background:#f3f5ef;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:18px;
-position:relative;
+.cart-progress-top{display:flex;justify-content:space-between;font-size:12px;margin-bottom:10px}
+.progress-bg{height:8px;background:#ffffff2b;border-radius:10px;overflow:hidden}
+.progress{
+height:100%;background:#d8e8b7;border-radius:10px;width:0;transition:.4s
 }
-
-.product-image img{
-width:100%;
-height:100%;
-object-fit:contain;
-}
-
-.product-badge{
-position:absolute;
-top:12px;
-left:12px;
-background:#173d26;
-color:white;
-font-size:10px;
-font-weight:bold;
-padding:6px 8px;
-border-radius:6px;
-}
-
-.product-info{
-padding:17px;
-}
-
-.product-brand{
-font-size:10px;
-text-transform:uppercase;
-letter-spacing:.7px;
-color:#8a928b;
-font-weight:bold;
-}
-
-.product h3{
-font-size:14px;
-line-height:1.45;
-min-height:60px;
-margin:8px 0 13px;
-}
-
-.product-bottom{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:8px;
-}
-
-.price{
-font-size:19px;
-font-weight:bold;
-color:#173d26;
-}
-
-.add-cart{
-border:0;
-background:#173d26;
-color:white;
-padding:10px 12px;
-border-radius:8px;
-cursor:pointer;
-font-size:11px;
-font-weight:bold;
-transition:.2s;
-}
-
-.add-cart:hover{
-background:#285d3c;
-}
-
-/* =========================
-   MARKALAR
-========================= */
+.progress-message{font-size:11px;margin-top:10px;color:#e9f1df}
 
 .brands-section{
-background:#fff;
-border-top:1px solid #e7ebe5;
-border-bottom:1px solid #e7ebe5;
-padding:65px 0;
+background:white;border-top:1px solid #e5e9e2;border-bottom:1px solid #e5e9e2;
+padding:65px 0
 }
-
-.brands-inner{
-max-width:1250px;
-margin:auto;
-padding:0 24px;
+.brands-inner{max-width:1250px;margin:auto;padding:0 20px}
+.center{text-align:center}
+.center h2{font:700 33px Georgia,serif;color:#173d26;margin:0}
+.center p{font-size:12px;color:#7a837c;max-width:650px;margin:10px auto 32px;line-height:1.6}
+.brands{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.brand-card{
+min-height:145px;border:1px solid #e1e6de;border-radius:16px;
+background:#fbfcfa;display:flex;flex-direction:column;align-items:center;
+justify-content:center;transition:.25s;position:relative
 }
-
-.brands-title{
-text-align:center;
+.brand-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #173d2610}
+.brand-name{font:700 22px Georgia,serif;color:#173d26}
+.authorized{
+margin-top:10px;background:#edf3e9;color:#557344;border-radius:20px;
+padding:6px 10px;font-size:9px;font-weight:bold
 }
-
-.brands-title h2{
-font-family:Georgia,serif;
-font-size:34px;
-color:#173d26;
-margin:0;
-}
-
-.brands-title p{
-color:#7b837d;
-font-size:13px;
-max-width:650px;
-margin:10px auto 35px;
-line-height:1.6;
-}
-
-.brands{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px;
-}
-
-.brand{
-min-height:145px;
-border:1px solid #e1e6de;
-border-radius:17px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-background:#fbfcfa;
-transition:.25s;
-position:relative;
-}
-
-.brand:hover{
-transform:translateY(-4px);
-box-shadow:0 12px 28px rgba(20,55,30,.08);
-}
-
-.brand-logo{
-font-family:Georgia,serif;
-font-weight:bold;
-font-size:23px;
-color:#173d26;
-letter-spacing:.5px;
-}
-
-.brand small{
-margin-top:10px;
-padding:6px 10px;
-border-radius:20px;
-background:#edf3e9;
-color:#557344;
-font-weight:bold;
-font-size:10px;
-}
-
-.brand-check{
-position:absolute;
-right:12px;
-top:12px;
-color:#6d914f;
-font-size:14px;
-}
-
-/* =========================
-   HAKKIMIZDA
-========================= */
+.check{position:absolute;right:12px;top:10px;color:#719150}
 
 .about{
-display:grid;
-grid-template-columns:1.2fr .8fr;
-gap:25px;
+display:grid;grid-template-columns:1.2fr .8fr;gap:20px
+}
+.about-box,.coupon{
+border-radius:20px;padding:38px
+}
+.about-box{background:#edf3e9}
+.about-box h2,.coupon h2{font:700 29px Georgia,serif;color:#173d26;margin-top:0}
+.about-box p{font-size:13px;line-height:1.8;color:#536057}
+.coupon{background:#fff3d5}
+.code{
+display:flex;align-items:center;gap:8px;margin-top:15px
+}
+.code span{
+background:white;border:1px dashed #bd8a2d;padding:11px 14px;
+border-radius:8px;font-weight:bold;letter-spacing:1px
+}
+.copy{
+border:0;background:#173d26;color:white;border-radius:8px;
+padding:11px 13px;cursor:pointer;font-size:11px;font-weight:bold
 }
 
-.about-box{
-background:#edf3e9;
-border-radius:22px;
-padding:42px;
+.instagram{
+position:fixed;right:20px;bottom:85px;width:355px;background:white;
+border-radius:16px;padding:16px;box-shadow:0 15px 45px #0003;
+display:flex;align-items:center;gap:11px;z-index:3000;animation:pop .5s
 }
-
-.about-box h2{
-font-family:Georgia,serif;
-font-size:32px;
-color:#173d26;
-margin-top:0;
-}
-
-.about-box p{
-line-height:1.8;
-font-size:14px;
-color:#526057;
-}
-
-.coupon{
-background:#fff5dc;
-border-radius:22px;
-padding:35px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-}
-
-.coupon h3{
-font-family:Georgia,serif;
-font-size:25px;
-margin-top:0;
-}
-
-.coupon-code{
-display:inline-block;
-background:white;
-border:1px dashed #bd8a2d;
-padding:11px 15px;
-border-radius:8px;
-font-weight:bold;
-letter-spacing:1px;
-margin-top:10px;
-width:max-content;
-}
-
-/* =========================
-   INSTAGRAM
-========================= */
-
-.instagram-popup{
-position:fixed;
-right:20px;
-bottom:85px;
-width:355px;
-background:white;
-border-radius:17px;
-padding:17px;
-box-shadow:0 15px 45px rgba(0,0,0,.2);
-display:flex;
-align-items:center;
-gap:12px;
-z-index:3000;
-animation:popup .5s ease;
-}
-
-@keyframes popup{
-
-from{
-opacity:0;
-transform:translateY(25px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
+@keyframes pop{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
 .insta-icon{
-width:48px;
-height:48px;
-border-radius:13px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
-font-size:25px;
-flex-shrink:0;
+width:47px;height:47px;border-radius:13px;display:flex;align-items:center;
+justify-content:center;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+font-size:23px
 }
-
-.insta-text{
-flex:1;
+.insta-text{flex:1}
+.insta-text strong{font-size:12px;display:block}
+.insta-text small{font-size:9px;color:#777}
+.follow{
+background:#173d26;color:white;padding:9px 10px;border-radius:7px;
+font-size:9px;font-weight:bold
 }
-
-.insta-text strong{
-font-size:13px;
-display:block;
+.close{
+position:absolute;right:6px;top:2px;border:0;background:none;
+font-size:18px;color:#aaa;cursor:pointer
 }
-
-.insta-text span{
-font-size:10px;
-color:#777;
-display:block;
-margin-top:4px;
-}
-
-.insta-follow{
-background:#173d26;
-color:white;
-padding:9px 11px;
-border-radius:8px;
-font-size:10px;
-font-weight:bold;
-text-decoration:none;
-}
-
-.insta-close{
-position:absolute;
-right:7px;
-top:3px;
-border:0;
-background:none;
-font-size:18px;
-color:#aaa;
-cursor:pointer;
-}
-
-/* =========================
-   WHATSAPP
-========================= */
 
 .whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-width:55px;
-height:55px;
-background:#25d366;
-color:white;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-text-decoration:none;
-font-size:25px;
-box-shadow:0 7px 20px rgba(0,0,0,.16);
-z-index:2500;
+position:fixed;right:20px;bottom:18px;width:55px;height:55px;border-radius:50%;
+background:#25d366;color:white;display:flex;align-items:center;
+justify-content:center;font-size:25px;z-index:2500;box-shadow:0 8px 20px #0002
 }
 
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-background:#112f1d;
-color:white;
-margin-top:80px;
-padding:45px 24px;
+footer{background:#112f1d;color:white;margin-top:70px;padding:40px 20px}
+.footer{
+max-width:1250px;margin:auto;display:flex;justify-content:space-between;
+align-items:center
 }
+.footer-logo{font:700 21px Georgia,serif}
+.footer small{opacity:.7}
 
-.footer-inner{
-max-width:1250px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
-}
-
-.footer-logo{
-font-family:Georgia,serif;
-font-size:22px;
-}
-
-.footer-info{
-font-size:11px;
-opacity:.75;
-}
-
-/* =========================
-   MOBİL
-========================= */
-
-.mobile-menu{
-display:none;
+.mobile{
+display:none
 }
 
 @media(max-width:850px){
 
-.header{
-height:64px;
-padding:0 13px;
-gap:10px;
+.header{height:64px;padding:0 12px}
+nav,.wa-head{display:none}
+.logo-text{font-size:19px}
+.hero{padding:0 12px}
+.hero-box{min-height:460px;border-radius:20px}
+.hero-content{padding:30px 24px}
+.hero h1{font-size:44px}
+.hero p{font-size:13px}
+.trust{padding:0 12px;grid-template-columns:1fr 1fr}
+.trust-box{padding:11px}
+.categories{grid-template-columns:1fr 1fr}
+.section{padding:0 12px;margin:50px auto}
+.products{grid-template-columns:1fr 1fr;gap:9px}
+.pic{height:170px}
+.info{padding:10px}
+.info h3{font-size:12px}
+.price{font-size:16px}
+.add{padding:8px;font-size:9px}
+.shop-tools{display:block}
+.search{width:100%;margin-bottom:10px}
+.filters{overflow-x:auto;flex-wrap:nowrap}
+.filter{white-space:nowrap}
+.brands-inner{padding:0 12px}
+.brands{grid-template-columns:1fr 1fr}
+.brand-card{min-height:120px}
+.brand-name{font-size:16px}
+.about{grid-template-columns:1fr}
+.instagram{width:calc(100% - 20px);right:10px;bottom:75px}
+.whatsapp{bottom:145px}
+.footer{flex-direction:column;text-align:center;gap:15px}
+.mobile{
+display:flex;position:fixed;bottom:0;left:0;right:0;height:62px;
+background:white;border-top:1px solid #ddd;z-index:2000
 }
-
-.logo-text{
-font-size:19px;
+.mobile a{
+flex:1;text-align:center;padding-top:7px;color:#425047;font-size:9px
 }
-
-nav,
-.header-whatsapp{
-display:none;
-}
-
-.header-actions{
-margin-left:auto;
-}
-
-.hero{
-padding:0 12px;
-}
-
-.hero-box{
-min-height:460px;
-border-radius:20px;
-}
-
-.hero-content{
-padding:35px 25px;
-}
-
-.hero h1{
-font-size:44px;
-}
-
-.hero p{
-font-size:14px;
-}
-
-.trust{
-padding:0 12px;
-grid-template-columns:1fr 1fr;
-}
-
-.trust-card{
-padding:12px;
-}
-
-.categories{
-grid-template-columns:1fr 1fr;
-}
-
-.products{
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
-
-.product-image{
-height:175px;
-}
-
-.product-info{
-padding:11px;
-}
-
-.product h3{
-font-size:12px;
-min-height:55px;
-}
-
-.price{
-font-size:16px;
-}
-
-.add-cart{
-padding:8px;
-font-size:10px;
-}
-
-.section{
-padding:0 12px;
-margin:50px auto;
-}
-
-.section-heading h2,
-.brands-title h2{
-font-size:27px;
-}
-
-.brands-section{
-padding:50px 0;
-}
-
-.brands-inner{
-padding:0 12px;
-}
-
-.brands{
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
-
-.brand{
-min-height:120px;
-}
-
-.brand-logo{
-font-size:17px;
-}
-
-.about{
-grid-template-columns:1fr;
-}
-
-.instagram-popup{
-right:10px;
-bottom:75px;
-width:calc(100% - 20px);
-}
-
-.whatsapp{
-bottom:145px;
-}
-
-.footer-inner{
-flex-direction:column;
-text-align:center;
-}
-
-.mobile-menu{
-position:fixed;
-display:flex;
-bottom:0;
-left:0;
-right:0;
-height:62px;
-background:white;
-border-top:1px solid #ddd;
-z-index:2000;
-}
-
-.mobile-menu a{
-flex:1;
-text-align:center;
-text-decoration:none;
-font-size:10px;
-color:#425047;
-padding-top:7px;
-}
-
-.mobile-menu b{
-display:block;
-font-size:18px;
-margin-bottom:2px;
-}
+.mobile b{display:block;font-size:18px;margin-bottom:2px}
 
 }
 
@@ -989,83 +299,47 @@ margin-bottom:2px;
 
 <body>
 
-<!-- KAMPANYA -->
-
-<div class="topbar">
-
-<div class="topbar-track">
-
+<div class="top">
+<div class="ticker">
 🚚 1.500 TL ÜZERİ SİPARİŞLERDE KARGO BEDAVA
 &nbsp;&nbsp; • &nbsp;&nbsp;
-🎁 İLK ALIŞVERİŞİNİZE ÖZEL %10 İNDİRİM — YONCA10
+🎁 İLK ALIŞVERİŞE ÖZEL %10 İNDİRİM — YONCA10
 &nbsp;&nbsp; • &nbsp;&nbsp;
-🌿 YONCA BAHARAT
+✓ YETKİLİ SATICI
 &nbsp;&nbsp; • &nbsp;&nbsp;
-✓ YETKİLİ MARKA SATICISI
-&nbsp;&nbsp; • &nbsp;&nbsp;
-
+💬 WHATSAPP'TAN KOLAYCA ULAŞIN
 </div>
-
 </div>
-
-
-<!-- HEADER -->
 
 <header>
-
 <div class="header">
 
 <a href="index.html" class="logo">
-
 <div class="logo-icon">🌿</div>
-
-<div class="logo-text">
-Yonca <span>Baharat</span>
-</div>
-
+<div class="logo-text">Yonca <span>Baharat</span></div>
 </a>
-
 
 <nav>
-
 <a href="index.html">Ana Sayfa</a>
-
-<a href="urunler.html">Ürünler</a>
-
+<a href="#urunler">Ürünler</a>
 <a href="#markalar">Markalar</a>
-
 <a href="#hakkimizda">Hakkımızda</a>
-
 </nav>
 
+<div class="actions">
 
-<div class="header-actions">
-
-<a
-class="header-whatsapp"
-href="https://wa.me/905525102881"
-target="_blank">
-
-WhatsApp
-
+<a class="wa-head" href="https://wa.me/905525102881" target="_blank">
+💬 WhatsApp
 </a>
 
-<a href="sepet.html" class="cart">
-
+<a class="cart" href="sepet.html">
 🛒
-
 <span id="cartCount" class="cart-count">0</span>
-
 </a>
 
 </div>
-
 </div>
-
 </header>
-
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -1073,9 +347,7 @@ WhatsApp
 
 <div class="hero-content">
 
-<div class="hero-tag">
-🌿 Doğadan sofranıza
-</div>
+<div class="tag">🌿 Güvenilir markalar • Özenli alışveriş</div>
 
 <h1>
 Doğal olanı
@@ -1084,480 +356,275 @@ Doğal olanı
 </h1>
 
 <p>
-Baharatlardan doğal lezzetlere, bitkisel ürünlerden
-özenle seçilmiş markalara kadar aradığınız ürünleri
-Yonca Baharat güvencesiyle keşfedin.
+Baharatlardan doğal lezzetlere, çaylardan bitkisel
+ürünlere kadar seçkin ürünleri Yonca Baharat
+güvencesiyle keşfedin.
 </p>
 
-<div class="hero-buttons">
-
-<a
-href="urunler.html"
-class="btn btn-primary">
-
-🛍️ Ürünleri Keşfet
-
-</a>
-
-<a
-href="#markalar"
-class="btn btn-outline">
-
-Yetkili Markalar →
-
-</a>
-
+<div class="buttons">
+<a href="#urunler" class="btn btn-white">🛍️ Alışverişe Başla</a>
+<a href="#markalar" class="btn btn-line">Yetkili Markalar →</a>
 </div>
 
 </div>
-
 </div>
-
 </section>
-
-
-<!-- GÜVEN -->
 
 <section class="trust">
 
-<div class="trust-card">
-
+<div class="trust-box">
 <div class="trust-icon">✓</div>
-
-<div>
-
-<strong>Yetkili Satıcı</strong>
-
-<span>Güvenilir marka ürünleri</span>
-
+<div><strong>Yetkili Satıcı</strong><small>Güvenilir marka ürünleri</small></div>
 </div>
 
-</div>
-
-
-<div class="trust-card">
-
+<div class="trust-box">
 <div class="trust-icon">🚚</div>
-
-<div>
-
-<strong>1.500 TL Üzeri Kargo Bedava</strong>
-
-<span>Avantajlı alışveriş</span>
-
+<div><strong>1.500 TL Üzeri Kargo Bedava</strong><small>Sepetinizi büyütün, kargo ödemeyin</small></div>
 </div>
 
-</div>
-
-
-<div class="trust-card">
-
+<div class="trust-box">
 <div class="trust-icon">💬</div>
-
-<div>
-
-<strong>Kolay İletişim</strong>
-
-<span>WhatsApp üzerinden destek</span>
-
+<div><strong>WhatsApp Destek</strong><small>Kolay ve hızlı iletişim</small></div>
 </div>
 
-</div>
-
-
-<div class="trust-card">
-
+<div class="trust-box">
 <div class="trust-icon">🎁</div>
-
-<div>
-
-<strong>İlk Alışverişe %10</strong>
-
-<span>YONCA10 kupon kodu</span>
-
-</div>
-
+<div><strong>İlk Alışveriş %10</strong><small>YONCA10 kodunu kullanın</small></div>
 </div>
 
 </section>
 
-
-<!-- KATEGORİLER -->
-
 <section class="section">
 
-<div class="section-heading">
-
+<div class="heading">
 <div>
-
-<h2>Alışverişe Başla</h2>
-
-<p>İhtiyacınız olan ürünleri kolayca keşfedin.</p>
-
+<h2>Kategoriler</h2>
+<p>Aradığınız ürünü kolayca bulun.</p>
 </div>
-
-<a href="urunler.html" class="view-all">
-Tüm ürünler →
-</a>
-
+<a href="#urunler">Ürünleri Gör →</a>
 </div>
-
 
 <div class="categories">
 
-<a href="urunler.html" class="category cat1">
-
-<div class="category-content">
-
-<div class="category-icon">🌶️</div>
-
-<strong>Baharatlar</strong>
-
-<span>Geleneksel ve seçkin tatlar</span>
-
-</div>
-
+<a href="#urunler" class="category c1">
+<div><i>🌶️</i><strong>Baharatlar</strong><small>Geleneksel lezzetler</small></div>
 </a>
 
-
-<a href="urunler.html" class="category cat2">
-
-<div class="category-content">
-
-<div class="category-icon">🍯</div>
-
-<strong>Doğal Lezzetler</strong>
-
-<span>Özenle seçilmiş ürünler</span>
-
-</div>
-
+<a href="#urunler" class="category c2">
+<div><i>🍯</i><strong>Doğal Lezzetler</strong><small>Özenle seçilmiş ürünler</small></div>
 </a>
 
-
-<a href="urunler.html" class="category cat3">
-
-<div class="category-content">
-
-<div class="category-icon">🍵</div>
-
-<strong>Çaylar</strong>
-
-<span>Doğal bitki çayları</span>
-
-</div>
-
+<a href="#urunler" class="category c3">
+<div><i>🍵</i><strong>Çaylar</strong><small>Bitki çayları</small></div>
 </a>
 
-
-<a href="urunler.html" class="category cat4">
-
-<div class="category-content">
-
-<div class="category-icon">🌿</div>
-
-<strong>Bitkisel Ürünler</strong>
-
-<span>Seçkin ürün seçenekleri</span>
-
-</div>
-
+<a href="#urunler" class="category c4">
+<div><i>🌿</i><strong>Bitkisel Ürünler</strong><small>Seçkin ürünler</small></div>
 </a>
 
 </div>
-
 </section>
 
+<section class="section" id="urunler">
 
-<!-- ÜRÜNLER -->
-
-<section class="section">
-
-<div class="section-heading">
-
+<div class="heading">
 <div>
-
-<h2>Öne Çıkan Ürünler</h2>
-
+<h2>🔥 Öne Çıkan Ürünler</h2>
 <p>Yonca Baharat'tan seçtiklerimiz.</p>
+</div>
+</div>
+
+<div class="cart-progress">
+
+<div class="cart-progress-top">
+<strong>🚚 Ücretsiz Kargo Hedefiniz</strong>
+<strong id="progressText">1.500 TL</strong>
+</div>
+
+<div class="progress-bg">
+<div id="progress" class="progress"></div>
+</div>
+
+<div id="progressMessage" class="progress-message">
+1.500 TL'ye ulaştığınızda kargo ücretsiz!
+</div>
 
 </div>
 
-<a href="urunler.html" class="view-all">
-Tümünü Gör →
-</a>
+<div class="shop-tools">
+
+<input
+id="search"
+class="search"
+placeholder="🔎 Ürün ara..."
+oninput="urunFiltrele()">
+
+<div class="filters">
+
+<button class="filter active" onclick="kategori('all',this)">Tümü</button>
+<button class="filter" onclick="kategori('bitkisel',this)">Bitkisel</button>
+<button class="filter" onclick="kategori('dogal',this)">Doğal</button>
+<button class="filter" onclick="kategori('krem',this)">Krem</button>
 
 </div>
-
+</div>
 
 <div class="products">
 
+<div class="product" data-name="holistrakt enginar devedikeni karahindiba" data-cat="bitkisel">
 
-<!-- HOLİSTRAKT -->
-
-<div class="product">
-
-<div class="product-image">
-
-<div class="product-badge">
-ÇOK SATAN
-</div>
-
+<div class="pic">
+<div class="badge">ÇOK SATAN</div>
 <img src="images/holistrakt.jpg">
-
 </div>
 
-<div class="product-info">
+<div class="info">
+<div class="brand">Shiffa Home</div>
 
-<div class="product-brand">
-Shiffa Home
-</div>
+<h3>HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML</h3>
 
-<h3>
-HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML
-</h3>
+<div class="bottom">
+<div class="price">925 TL</div>
 
-<div class="product-bottom">
-
-<div class="price">
-925 TL
-</div>
-
-<button
-class="add-cart"
-onclick="sepeteEkle('holistrakt')">
-
+<button class="add" onclick="sepeteEkle('HOLİSTRAKT',925)">
 Sepete Ekle
-
 </button>
-
 </div>
 
-</div>
+<a class="ask" target="_blank"
+href="https://wa.me/905525102881?text=Merhaba%2C%20HOL%C4%B0STRAKT%20%C3%BCr%C3%BCn%C3%BC%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">
+💬 Bu ürün hakkında sor
+</a>
 
 </div>
+</div>
 
+<div class="product" data-name="kanta roit krem" data-cat="krem">
 
-<!-- KANTAROID -->
-
-<div class="product">
-
-<div class="product-image">
-
+<div class="pic">
 <img src="images/kantaroid.jpg">
-
 </div>
 
-<div class="product-info">
+<div class="info">
+<div class="brand">Shiffa Home</div>
+<h3>KANTA ROIT KREM 20 ML</h3>
 
-<div class="product-brand">
-Shiffa Home
-</div>
+<div class="bottom">
+<div class="price">190 TL</div>
 
-<h3>
-KANTA ROIT KREM 20 ML
-</h3>
-
-<div class="product-bottom">
-
-<div class="price">
-190 TL
-</div>
-
-<button
-class="add-cart"
-onclick="sepeteEkle('kantaroid')">
-
+<button class="add" onclick="sepeteEkle('KANTA ROIT KREM',190)">
 Sepete Ekle
-
 </button>
-
 </div>
 
-</div>
+<a class="ask" target="_blank"
+href="https://wa.me/905525102881?text=Merhaba%2C%20KANTA%20ROIT%20KREM%20%C3%BCr%C3%BCn%C3%BC%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">
+💬 Bu ürün hakkında sor
+</a>
 
 </div>
-
-
-<!-- AKZER -->
-
-<div class="product">
-
-<div class="product-image">
-
-<div class="product-badge">
-SEÇKİN ÜRÜN
 </div>
 
+<div class="product" data-name="akzer saf nar eksisi" data-cat="dogal">
+
+<div class="pic">
+<div class="badge">SEÇKİN ÜRÜN</div>
 <img src="images/akzer.jpg">
-
 </div>
 
-<div class="product-info">
+<div class="info">
+<div class="brand">Akzer</div>
+<h3>Saf Nar Ekşisi</h3>
 
-<div class="product-brand">
-Akzer
-</div>
+<div class="bottom">
+<div class="price">349 TL</div>
 
-<h3>
-Saf Nar Ekşisi
-</h3>
-
-<div class="product-bottom">
-
-<div class="price">
-349 TL
-</div>
-
-<button
-class="add-cart"
-onclick="sepeteEkle('akzer')">
-
+<button class="add" onclick="sepeteEkle('AKZER SAF NAR EKŞİSİ',349)">
 Sepete Ekle
-
 </button>
-
 </div>
 
-</div>
+<a class="ask" target="_blank"
+href="https://wa.me/905525102881?text=Merhaba%2C%20Akzer%20Saf%20Nar%20Ek%C5%9Fisi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">
+💬 Bu ürün hakkında sor
+</a>
 
 </div>
+</div>
 
+<div class="product" data-name="kudret nari ekstraktli macun" data-cat="bitkisel">
 
-<!-- KUDRET NARI -->
-
-<div class="product">
-
-<div class="product-image">
-
+<div class="pic">
 <img src="images/yeni-kudret-nari-83.jpg">
-
 </div>
 
-<div class="product-info">
+<div class="info">
+<div class="brand">Aksu Vital</div>
+<h3>Kudret Narı Ekstraktlı Macun 300 gr</h3>
 
-<div class="product-brand">
-Aksu Vital
-</div>
+<div class="bottom">
+<div class="price">600 TL</div>
 
-<h3>
-Kudret Narı Ekstraktlı Macun 300 gr
-</h3>
-
-<div class="product-bottom">
-
-<div class="price">
-600 TL
-</div>
-
-<button
-class="add-cart"
-onclick="sepeteEkle('kudretnari')">
-
+<button class="add" onclick="sepeteEkle('KUDRET NARI MACUN',600)">
 Sepete Ekle
-
 </button>
+</div>
 
+<a class="ask" target="_blank"
+href="https://wa.me/905525102881?text=Merhaba%2C%20Kudret%20Nari%20Macunu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">
+💬 Bu ürün hakkında sor
+</a>
+
+</div>
 </div>
 
 </div>
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- MARKALAR -->
 
 <section class="brands-section" id="markalar">
 
 <div class="brands-inner">
 
-<div class="brands-title">
+<div class="center">
 
 <h2>Yetkili Satıcısı Olduğumuz Markalar</h2>
 
 <p>
-Çalıştığımız markaların ürünlerini güvenilir tedarik
-zinciriyle sizlere sunuyoruz.
+Güvenilir ve seçkin markaların ürünlerini
+yetkili satıcı olarak sizlerle buluşturuyoruz.
 </p>
 
 </div>
 
-
 <div class="brands">
 
-
-<div class="brand">
-
-<div class="brand-check">✓</div>
-
-<div class="brand-logo">
-BALEN
+<div class="brand-card">
+<div class="check">✓</div>
+<div class="brand-name">BALEN</div>
+<div class="authorized">YETKİLİ SATICI</div>
 </div>
 
-<small>
-Yetkili Satıcı
-</small>
-
+<div class="brand-card">
+<div class="check">✓</div>
+<div class="brand-name">AKSU VİTAL</div>
+<div class="authorized">YETKİLİ SATICI</div>
 </div>
 
-
-<div class="brand">
-
-<div class="brand-check">✓</div>
-
-<div class="brand-logo">
-AKSU VİTAL
+<div class="brand-card">
+<div class="check">✓</div>
+<div class="brand-name">MECİTEFENDİ</div>
+<div class="authorized">YETKİLİ SATICI</div>
 </div>
 
-<small>
-Yetkili Satıcı
-</small>
-
-</div>
-
-
-<div class="brand">
-
-<div class="brand-check">✓</div>
-
-<div class="brand-logo">
-MECİTEFENDİ
-</div>
-
-<small>
-Yetkili Satıcı
-</small>
-
-</div>
-
-
-<div class="brand">
-
-<div class="brand-check">✓</div>
-
-<div class="brand-logo">
-AKZER
-</div>
-
-<small>
-Yetkili Satıcı
-</small>
-
-</div>
-
-
+<div class="brand-card">
+<div class="check">✓</div>
+<div class="brand-name">AKZER</div>
+<div class="authorized">YETKİLİ SATICI</div>
 </div>
 
 </div>
-
+</div>
 </section>
-
-
-<!-- HAKKIMIZDA -->
 
 <section class="section" id="hakkimizda">
 
@@ -1565,269 +632,214 @@ Yetkili Satıcı
 
 <div class="about-box">
 
-<h2>Yonca Baharat</h2>
+<h2>🌿 Yonca Baharat</h2>
 
 <p>
-Doğadan gelen ürünleri, güvenilir markaları ve
-özenli hizmet anlayışını bir araya getiriyoruz.
+Doğal ürünleri ve güvenilir markaları bir araya getirerek
+müşterilerimize kolay, güvenli ve keyifli bir alışveriş
+deneyimi sunuyoruz.
 </p>
 
 <p>
-Amacımız yalnızca ürün satmak değil; müşterilerimizin
-aradığı ürüne kolayca ulaşabildiği, güvenle alışveriş
-yapabildiği modern bir alışveriş deneyimi sunmak.
+Ürünlerimizi seçerken kaliteye, güvenilirliğe ve müşteri
+memnuniyetine önem veriyoruz.
 </p>
 
 </div>
-
 
 <div class="coupon">
 
-<h3>
-🎁 İlk alışverişinize özel
-</h3>
+<h2>🎁 İlk alışverişinize %10</h2>
 
 <p>
-İlk siparişinizde %10 indirim fırsatından yararlanın.
+İlk siparişinizde indirimden yararlanmak için
+aşağıdaki kodu kullanabilirsiniz.
 </p>
 
-<strong>
-Kupon kodunuz:
-</strong>
-
-<div class="coupon-code">
-YONCA10
+<div class="code">
+<span id="coupon">YONCA10</span>
+<button class="copy" onclick="kuponKopyala()">Kopyala</button>
 </div>
 
-</div>
+<p id="copyMessage" style="font-size:11px;color:#557344"></p>
 
 </div>
-
+</div>
 </section>
 
+<div id="instagram" class="instagram">
 
-<!-- INSTAGRAM -->
+<button class="close" onclick="document.getElementById('instagram').style.display='none'">×</button>
 
-<div
-id="instagramPopup"
-class="instagram-popup">
-
-<button
-class="insta-close"
-onclick="instagramKapat()">
-
-×
-
-</button>
-
-
-<div class="insta-icon">
-📸
-</div>
-
+<div class="insta-icon">📸</div>
 
 <div class="insta-text">
-
-<strong>
-Yonca Baharat
-</strong>
-
-<span>
-Instagram'da bizi takip edin 🌿
-</span>
-
+<strong>Yonca Baharat</strong>
+<small>Instagram'da bizi takip edin 🌿</small>
 </div>
 
-
-<a
-class="insta-follow"
-href="https://www.instagram.com/yonca.baharat/"
-target="_blank">
-
+<a class="follow" href="https://www.instagram.com/yonca.baharat/" target="_blank">
 Takip Et
-
 </a>
 
 </div>
 
-
-<!-- WHATSAPP -->
-
-<a
-href="https://wa.me/905525102881"
-target="_blank"
-class="whatsapp">
-
-💬
-
-</a>
-
-
-<!-- MOBİL MENÜ -->
-
-<div class="mobile-menu">
-
-<a href="index.html">
-
-<b>⌂</b>
-
-Ana Sayfa
-
-</a>
-
-
-<a href="urunler.html">
-
-<b>🛍️</b>
-
-Ürünler
-
-</a>
-
-
-<a href="sepet.html">
-
-<b>🛒</b>
-
-Sepet
-
-</a>
-
-
-<a
+<a class="whatsapp"
 href="https://wa.me/905525102881"
 target="_blank">
-
-<b>💬</b>
-
-WhatsApp
-
+💬
 </a>
-
-</div>
-
-
-<!-- FOOTER -->
 
 <footer>
 
-<div class="footer-inner">
+<div class="footer">
 
-<div class="footer-logo">
-🌿 Yonca Baharat
-</div>
+<div class="footer-logo">🌿 Yonca Baharat</div>
 
-<div class="footer-info">
-Doğal ürünler • Güvenilir markalar • Özenli hizmet
-<br><br>
+<small>
+Yetkili markalar • Güvenilir alışveriş • Özenli hizmet<br><br>
 © 2026 Yonca Baharat
-</div>
+</small>
 
 </div>
 
 </footer>
 
+<div class="mobile">
+
+<a href="index.html"><b>⌂</b>Ana Sayfa</a>
+<a href="#urunler"><b>🛍️</b>Ürünler</a>
+<a href="sepet.html"><b>🛒</b>Sepet</a>
+<a href="https://wa.me/905525102881" target="_blank"><b>💬</b>WhatsApp</a>
+
+</div>
 
 <script>
 
-/* =========================
-   ÜRÜNLER
-========================= */
-
-const urunler={
-
-holistrakt:925,
-
-kantaroid:190,
-
-akzer:349,
-
-kudretnari:600
-
-};
-
-
-/* =========================
-   SEPET
-========================= */
+let seciliKategori="all";
 
 function sepetGetir(){
-
-return JSON.parse(
-localStorage.getItem("sepet")
-)||[];
-
+return JSON.parse(localStorage.getItem("sepet")||"[]");
 }
 
-
-function sepeteEkle(id){
+function sepeteEkle(ad,fiyat){
 
 let sepet=sepetGetir();
 
-let urun=sepet.find(
-x=>x.id===id
-);
+let bulunan=sepet.find(x=>x.ad===ad);
 
-if(urun){
-
-urun.adet++;
-
+if(bulunan){
+bulunan.adet++;
 }else{
-
-sepet.push({
-id:id,
-adet:1
-});
-
+sepet.push({ad:ad,fiyat:fiyat,adet:1});
 }
 
-localStorage.setItem(
-"sepet",
-JSON.stringify(sepet)
-);
+localStorage.setItem("sepet",JSON.stringify(sepet));
 
 sepetSay();
 
-alert("Ürün sepetinize eklendi 🛒");
+progressGuncelle();
+
+alert("🛒 "+ad+" sepete eklendi!");
 
 }
-
 
 function sepetSay(){
 
 let sepet=sepetGetir();
+let adet=sepet.reduce((t,x)=>t+(x.adet||1),0);
 
-let toplam=0;
+document.getElementById("cartCount").innerText=adet;
 
-sepet.forEach(x=>{
+}
 
-toplam+=x.adet;
+function sepetToplam(){
+
+let sepet=sepetGetir();
+
+return sepet.reduce(
+(t,x)=>t+(x.fiyat*x.adet),0
+);
+
+}
+
+function progressGuncelle(){
+
+let toplam=sepetToplam();
+
+let oran=Math.min((toplam/1500)*100,100);
+
+document.getElementById("progress").style.width=oran+"%";
+
+let kalan=1500-toplam;
+
+if(toplam>=1500){
+
+document.getElementById("progressText").innerText="KARGO BEDAVA 🎉";
+
+document.getElementById("progressMessage").innerText=
+"Harika! Siparişinizde kargo ücretsiz.";
+
+}else{
+
+document.getElementById("progressText").innerText=
+kalan.toLocaleString("tr-TR")+" TL kaldı";
+
+document.getElementById("progressMessage").innerText=
+"Kargo bedava için "+kalan.toLocaleString("tr-TR")+" TL daha ekleyin.";
+
+}
+
+}
+
+function kategori(cat,btn){
+
+seciliKategori=cat;
+
+document.querySelectorAll(".filter").forEach(x=>{
+x.classList.remove("active");
+});
+
+btn.classList.add("active");
+
+urunFiltrele();
+
+}
+
+function urunFiltrele(){
+
+let arama=
+document.getElementById("search").value.toLowerCase();
+
+document.querySelectorAll(".product").forEach(urun=>{
+
+let isim=urun.dataset.name;
+let cat=urun.dataset.cat;
+
+let isimUygun=isim.includes(arama);
+
+let kategoriUygun=
+seciliKategori==="all"||
+cat===seciliKategori;
+
+urun.style.display=
+isimUygun&&kategoriUygun?"block":"none";
 
 });
 
-document.getElementById(
-"cartCount"
-).innerText=toplam;
-
 }
 
+function kuponKopyala(){
 
-/* =========================
-   INSTAGRAM
-========================= */
+navigator.clipboard.writeText("YONCA10");
 
-function instagramKapat(){
-
-document.getElementById(
-"instagramPopup"
-).style.display="none";
+document.getElementById("copyMessage").innerText=
+"✓ Kupon kodu kopyalandı!";
 
 }
-
-
-/* BAŞLAT */
 
 sepetSay();
+progressGuncelle();
 
 </script>
 
