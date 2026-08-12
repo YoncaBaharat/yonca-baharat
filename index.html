@@ -3,12 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Yonca Baharat</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f4ed;
+            color: #333;
+        }
+
+        header {
+            background: #31572c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 15px;
+        }
+
+        nav {
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        nav a {
+            color: #31572c;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            color: #31572c;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #31572c;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #244522;
+        }
+
+        .categories {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .categories h2 {
+            color: #31572c;
+            margin-bottom: 25px;
+        }
+
+        .category-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .category {
+            background: white;
+            width: 200px;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .category h3 {
+            color: #31572c;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: #31572c;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+    </style>
 </head>
+
 <body>
 
+<header>
     <h1>Yonca Baharat</h1>
-    <p>Baharat, bitkisel ürünler ve doğal lezzetler.</p>
+    <p>Doğal lezzetler, kaliteli ürünler</p>
+</header>
+
+<nav>
+    <a href="#">Ana Sayfa</a>
+    <a href="#">Ürünler</a>
+    <a href="#">İletişim</a>
+</nav>
+
+<section class="hero">
+    <h2>Doğadan Gelen Lezzet</h2>
+
+    <p>
+        Baharatlar, bitkisel ürünler ve doğal lezzetler
+        Yonca Baharat'ta.
+    </p>
+
+    <a href="#" class="button">Ürünleri İncele</a>
+</section>
+
+<section class="categories">
+
+    <h2>Kategoriler</h2>
+
+    <div class="category-container">
+
+        <div class="category">
+            <h3>🌿 Bitkisel Ürünler</h3>
+            <p>Doğal ve kaliteli ürünler</p>
+        </div>
+
+        <div class="category">
+            <h3>🌶️ Baharatlar</h3>
+            <p>Taze ve aromatik baharatlar</p>
+        </div>
+
+        <div class="category">
+            <h3>🍯 Pekmez & Bal</h3>
+            <p>Doğal tatlar</p>
+        </div>
+
+        <div class="category">
+            <h3>🧴 Kremler & Yağlar</h3>
+            <p>Bakım ürünleri</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Yonca Baharat
+</footer>
 
 </body>
 </html>
