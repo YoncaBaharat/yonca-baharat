@@ -9,511 +9,310 @@
 
 <style>
 
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f7f7f2;
+color:#26372b;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7f3;
-    color: #26352b;
+.top{
+background:#173f27;
+color:white;
+padding:10px;
+text-align:center;
+font-size:13px;
+font-weight:bold;
 }
 
-/* KAMPANYA */
-
-.kampanya {
-    background: #d89a18;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-weight: 700;
-    font-size: 14px;
+header{
+background:white;
+border-bottom:1px solid #ddd;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-/* HEADER */
-
-header {
-    background: #174d2b;
-    color: white;
+.header{
+max-width:1200px;
+margin:auto;
+height:72px;
+padding:0 20px;
+display:flex;
+align-items:center;
+gap:30px;
 }
 
-.header-ic {
-    max-width: 1200px;
-    margin: auto;
-    padding: 16px 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.logo{
+font-size:23px;
+font-weight:900;
+text-decoration:none;
+color:#173f27;
 }
 
-.logo {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: 800;
+.logo span{
+color:#789653;
 }
 
-.logo span {
-    color: #cde49f;
+nav{
+display:flex;
+gap:5px;
 }
 
-.menu {
-    display: flex;
-    gap: 10px;
+nav a{
+text-decoration:none;
+color:#39453d;
+padding:10px 14px;
+border-radius:8px;
 }
 
-.menu a {
-    color: white;
-    text-decoration: none;
-    padding: 9px 13px;
-    background: rgba(255,255,255,.12);
-    border-radius: 8px;
+nav a:hover{
+background:#edf2e9;
 }
 
-/* ANA */
-
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
+.sag{
+margin-left:auto;
 }
 
-.baslik {
-    margin-bottom: 25px;
+.container{
+max-width:1100px;
+margin:45px auto;
+padding:0 20px;
 }
 
-.baslik h1 {
-    margin: 0 0 8px;
+h1{
+font-family:Georgia,serif;
+font-size:40px;
 }
 
-.baslik p {
-    color: #707870;
+.layout{
+display:grid;
+grid-template-columns:1fr 350px;
+gap:25px;
 }
 
-/* SEPET */
+.urun{
+background:white;
+border:1px solid #e4e8e1;
+border-radius:15px;
+padding:15px;
+margin-bottom:12px;
 
-.sepet-layout {
-    display: grid;
-    grid-template-columns: 1fr 370px;
-    gap: 25px;
+display:grid;
+grid-template-columns:90px 1fr auto;
+gap:15px;
+align-items:center;
 }
 
-.sepet-urunler {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.urun img{
+width:90px;
+height:90px;
+object-fit:contain;
+background:#f2f4ee;
+border-radius:10px;
 }
 
-/* ÜRÜN */
-
-.urun {
-    background: white;
-    border-radius: 15px;
-    padding: 15px;
-
-    display: grid;
-    grid-template-columns: 95px 1fr auto;
-    gap: 18px;
-
-    align-items: center;
-
-    box-shadow: 0 4px 15px rgba(0,0,0,.05);
+.urun h3{
+font-size:15px;
+margin:5px 0;
 }
 
-.urun img {
-    width: 95px;
-    height: 95px;
-
-    object-fit: contain;
-
-    background: #f5f7f3;
-    border-radius: 10px;
+.marka{
+font-size:11px;
+color:#899189;
 }
 
-.urun-bilgi h3 {
-    margin: 0 0 7px;
-    font-size: 16px;
+.fiyat{
+color:#173f27;
+font-weight:bold;
 }
 
-.marka {
-    font-size: 13px;
-    color: #7b837d;
+.adet{
+display:flex;
+align-items:center;
+gap:8px;
+margin-top:10px;
 }
 
-.fiyat {
-    color: #174d2b;
-    font-weight: 800;
-    margin-top: 7px;
+.adet button{
+width:30px;
+height:30px;
+border:1px solid #ddd;
+background:#f4f5f1;
+border-radius:7px;
+cursor:pointer;
 }
 
-/* ADET */
-
-.adet {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
+.sag-urun{
+text-align:right;
 }
 
-.adet button {
-    width: 32px;
-    height: 32px;
-
-    border: 1px solid #d8ddd8;
-    background: #f4f6f3;
-
-    border-radius: 7px;
-
-    cursor: pointer;
-
-    font-size: 18px;
+.sil{
+border:0;
+background:none;
+color:#b34b4b;
+cursor:pointer;
+margin-top:10px;
 }
 
-.adet span {
-    min-width: 25px;
-    text-align: center;
-    font-weight: 700;
+.ozet{
+background:white;
+border-radius:17px;
+padding:25px;
+height:max-content;
+position:sticky;
+top:90px;
 }
 
-/* SAĞ */
-
-.urun-sag {
-    text-align: right;
+.satir{
+display:flex;
+justify-content:space-between;
+margin:15px 0;
 }
 
-.urun-toplam {
-    font-size: 18px;
-    font-weight: 800;
-    color: #174d2b;
+.toplam{
+border-top:1px solid #ddd;
+padding-top:18px;
+display:flex;
+justify-content:space-between;
+font-size:20px;
+font-weight:bold;
 }
 
-.sil {
-    margin-top: 10px;
-
-    border: none;
-    background: none;
-
-    color: #b53d3d;
-
-    cursor: pointer;
+.toplam strong{
+color:#173f27;
+font-size:25px;
 }
 
-/* ÖZET */
-
-.ozet {
-    background: white;
-
-    border-radius: 16px;
-
-    padding: 23px;
-
-    box-shadow: 0 4px 18px rgba(0,0,0,.06);
-
-    position: sticky;
-    top: 20px;
+.kargo{
+background:#edf3e8;
+padding:13px;
+border-radius:10px;
+font-size:13px;
+margin:18px 0;
 }
 
-.ozet h2 {
-    margin-top: 0;
+input{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
 }
 
-.satir {
-    display: flex;
-    justify-content: space-between;
-
-    margin: 14px 0;
+.kupon{
+display:flex;
+gap:7px;
+margin-top:8px;
 }
 
-.kargo-bedava {
-    color: #174d2b;
-    font-weight: 700;
+.kupon button{
+background:#173f27;
+color:white;
+border:0;
+border-radius:8px;
+padding:0 14px;
+cursor:pointer;
 }
 
-.kargo {
-    color: #777;
+.odeme,
+.whatsapp{
+display:block;
+width:100%;
+padding:15px;
+border:0;
+border-radius:9px;
+margin-top:10px;
+font-weight:bold;
+font-size:15px;
+cursor:pointer;
+text-align:center;
 }
 
-/* KARGO */
-
-.kargo-bilgi {
-    background: #f1f6ef;
-
-    border-radius: 10px;
-
-    padding: 13px;
-
-    margin: 18px 0;
-
-    font-size: 14px;
-
-    line-height: 1.5;
+.odeme{
+background:#173f27;
+color:white;
 }
 
-.progress {
-    height: 8px;
-
-    background: #dce4db;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    margin-top: 9px;
+.whatsapp{
+background:#25d366;
+color:white;
 }
 
-.progress-bar {
-    height: 100%;
-
-    width: 0%;
-
-    background: #174d2b;
-
-    transition: .3s;
+.devam{
+display:block;
+text-align:center;
+margin-top:15px;
+color:#173f27;
+font-weight:bold;
+text-decoration:none;
 }
 
-/* KUPON */
-
-.kupon {
-    margin-top: 20px;
+.bos{
+background:white;
+padding:60px 20px;
+text-align:center;
+border-radius:18px;
 }
 
-.kupon label {
-    display: block;
-
-    font-weight: 700;
-
-    margin-bottom: 8px;
+.mobil{
+display:none;
 }
 
-.kupon-flex {
-    display: flex;
-    gap: 7px;
+@media(max-width:800px){
+
+nav{
+display:none;
 }
 
-.kupon input {
-    min-width: 0;
-
-    flex: 1;
-
-    padding: 12px;
-
-    border: 1px solid #d8ddd8;
-
-    border-radius: 8px;
+.layout{
+grid-template-columns:1fr;
 }
 
-.kupon button {
-    border: none;
-
-    background: #174d2b;
-
-    color: white;
-
-    padding: 0 15px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
+.ozet{
+position:static;
 }
 
-.kupon-mesaj {
-    font-size: 13px;
-
-    margin-top: 8px;
+.urun{
+grid-template-columns:70px 1fr;
 }
 
-/* TOPLAM */
-
-.genel-toplam {
-    border-top: 1px solid #e0e4df;
-
-    padding-top: 18px;
-
-    margin-top: 18px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
+.urun img{
+width:70px;
+height:70px;
 }
 
-.genel-toplam strong {
-    font-size: 24px;
-
-    color: #174d2b;
+.sag-urun{
+grid-column:2;
+text-align:left;
 }
 
-/* BUTONLAR */
-
-.odeme {
-    display: block;
-
-    width: 100%;
-
-    margin-top: 18px;
-
-    padding: 16px;
-
-    border: none;
-
-    border-radius: 10px;
-
-    background: #174d2b;
-
-    color: white;
-
-    font-size: 17px;
-
-    font-weight: 800;
-
-    cursor: pointer;
+.mobil{
+position:fixed;
+display:flex;
+bottom:0;
+left:0;
+right:0;
+height:62px;
+background:white;
+border-top:1px solid #ddd;
+z-index:1500;
 }
 
-.odeme:hover {
-    background: #0e3b20;
+.mobil a{
+flex:1;
+text-align:center;
+text-decoration:none;
+color:#405046;
+font-size:11px;
+padding-top:8px;
 }
 
-.whatsapp {
-    display: block;
-
-    width: 100%;
-
-    margin-top: 10px;
-
-    padding: 14px;
-
-    border: none;
-
-    border-radius: 10px;
-
-    background: #25D366;
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: 800;
-
-    cursor: pointer;
+.mobil b{
+display:block;
+font-size:18px;
 }
-
-.whatsapp:hover {
-    opacity: .9;
-}
-
-.devam {
-    display: block;
-
-    text-align: center;
-
-    margin-top: 15px;
-
-    color: #174d2b;
-
-    text-decoration: none;
-
-    font-weight: 700;
-}
-
-/* BOŞ SEPET */
-
-.bos {
-    background: white;
-
-    border-radius: 18px;
-
-    padding: 60px 20px;
-
-    text-align: center;
-}
-
-.bos-icon {
-    font-size: 55px;
-}
-
-.bos h2 {
-    margin-bottom: 8px;
-}
-
-.bos p {
-    color: #777;
-}
-
-.bos a {
-    display: inline-block;
-
-    margin-top: 15px;
-
-    background: #174d2b;
-
-    color: white;
-
-    text-decoration: none;
-
-    padding: 13px 22px;
-
-    border-radius: 9px;
-}
-
-/* FOOTER */
-
-footer {
-    margin-top: 70px;
-
-    background: #123b21;
-
-    color: white;
-
-    text-align: center;
-
-    padding: 30px;
-}
-
-/* MOBİL */
-
-@media (max-width: 800px) {
-
-    .sepet-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .ozet {
-        position: static;
-    }
-
-}
-
-@media (max-width: 600px) {
-
-    .header-ic {
-        padding: 13px 15px;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-
-    .urun {
-        grid-template-columns: 70px 1fr;
-        gap: 12px;
-    }
-
-    .urun img {
-        width: 70px;
-        height: 70px;
-    }
-
-    .urun-sag {
-        grid-column: 2;
-        text-align: left;
-    }
-
-    .urun-toplam {
-        display: inline-block;
-    }
 
 }
 
@@ -523,29 +322,19 @@ footer {
 
 <body>
 
-
-<!-- KAMPANYA -->
-
-<div class="kampanya">
-
-🚚 1.500 TL ÜZERİ SİPARİŞLERDE KARGO BEDAVA
-&nbsp;&nbsp; • &nbsp;&nbsp;
-🎁 İLK ALIŞVERİŞ %10 — YONCA10
-
+<div class="top">
+🚚 1.500 TL ÜZERİ KARGO BEDAVA • 🎁 YONCA10 %10 İNDİRİM
 </div>
-
-
-<!-- HEADER -->
 
 <header>
 
-<div class="header-ic">
+<div class="header">
 
 <a href="index.html" class="logo">
 🌿 Yonca <span>Baharat</span>
 </a>
 
-<div class="menu">
+<nav>
 
 <a href="index.html">
 Ana Sayfa
@@ -555,70 +344,41 @@ Ana Sayfa
 Ürünler
 </a>
 
+</nav>
+
+<div class="sag">
+🛒 Sepetim
 </div>
 
 </div>
 
 </header>
 
-
-<!-- ANA -->
-
 <div class="container">
-
-
-<div class="baslik">
 
 <h1>
 🛒 Sepetim
 </h1>
 
-<p>
-Siparişinizi kontrol edin ve devam edin.
-</p>
-
-</div>
-
-
-<!-- BOŞ SEPET -->
-
-<div id="bosSepet" class="bos" style="display:none;">
-
-<div class="bos-icon">
-🛒
-</div>
+<div id="bos" class="bos" style="display:none">
 
 <h2>
 Sepetiniz boş
 </h2>
 
 <p>
-Henüz sepetinize ürün eklemediniz.
+Henüz ürün eklemediniz.
 </p>
 
-<a href="urunler.html">
-Alışverişe Başla
+<a href="urunler.html" class="devam">
+Alışverişe Başla →
 </a>
 
 </div>
 
+<div id="alan" class="layout">
 
-<!-- SEPET -->
-
-<div id="sepetAlan">
-
-<div class="sepet-layout">
-
-
-<!-- ÜRÜNLER -->
-
-<div
-id="urunler"
-class="sepet-urunler">
-</div>
-
-
-<!-- ÖZET -->
+<div id="urunler"></div>
 
 <div class="ozet">
 
@@ -626,361 +386,226 @@ class="sepet-urunler">
 Sipariş Özeti
 </h2>
 
-
 <div class="satir">
-
-<span>
-Ara Toplam
-</span>
-
-<strong id="araToplam">
-0 TL
-</strong>
-
+<span>Ara Toplam</span>
+<strong id="ara">0 TL</strong>
 </div>
 
-
 <div class="satir">
-
-<span>
-Kargo
-</span>
-
-<strong
-id="kargo"
-class="kargo">
-0 TL
-</strong>
-
+<span>Kargo</span>
+<strong id="kargo">0 TL</strong>
 </div>
 
-
-<div
-id="indirimSatiri"
+<div id="indirimSatiri"
 class="satir"
-style="display:none;">
+style="display:none">
 
-<span>
-Kupon İndirimi
-</span>
-
-<strong id="indirim">
--0 TL
-</strong>
+<span>İndirim</span>
+<strong id="indirim">0 TL</strong>
 
 </div>
 
-
-<!-- KARGO BİLGİSİ -->
-
-<div
-id="kargoBilgi"
-class="kargo-bilgi">
+<div class="kargo" id="kargoBilgi">
 </div>
-
-
-<!-- KUPON -->
-
-<div class="kupon">
 
 <label>
-🎁 Kupon Kodunuz
+🎁 Kupon Kodu
 </label>
 
-<div class="kupon-flex">
+<div class="kupon">
 
 <input
 id="kupon"
 placeholder="YONCA10">
 
-<button onclick="kuponUygula()">
+<button onclick="kupon()">
 Uygula
 </button>
 
 </div>
 
-<div
-id="kuponMesaj"
-class="kupon-mesaj">
-</div>
+<div id="mesaj"></div>
 
-</div>
-
-
-<!-- TOPLAM -->
-
-<div class="genel-toplam">
+<div class="toplam">
 
 <span>
 Toplam
 </span>
 
-<strong id="genelToplam">
+<strong id="toplam">
 0 TL
 </strong>
 
 </div>
 
-
-<!-- ÖDEME -->
-
 <button
 class="odeme"
 onclick="odeme()">
 
-💳 Siparişe Devam Et →
+💳 Ödeme ile Devam Et
 
 </button>
 
-
-<!-- WHATSAPP -->
-
 <button
 class="whatsapp"
-onclick="whatsappSiparis()">
+onclick="whatsapp()">
 
 💬 WhatsApp'tan Sipariş Ver
 
 </button>
 
-
-<a
-href="urunler.html"
-class="devam">
-
+<a href="urunler.html" class="devam">
 ← Alışverişe Devam Et
-
 </a>
 
-
-</div>
-
-
 </div>
 
 </div>
 
 </div>
 
+<div class="mobil">
 
-<!-- FOOTER -->
+<a href="index.html">
+<b>⌂</b>
+Ana Sayfa
+</a>
 
-<footer>
+<a href="urunler.html">
+<b>🛍️</b>
+Ürünler
+</a>
 
-🌿 Yonca Baharat © 2026
+<a href="sepet.html">
+<b>🛒</b>
+Sepet
+</a>
 
-</footer>
+<a href="https://wa.me/905525102881">
+<b>💬</b>
+WhatsApp
+</a>
 
+</div>
 
 <script>
 
+const urunler={
 
-/* =========================
-   ÜRÜNLER
-========================= */
-
-const urunBilgileri = {
-
-holistrakt: {
-
-ad: "HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML",
-
-marka: "Shiffa Home",
-
-fiyat: 925,
-
-foto: "images/holistrakt.jpg"
-
+holistrakt:{
+ad:"HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML",
+marka:"Shiffa Home",
+fiyat:925,
+foto:"images/holistrakt.jpg"
 },
 
-kantaroid: {
-
-ad: "KANTA ROIT KREM 20 ML",
-
-marka: "Shiffa Home",
-
-fiyat: 190,
-
-foto: "images/kantaroid.jpg"
-
+kantaroid:{
+ad:"KANTA ROIT KREM 20 ML",
+marka:"Shiffa Home",
+fiyat:190,
+foto:"images/kantaroid.jpg"
 },
 
-akzer: {
-
-ad: "Saf Nar Ekşisi",
-
-marka: "Akzer",
-
-fiyat: 349,
-
-foto: "images/akzer.jpg"
-
+akzer:{
+ad:"Saf Nar Ekşisi",
+marka:"Akzer",
+fiyat:349,
+foto:"images/akzer.jpg"
 },
 
-kudretnari: {
-
-ad: "Kudret Narı Ekstraktlı Macun 300 gr",
-
-marka: "Aksu Vital",
-
-fiyat: 600,
-
-foto: "images/yeni-kudret-nari-83.jpg"
-
+kudretnari:{
+ad:"Kudret Narı Ekstraktlı Macun 300 gr",
+marka:"Aksu Vital",
+fiyat:600,
+foto:"images/yeni-kudret-nari-83.jpg"
 }
 
 };
 
+const KARGO=40.99;
 
-/* =========================
-   AYARLAR
-========================= */
+let kuponAktif=false;
 
-const WHATSAPP =
-"905525102881";
-
-const UCRETSIZ_KARGO_LIMIT =
-1500;
-
-const KARGO_UCRETI =
-40.99;
-
-let kuponAktif = false;
-
-
-/* =========================
-   SEPET
-========================= */
-
-function sepetGetir() {
-
-return JSON.parse(
-localStorage.getItem("sepet")
-) || [];
-
+function getir(){
+return JSON.parse(localStorage.getItem("sepet"))||[];
 }
 
-
-function sepetKaydet(sepet) {
-
-localStorage.setItem(
-"sepet",
-JSON.stringify(sepet)
-);
-
+function kaydet(s){
+localStorage.setItem("sepet",JSON.stringify(s));
 }
 
+function yaz(){
 
-/* =========================
-   SEPETİ GÖSTER
-========================= */
+let s=getir();
 
-function sepeteYazdir() {
+let alan=document.getElementById("urunler");
 
-const sepet =
-sepetGetir();
+alan.innerHTML="";
 
-const alan =
-document.getElementById("urunler");
+if(s.length===0){
 
-alan.innerHTML = "";
-
-
-if (sepet.length === 0) {
-
-document.getElementById(
-"sepetAlan"
-).style.display = "none";
-
-document.getElementById(
-"bosSepet"
-).style.display = "block";
+document.getElementById("alan").style.display="none";
+document.getElementById("bos").style.display="block";
 
 return;
 
 }
 
+document.getElementById("alan").style.display="grid";
+document.getElementById("bos").style.display="none";
 
-document.getElementById(
-"sepetAlan"
-).style.display = "block";
+s.forEach((item,i)=>{
 
-document.getElementById(
-"bosSepet"
-).style.display = "none";
+let u=urunler[item.id];
 
+if(!u)return;
 
-sepet.forEach((item,index) => {
+let div=document.createElement("div");
 
-const urun =
-urunBilgileri[item.id];
+div.className="urun";
 
-if (!urun) return;
+div.innerHTML=`
 
+<img src="${u.foto}">
 
-const toplam =
-urun.fiyat * item.adet;
-
-
-const div =
-document.createElement("div");
-
-div.className =
-"urun";
-
-
-div.innerHTML = `
-
-<img
-src="${urun.foto}"
-alt="${urun.ad}"
->
-
-<div class="urun-bilgi">
+<div>
 
 <div class="marka">
-${urun.marka}
+${u.marka}
 </div>
 
 <h3>
-${urun.ad}
+${u.ad}
 </h3>
 
 <div class="fiyat">
-${urun.fiyat.toLocaleString("tr-TR")} TL / adet
+${u.fiyat} TL
 </div>
 
 <div class="adet">
 
-<button
-onclick="adetDegistir(${index},-1)">
-−
-</button>
+<button onclick="adet(${i},-1)">−</button>
 
-<span>
-${item.adet}
-</span>
+<span>${item.adet}</span>
 
-<button
-onclick="adetDegistir(${index},1)">
-+
-</button>
+<button onclick="adet(${i},1)">+</button>
 
 </div>
 
 </div>
 
-<div class="urun-sag">
+<div class="sag-urun">
 
-<div class="urun-toplam">
-${toplam.toLocaleString("tr-TR")} TL
-</div>
+<strong>
+${u.fiyat*item.adet} TL
+</strong>
 
-<button
-class="sil"
-onclick="urunSil(${index})">
+<br>
 
-🗑️ Sil
+<button class="sil"
+onclick="sil(${i})">
+
+Sil
 
 </button>
 
@@ -992,555 +617,183 @@ alan.appendChild(div);
 
 });
 
-
 hesapla();
 
 }
 
+function adet(i,m){
 
-/* =========================
-   ADET
-========================= */
+let s=getir();
 
-function adetDegistir(index,miktar) {
+s[i].adet+=m;
 
-const sepet =
-sepetGetir();
+if(s[i].adet<1)
+s[i].adet=1;
 
-sepet[index].adet += miktar;
+kaydet(s);
 
-
-if (sepet[index].adet < 1) {
-
-sepet[index].adet = 1;
+yaz();
 
 }
 
+function sil(i){
 
-sepetKaydet(sepet);
+let s=getir();
 
-sepeteYazdir();
+s.splice(i,1);
 
-}
+kaydet(s);
 
-
-/* =========================
-   ÜRÜN SİL
-========================= */
-
-function urunSil(index) {
-
-const sepet =
-sepetGetir();
-
-sepet.splice(index,1);
-
-sepetKaydet(sepet);
-
-sepeteYazdir();
+yaz();
 
 }
 
+function hesapla(){
 
-/* =========================
-   HESAP
-========================= */
+let s=getir();
 
-function hesapla() {
+let ara=0;
 
-const sepet =
-sepetGetir();
+s.forEach(x=>{
 
-let araToplam = 0;
-
-
-sepet.forEach(item => {
-
-const urun =
-urunBilgileri[item.id];
-
-if (urun) {
-
-araToplam +=
-urun.fiyat * item.adet;
-
-}
+if(urunler[x.id])
+ara+=urunler[x.id].fiyat*x.adet;
 
 });
 
+let kargo=ara>=1500?0:ara>0?KARGO:0;
 
-let kargo = 0;
+let indirim=kuponAktif?ara*.10:0;
 
+let toplam=ara+kargo-indirim;
 
-if (
-araToplam > 0 &&
-araToplam < UCRETSIZ_KARGO_LIMIT
-) {
+document.getElementById("ara").innerText=
+ara.toFixed(2)+" TL";
 
-kargo =
-KARGO_UCRETI;
+document.getElementById("kargo").innerText=
+kargo===0&&ara>0
+?"ÜCRETSİZ"
+:kargo.toFixed(2)+" TL";
 
-}
+document.getElementById("toplam").innerText=
+toplam.toFixed(2)+" TL";
 
+if(kuponAktif){
 
-let indirim = 0;
+document.getElementById("indirimSatiri").style.display="flex";
 
-
-if (kuponAktif) {
-
-indirim =
-araToplam * 0.10;
-
-}
-
-
-const toplam =
-araToplam +
-kargo -
-indirim;
-
-
-/* ARA TOPLAM */
-
-document.getElementById(
-"araToplam"
-).innerText =
-
-araToplam.toLocaleString(
-"tr-TR",
-{
-minimumFractionDigits: 2
-}
-) + " TL";
-
-
-/* KARGO */
-
-document.getElementById(
-"kargo"
-).innerText =
-
-kargo === 0 && araToplam > 0
-
-? "ÜCRETSİZ"
-
-:
-
-kargo.toLocaleString(
-"tr-TR",
-{
-minimumFractionDigits: 2
-}
-) + " TL";
-
-
-document.getElementById(
-"kargo"
-).className =
-
-kargo === 0 && araToplam > 0
-
-? "kargo-bedava"
-
-: "kargo";
-
-
-/* İNDİRİM */
-
-if (kuponAktif) {
-
-document.getElementById(
-"indirimSatiri"
-).style.display =
-"flex";
-
-document.getElementById(
-"indirim"
-).innerText =
-
-"-" +
-
-indirim.toLocaleString(
-"tr-TR",
-{
-minimumFractionDigits: 2
-}
-) +
-
-" TL";
+document.getElementById("indirim").innerText=
+"-"+indirim.toFixed(2)+" TL";
 
 }
 
-else {
+if(ara<1500&&ara>0){
 
-document.getElementById(
-"indirimSatiri"
-).style.display =
-"none";
+document.getElementById("kargoBilgi").innerText=
+"🚚 Ücretsiz kargoya "+
+(1500-ara).toFixed(2)+
+" TL kaldı.";
 
-}
+}else if(ara>=1500){
 
-
-/* GENEL TOPLAM */
-
-document.getElementById(
-"genelToplam"
-).innerText =
-
-toplam.toLocaleString(
-"tr-TR",
-{
-minimumFractionDigits: 2
-}
-) +
-
-" TL";
-
-
-/* KARGO BİLGİSİ */
-
-const bilgi =
-document.getElementById(
-"kargoBilgi"
-);
-
-
-if (araToplam === 0) {
-
-bilgi.innerHTML =
-"🛍️ Sepetinize ürün ekleyin.";
-
-}
-
-else if (
-araToplam < UCRETSIZ_KARGO_LIMIT
-) {
-
-const kalan =
-UCRETSIZ_KARGO_LIMIT -
-araToplam;
-
-const yuzde =
-Math.min(
-(araToplam /
-UCRETSIZ_KARGO_LIMIT)
-* 100,
-100
-);
-
-
-bilgi.innerHTML = `
-
-🚚 Ücretsiz kargoya
-
-<strong>
-${kalan.toLocaleString(
-"tr-TR",
-{
-minimumFractionDigits: 2
-}
-)} TL
-</strong>
-
-kaldı!
-
-<div class="progress">
-
-<div
-class="progress-bar"
-style="width:${yuzde}%">
-</div>
-
-</div>
-
-`;
-
-}
-
-else {
-
-bilgi.innerHTML = `
-
-🎉 <strong>
-Tebrikler!
-</strong>
-
-<br>
-
-1.500 TL üzeri siparişinizde
-kargonuz ücretsiz.
-
-<div class="progress">
-
-<div
-class="progress-bar"
-style="width:100%">
-</div>
-
-</div>
-
-`;
+document.getElementById("kargoBilgi").innerText=
+"🎉 Tebrikler! Kargonuz ücretsiz.";
 
 }
 
 }
 
+function kupon(){
 
-/* =========================
-   KUPON
-========================= */
-
-function kuponUygula() {
-
-const input =
-document.getElementById(
-"kupon"
-);
-
-const mesaj =
-document.getElementById(
-"kuponMesaj"
-);
-
-
-const kod =
-input.value
+let kod=
+document.getElementById("kupon").value
 .trim()
 .toUpperCase();
 
+if(kod==="YONCA10"){
 
-if (kod === "YONCA10") {
+kuponAktif=true;
 
-kuponAktif = true;
+document.getElementById("mesaj").innerText=
+"✅ %10 indirim uygulandı.";
 
-mesaj.innerText =
-"✅ Kupon uygulandı! %10 indirim.";
+}else{
 
-mesaj.style.color =
-"#174d2b";
+kuponAktif=false;
+
+document.getElementById("mesaj").innerText=
+"❌ Geçersiz kupon.";
+
+}
 
 hesapla();
 
 }
 
-else {
+function whatsapp(){
 
-kuponAktif = false;
+let s=getir();
 
-mesaj.innerText =
-"❌ Geçersiz kupon kodu.";
+if(s.length===0){
 
-mesaj.style.color =
-"#b53d3d";
-
-hesapla();
-
-}
-
-}
-
-
-/* =========================
-   WHATSAPP SİPARİŞ
-========================= */
-
-function whatsappSiparis() {
-
-const sepet =
-sepetGetir();
-
-
-if (sepet.length === 0) {
-
-alert(
-"Sepetiniz boş."
-);
+alert("Sepetiniz boş.");
 
 return;
 
 }
 
-
-let araToplam = 0;
-
-let mesaj =
+let mesaj=
 "Merhaba, Yonca Baharat'tan sipariş vermek istiyorum.%0A%0A";
 
+let ara=0;
 
-sepet.forEach(item => {
+s.forEach(x=>{
 
-const urun =
-urunBilgileri[item.id];
+let u=urunler[x.id];
 
-if (!urun) return;
+if(!u)return;
 
+let t=u.fiyat*x.adet;
 
-const toplam =
-urun.fiyat * item.adet;
+ara+=t;
 
-
-araToplam += toplam;
-
-
-mesaj +=
-"• " +
-urun.ad +
-" — " +
-item.adet +
-" adet — " +
-toplam.toLocaleString(
-"tr-TR"
-) +
-" TL%0A";
+mesaj+=
+"• "+u.ad+
+" — "+x.adet+
+" adet — "+t+" TL%0A";
 
 });
 
+let kargo=ara>=1500?0:KARGO;
 
-let kargo = 0;
+let indirim=kuponAktif?ara*.10:0;
 
+let toplam=ara+kargo-indirim;
 
-if (
-araToplam > 0 &&
-araToplam < UCRETSIZ_KARGO_LIMIT
-) {
+mesaj+=
+"%0AToplam: "+
+toplam.toFixed(2)+
+" TL%0A%0A";
 
-kargo =
-KARGO_UCRETI;
-
-}
-
-
-let indirim = 0;
-
-
-if (kuponAktif) {
-
-indirim =
-araToplam * 0.10;
-
-}
-
-
-const genelToplam =
-araToplam +
-kargo -
-indirim;
-
-
-mesaj +=
-"%0A";
-
-mesaj +=
-"Ara toplam: " +
-araToplam.toLocaleString(
-"tr-TR",
-{
-minimumFractionDigits: 2
-}
-) +
-" TL%0A";
-
-
-if (kargo === 0) {
-
-mesaj +=
-"Kargo: ÜCRETSİZ%0A";
-
-}
-
-else {
-
-mesaj +=
-"Kargo: " +
-kargo.toLocaleString(
-"tr-TR",
-{
-minimumFractionDigits: 2
-}
-) +
-" TL%0A";
-
-}
-
-
-if (kuponAktif) {
-
-mesaj +=
-"Kupon indirimi: -" +
-indirim.toLocaleString(
-"tr-TR",
-{
-minimumFractionDigits: 2
-}
-) +
-" TL%0A";
-
-}
-
-
-mesaj +=
-"*Toplam: " +
-genelToplam.toLocaleString(
-"tr-TR",
-{
-minimumFractionDigits: 2
-}
-) +
-" TL*%0A%0A";
-
-
-mesaj +=
-"Ad Soyad:%0A";
-
-mesaj +=
-"Adres:%0A";
-
-mesaj +=
-"Telefon:%0A";
-
+mesaj+=
+"Ad Soyad:%0AAdres:%0ATelefon:";
 
 window.open(
-"https://wa.me/" +
-WHATSAPP +
-"?text=" +
-mesaj,
+"https://wa.me/905525102881?text="+mesaj,
 "_blank"
 );
 
 }
 
-
-/* =========================
-   ÖDEME
-========================= */
-
-function odeme() {
-
-const sepet =
-sepetGetir();
-
-
-if (sepet.length === 0) {
+function odeme(){
 
 alert(
-"Sepetiniz boş."
-);
-
-return;
-
-}
-
-
-alert(
-"Ödeme sayfasını bir sonraki adımda ekleyeceğiz."
+"Online ödeme sistemi bir sonraki adımda bağlanacak."
 );
 
 }
 
-
-/* BAŞLAT */
-
-sepeteYazdir();
+yaz();
 
 </script>
 
