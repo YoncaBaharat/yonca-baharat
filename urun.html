@@ -1,161 +1,628 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürün Detayı - Yonca Baharat</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
-            color: #222;
-        }
+<title>Ürün | Yonca Baharat</title>
 
-        header {
-            background: #2f6b3f;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        .urun-detay {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 25px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-        }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f2;
+    color: #26352b;
+}
 
-        .urun-detay img {
-            width: 100%;
-            max-height: 450px;
-            object-fit: contain;
-        }
+/* KAMPANYA BANDI */
 
-        h1 {
-            font-size: 28px;
-        }
+.kampanya {
+    background: #d99a18;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    font-weight: 700;
+}
 
-        .marka {
-            color: #666;
-        }
+.kampanya-yazi {
+    display: inline-block;
+    padding-left: 100%;
+    animation: kaydir 18s linear infinite;
+}
 
-        .fiyat {
-            color: #2f6b3f;
-            font-size: 28px;
-            font-weight: bold;
-            margin: 20px 0;
-        }
+@keyframes kaydir {
+    0% {
+        transform: translateX(0);
+    }
 
-        .whatsapp {
-            display: inline-block;
-            background: #25D366;
-            color: white;
-            padding: 14px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
-        .geri {
-            display: inline-block;
-            margin-top: 20px;
-            color: #2f6b3f;
-        }
-    </style>
+/* HEADER */
+
+header {
+    background: #174d2b;
+    color: white;
+    padding: 18px 6%;
+}
+
+.header-ust {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #c9df9c;
+}
+
+.menu {
+    display: flex;
+    gap: 10px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+}
+
+/* ANA */
+
+.container {
+    max-width: 1150px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.urun-detay {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.06);
+}
+
+/* FOTO */
+
+.foto-alani {
+    background: #f7f8f6;
+    border-radius: 16px;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.foto-alani img {
+    width: 100%;
+    height: 430px;
+    object-fit: contain;
+}
+
+/* BİLGİ */
+
+.marka {
+    color: #788178;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 1.3;
+    margin: 0 0 18px;
+}
+
+.fiyat {
+    font-size: 32px;
+    font-weight: 800;
+    color: #174d2b;
+    margin: 20px 0;
+}
+
+.aciklama {
+    color: #68736b;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* ADET */
+
+.adet-alani {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.adet-alani button {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #dce2dc;
+    background: #f3f5f2;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#adet {
+    min-width: 35px;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* BUTON */
+
+.sepete-ekle {
+    width: 100%;
+    border: none;
+    background: #174d2b;
+    color: white;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sepete-ekle:hover {
+    background: #0e3b20;
+}
+
+.whatsapp {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    border: 1px solid #174d2b;
+    background: white;
+    color: #174d2b;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* GÜVEN */
+
+.guven {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.guven-kutu {
+    background: #f5f7f4;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* KUPON */
+
+.kupon {
+    margin-top: 25px;
+    padding: 16px;
+    background: #fff8e7;
+    border: 1px dashed #d99a18;
+    border-radius: 10px;
+    color: #765510;
+}
+
+.kupon strong {
+    color: #a66f00;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 50px;
+    background: #174d2b;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* MOBİL */
+
+@media (max-width: 800px) {
+
+    .header-ust {
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu a {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .urun-detay {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .foto-alani {
+        min-height: 330px;
+    }
+
+    .foto-alani img {
+        height: 300px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .fiyat {
+        font-size: 27px;
+    }
+
+    .guven {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <h2>Yonca Baharat</h2>
-</header>
+<!-- KAMPANYA -->
 
-<div class="urun-detay">
+<div class="kampanya">
 
-    <img id="urunFoto" src="" alt="Ürün">
-
-    <div class="marka" id="urunMarka"></div>
-
-    <h1 id="urunAdi"></h1>
-
-    <div class="fiyat" id="urunFiyat"></div>
-
-    <p id="urunAciklama"></p>
-
-    <a id="whatsapp" class="whatsapp" href="#" target="_blank">
-        WhatsApp'tan Sipariş Ver
-    </a>
-
-    <br>
-
-    <a class="geri" href="urunler.html">
-        ← Ürünlere Geri Dön
-    </a>
+    <div class="kampanya-yazi">
+        🚚 1.500 TL VE ÜZERİ SİPARİŞLERDE KARGO BEDAVA
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        🎁 İLK ALIŞVERİŞİNİZE ÖZEL %10 İNDİRİM — KUPON: YONCA10
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        🌿 YONCA BAHARAT
+    </div>
 
 </div>
+
+
+<header>
+
+    <div class="header-ust">
+
+        <div class="logo">
+            🌿 Yonca <span>Baharat</span>
+        </div>
+
+        <div class="menu">
+
+            <a href="urunler.html">
+                Ürünler
+            </a>
+
+            <a href="sepet.html">
+                🛒 Sepet
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="container">
+
+    <div class="urun-detay">
+
+        <!-- FOTO -->
+
+        <div class="foto-alani">
+
+            <img id="urunFoto" src="" alt="Ürün">
+
+        </div>
+
+
+        <!-- BİLGİ -->
+
+        <div>
+
+            <div id="urunMarka" class="marka"></div>
+
+            <h1 id="urunAdi">
+                Ürün
+            </h1>
+
+            <div id="urunFiyat" class="fiyat">
+                0 TL
+            </div>
+
+            <div class="aciklama">
+
+                🌿 Özenle seçilmiş ürünlerimizi
+                güvenle sipariş edebilirsiniz.
+
+                <br><br>
+
+                📦 Siparişleriniz özenle paketlenerek
+                adresinize gönderilir.
+
+            </div>
+
+
+            <div class="adet-alani">
+
+                <button onclick="adetAzalt()">
+                    −
+                </button>
+
+                <span id="adet">
+                    1
+                </span>
+
+                <button onclick="adetArttir()">
+                    +
+                </button>
+
+            </div>
+
+
+            <button
+                class="sepete-ekle"
+                onclick="sepeteEkle()"
+            >
+                🛒 Sepete Ekle
+            </button>
+
+
+            <button
+                class="whatsapp"
+                onclick="whatsappSiparis()"
+            >
+                💬 WhatsApp ile Sor / Sipariş Ver
+            </button>
+
+
+            <div class="guven">
+
+                <div class="guven-kutu">
+                    🚚
+                    <br>
+                    Güvenli Kargo
+                </div>
+
+                <div class="guven-kutu">
+                    📦
+                    <br>
+                    Özenli Paketleme
+                </div>
+
+                <div class="guven-kutu">
+                    🔒
+                    <br>
+                    Güvenli Alışveriş
+                </div>
+
+            </div>
+
+
+            <div class="kupon">
+
+                🎁 İlk alışverişinizde
+                <strong>%10 indirim</strong>
+                fırsatını kaçırmayın.
+
+                <br><br>
+
+                Kupon kodu:
+                <strong>YONCA10</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    🌿 Yonca Baharat © 2026
+
+</footer>
+
 
 <script>
 
 const urunler = {
 
     holistrakt: {
-        marka: "Shiffa Home",
         ad: "HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML",
-        fiyat: "925 TL",
-        foto: "images/holistrakt.jpg",
-        aciklama: "Enginar, devedikeni ve karahindiba içeren sıvı ekstrat."
+        marka: "Shiffa Home",
+        fiyat: 925,
+        foto: "images/holistrakt.jpg"
     },
 
     kantaroid: {
-        marka: "Shiffa Home",
         ad: "KANTA ROIT KREM 20 ML",
-        fiyat: "190 TL",
-        foto: "images/kantaroid.jpg",
-        aciklama: "Kanta Roit Krem 20 ML."
+        marka: "Shiffa Home",
+        fiyat: 190,
+        foto: "images/kantaroid.jpg"
     },
 
     akzer: {
-        marka: "Akzer",
         ad: "Saf Nar Ekşisi",
-        fiyat: "349 TL",
-        foto: "images/akzer.jpg",
-        aciklama: "Akzer Saf Nar Ekşisi."
+        marka: "Akzer",
+        fiyat: 349,
+        foto: "images/akzer.jpg"
     },
 
     kudretnari: {
-        marka: "Aksu Vital",
         ad: "Kudret Narı Ekstraktlı Macun 300 gr",
-        fiyat: "600 TL",
-        foto: "images/yeni-kudret-nari-83.jpg",
-        aciklama: "Aksu Vital Kudret Narı Ekstraktlı Macun 300 gr."
+        marka: "Aksu Vital",
+        fiyat: 600,
+        foto: "images/yeni-kudret-nari-83.jpg"
     }
 
 };
 
-const params = new URLSearchParams(window.location.search);
-const urun = params.get("urun");
 
-if (urunler[urun]) {
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
 
-    document.getElementById("urunFoto").src = urunler[urun].foto;
-    document.getElementById("urunMarka").textContent = urunler[urun].marka;
-    document.getElementById("urunAdi").textContent = urunler[urun].ad;
-    document.getElementById("urunFiyat").textContent = urunler[urun].fiyat;
-    document.getElementById("urunAciklama").textContent = urunler[urun].aciklama;
 
-    const mesaj = "Merhaba, " + urunler[urun].ad + " ürünü hakkında bilgi almak istiyorum.";
+const id =
+    params.get("urun");
 
-    document.getElementById("whatsapp").href =
-        "https://wa.me/?text=" + encodeURIComponent(mesaj);
 
-} else {
+const urun =
+    urunler[id];
 
-    document.querySelector(".urun-detay").innerHTML =
-        "<h1>Ürün bulunamadı</h1><a href='urunler.html'>Ürünlere dön</a>";
+
+let adet = 1;
+
+
+if (urun) {
+
+    document.getElementById("urunFoto").src =
+        urun.foto;
+
+    document.getElementById("urunFoto").alt =
+        urun.ad;
+
+    document.getElementById("urunMarka").innerText =
+        urun.marka;
+
+    document.getElementById("urunAdi").innerText =
+        urun.ad;
+
+    document.getElementById("urunFiyat").innerText =
+        urun.fiyat.toLocaleString("tr-TR") +
+        " TL";
+
+}
+
+
+function adetArttir() {
+
+    adet++;
+
+    document.getElementById("adet").innerText =
+        adet;
+
+}
+
+
+function adetAzalt() {
+
+    if (adet > 1) {
+
+        adet--;
+
+    }
+
+    document.getElementById("adet").innerText =
+        adet;
+
+}
+
+
+function sepeteEkle() {
+
+    let sepet =
+        JSON.parse(
+            localStorage.getItem("sepet")
+        ) || [];
+
+
+    let mevcut =
+        sepet.find(
+            item => item.id === id
+        );
+
+
+    if (mevcut) {
+
+        mevcut.adet += adet;
+
+    }
+
+    else {
+
+        sepet.push({
+
+            id: id,
+
+            adet: adet
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "sepet",
+        JSON.stringify(sepet)
+    );
+
+
+    alert(
+        adet +
+        " adet ürün sepete eklendi! 🛒"
+    );
+
+}
+
+
+function whatsappSiparis() {
+
+    if (!urun) return;
+
+
+    const mesaj =
+        "Merhaba, Yonca Baharat'tan " +
+        adet +
+        " adet " +
+        urun.ad +
+        " ürününü sipariş etmek istiyorum.";
+
+
+    const telefon =
+        "905XXXXXXXXX";
+
+
+    window.open(
+        "https://wa.me/" +
+        telefon +
+        "?text=" +
+        encodeURIComponent(mesaj),
+        "_blank"
+    );
 
 }
 
