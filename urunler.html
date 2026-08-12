@@ -1,184 +1,653 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yonca Baharat - Ürünler</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
-            color: #222;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            background: #2f6b3f;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
+<title>Ürünler | Yonca Baharat</title>
 
-        header h1 {
-            margin: 0;
-        }
+<style>
 
-        .sepet-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+*{box-sizing:border-box}
 
-        .urunler {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f7f7f2;
+color:#26372b;
+}
 
-        .urun {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            text-align: center;
-        }
+.top{
+background:#173f27;
+color:white;
+padding:10px;
+text-align:center;
+font-size:13px;
+font-weight:bold;
+}
 
-        .urun img {
-            width: 100%;
-            height: 220px;
-            object-fit: contain;
-            margin-bottom: 10px;
-        }
+header{
+background:white;
+border-bottom:1px solid #ddd;
+position:sticky;
+top:0;
+z-index:1000;
+}
 
-        .urun h2 {
-            font-size: 18px;
-            line-height: 1.4;
-            margin: 10px 0 15px;
-        }
+.header{
+max-width:1200px;
+margin:auto;
+height:72px;
+padding:0 20px;
+display:flex;
+align-items:center;
+gap:30px;
+}
 
-        .marka {
-            color: #666;
-            font-size: 14px;
-        }
+.logo{
+font-size:23px;
+font-weight:900;
+text-decoration:none;
+color:#173f27;
+}
 
-        .fiyat {
-            color: #2f6b3f;
-            font-size: 22px;
-            font-weight: bold;
-        }
+.logo span{
+color:#789653;
+}
 
-        .buton {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 10px 15px;
-            background: #2f6b3f;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-        }
+nav{
+display:flex;
+gap:5px;
+}
 
-        .sepete-ekle {
-            background: #d08b00;
-        }
-    </style>
+nav a{
+text-decoration:none;
+color:#39453d;
+padding:10px 14px;
+border-radius:8px;
+}
+
+nav a:hover{
+background:#edf2e9;
+}
+
+.sag{
+margin-left:auto;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.arama{
+width:230px;
+padding:11px 15px;
+border:1px solid #ddd;
+border-radius:22px;
+outline:none;
+}
+
+.sepet{
+position:relative;
+font-size:23px;
+text-decoration:none;
+}
+
+.sayi{
+position:absolute;
+top:-6px;
+right:-8px;
+background:#c78b24;
+color:white;
+width:18px;
+height:18px;
+border-radius:50%;
+font-size:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.container{
+max-width:1200px;
+margin:45px auto;
+padding:0 20px;
+}
+
+.baslik h1{
+font-family:Georgia,serif;
+font-size:40px;
+margin-bottom:8px;
+}
+
+.baslik p{
+color:#717971;
+}
+
+.filtre{
+margin:30px 0;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.filtre button{
+border:1px solid #dce1d9;
+background:white;
+padding:10px 15px;
+border-radius:20px;
+cursor:pointer;
+}
+
+.filtre button:hover{
+background:#173f27;
+color:white;
+}
+
+.urunler{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.urun{
+background:white;
+border-radius:17px;
+overflow:hidden;
+border:1px solid #e4e8e1;
+transition:.2s;
+}
+
+.urun:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.foto{
+height:245px;
+background:#f2f4ee;
+padding:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.foto img{
+width:100%;
+height:100%;
+object-fit:contain;
+}
+
+.bilgi{
+padding:17px;
+}
+
+.marka{
+font-size:11px;
+color:#899189;
+text-transform:uppercase;
+}
+
+h3{
+font-size:15px;
+line-height:1.45;
+min-height:45px;
+}
+
+.alt{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:8px;
+}
+
+.fiyat{
+font-size:20px;
+font-weight:bold;
+color:#173f27;
+}
+
+.ekle{
+border:0;
+background:#173f27;
+color:white;
+padding:10px 12px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+footer{
+margin-top:70px;
+background:#112f1d;
+color:white;
+padding:40px 20px;
+text-align:center;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:56px;
+height:56px;
+border-radius:50%;
+background:#25d366;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:25px;
+text-decoration:none;
+z-index:2000;
+}
+
+.mobil{
+display:none;
+}
+
+@media(max-width:800px){
+
+nav{
+display:none;
+}
+
+.arama{
+width:140px;
+}
+
+.urunler{
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.foto{
+height:175px;
+}
+
+.bilgi{
+padding:11px;
+}
+
+h3{
+font-size:13px;
+}
+
+.fiyat{
+font-size:16px;
+}
+
+.ekle{
+font-size:11px;
+padding:8px;
+}
+
+.mobil{
+position:fixed;
+display:flex;
+bottom:0;
+left:0;
+right:0;
+height:62px;
+background:white;
+border-top:1px solid #ddd;
+z-index:1500;
+}
+
+.mobil a{
+flex:1;
+text-align:center;
+text-decoration:none;
+color:#405046;
+font-size:11px;
+padding-top:8px;
+}
+
+.mobil b{
+display:block;
+font-size:18px;
+}
+
+.whatsapp{
+bottom:75px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
+<div class="top">
+🚚 1.500 TL ÜZERİ KARGO BEDAVA • 🎁 İLK ALIŞVERİŞ %10 YONCA10
+</div>
+
 <header>
-    <h1>Yonca Baharat</h1>
-    <p>Ürünlerimiz</p>
-    <a class="sepet-link" href="sepet.html">🛒 Sepetimi Gör</a>
+
+<div class="header">
+
+<a href="index.html" class="logo">
+🌿 Yonca <span>Baharat</span>
+</a>
+
+<nav>
+<a href="index.html">Ana Sayfa</a>
+<a href="urunler.html">Ürünler</a>
+<a href="sepet.html">Sepetim</a>
+</nav>
+
+<div class="sag">
+
+<input
+id="arama"
+class="arama"
+placeholder="Ürün ara..."
+oninput="filtrele()">
+
+<a href="sepet.html" class="sepet">
+🛒
+<span id="sayi" class="sayi">0</span>
+</a>
+
+</div>
+
+</div>
+
 </header>
 
-<div class="urunler">
+<div class="container">
 
-    <div class="urun">
-        <img src="images/holistrakt.jpg" alt="Holistrakt">
-        <div class="marka">Shiffa Home</div>
-        <h2>HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML</h2>
-        <div class="fiyat">925 TL</div>
+<div class="baslik">
 
-        <a href="urun.html?urun=holistrakt" class="buton">İncele</a>
+<h1>
+Ürünler
+</h1>
 
-        <button class="buton sepete-ekle" onclick="sepeteEkle('holistrakt')">
-            🛒 Sepete Ekle
-        </button>
-    </div>
+<p>
+Yonca Baharat'ın seçkin ürünlerini keşfedin.
+</p>
+
+</div>
+
+<div class="filtre">
+
+<button onclick="kategori('hepsi')">
+Tümü
+</button>
+
+<button onclick="kategori('baharat')">
+🌶️ Baharat
+</button>
+
+<button onclick="kategori('cay')">
+🍵 Çay
+</button>
+
+<button onclick="kategori('dogal')">
+🍯 Doğal Ürünler
+</button>
+
+<button onclick="kategori('bitkisel')">
+🌿 Bitkisel
+</button>
+
+</div>
+
+<div id="urunler" class="urunler">
+
+<div class="urun" data-kategori="bitkisel" data-ara="holistrakt enginar devedikeni karahindiba shiffa home">
+
+<div class="foto">
+<img src="images/holistrakt.jpg">
+</div>
+
+<div class="bilgi">
+
+<div class="marka">Shiffa Home</div>
+
+<h3>
+HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML
+</h3>
+
+<div class="alt">
+
+<div class="fiyat">925 TL</div>
+
+<button class="ekle"
+onclick="ekle('holistrakt')">
+Sepete Ekle
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 
-    <div class="urun">
-        <img src="images/kantaroid.jpg" alt="Kanta Roit Krem">
-        <div class="marka">Shiffa Home</div>
-        <h2>KANTA ROIT KREM 20 ML</h2>
-        <div class="fiyat">190 TL</div>
+<div class="urun" data-kategori="bitkisel" data-ara="kanta roit krem shiffa">
 
-        <a href="urun.html?urun=kantaroid" class="buton">İncele</a>
+<div class="foto">
+<img src="images/kantaroid.jpg">
+</div>
 
-        <button class="buton sepete-ekle" onclick="sepeteEkle('kantaroid')">
-            🛒 Sepete Ekle
-        </button>
-    </div>
+<div class="bilgi">
+
+<div class="marka">Shiffa Home</div>
+
+<h3>
+KANTA ROIT KREM 20 ML
+</h3>
+
+<div class="alt">
+
+<div class="fiyat">190 TL</div>
+
+<button class="ekle"
+onclick="ekle('kantaroid')">
+Sepete Ekle
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 
-    <div class="urun">
-        <img src="images/akzer.jpg" alt="Akzer Saf Nar Ekşisi">
-        <div class="marka">Akzer</div>
-        <h2>Saf Nar Ekşisi</h2>
-        <div class="fiyat">349 TL</div>
+<div class="urun" data-kategori="dogal" data-ara="akzer saf nar ekşisi">
 
-        <a href="urun.html?urun=akzer" class="buton">İncele</a>
+<div class="foto">
+<img src="images/akzer.jpg">
+</div>
 
-        <button class="buton sepete-ekle" onclick="sepeteEkle('akzer')">
-            🛒 Sepete Ekle
-        </button>
-    </div>
+<div class="bilgi">
+
+<div class="marka">Akzer</div>
+
+<h3>
+Saf Nar Ekşisi
+</h3>
+
+<div class="alt">
+
+<div class="fiyat">349 TL</div>
+
+<button class="ekle"
+onclick="ekle('akzer')">
+Sepete Ekle
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 
-    <div class="urun">
-        <img src="images/yeni-kudret-nari-83.jpg" alt="Kudret Narı Ekstraktlı Macun">
-        <div class="marka">Aksu Vital</div>
-        <h2>Kudret Narı Ekstraktlı Macun 300 gr</h2>
-        <div class="fiyat">600 TL</div>
+<div class="urun" data-kategori="dogal" data-ara="aksu vital kudret narı macun">
 
-        <a href="urun.html?urun=kudretnari" class="buton">İncele</a>
+<div class="foto">
+<img src="images/yeni-kudret-nari-83.jpg">
+</div>
 
-        <button class="buton sepete-ekle" onclick="sepeteEkle('kudretnari')">
-            🛒 Sepete Ekle
-        </button>
-    </div>
+<div class="bilgi">
+
+<div class="marka">Aksu Vital</div>
+
+<h3>
+Kudret Narı Ekstraktlı Macun 300 gr
+</h3>
+
+<div class="alt">
+
+<div class="fiyat">600 TL</div>
+
+<button class="ekle"
+onclick="ekle('kudretnari')">
+Sepete Ekle
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+🌿 Yonca Baharat © 2026
+</footer>
+
+<a
+href="https://wa.me/905525102881"
+target="_blank"
+class="whatsapp">
+💬
+</a>
+
+<div class="mobil">
+
+<a href="index.html">
+<b>⌂</b>
+Ana Sayfa
+</a>
+
+<a href="urunler.html">
+<b>🛍️</b>
+Ürünler
+</a>
+
+<a href="sepet.html">
+<b>🛒</b>
+Sepet
+</a>
+
+<a href="https://wa.me/905525102881">
+<b>💬</b>
+WhatsApp
+</a>
 
 </div>
 
 <script>
 
-function sepeteEkle(id) {
+const urunler={
+holistrakt:925,
+kantaroid:190,
+akzer:349,
+kudretnari:600
+};
 
-    let sepet = JSON.parse(localStorage.getItem("sepet")) || [];
-
-    let mevcut = sepet.find(urun => urun.id === id);
-
-    if (mevcut) {
-        mevcut.adet++;
-    } else {
-        sepet.push({
-            id: id,
-            adet: 1
-        });
-    }
-
-    localStorage.setItem("sepet", JSON.stringify(sepet));
-
-    alert("Ürün sepete eklendi! 🛒");
+function sepet(){
+return JSON.parse(localStorage.getItem("sepet"))||[];
 }
+
+function kaydet(s){
+localStorage.setItem("sepet",JSON.stringify(s));
+}
+
+function ekle(id){
+
+let s=sepet();
+
+let mevcut=s.find(x=>x.id===id);
+
+if(mevcut){
+mevcut.adet++;
+}else{
+s.push({
+id:id,
+adet:1
+});
+}
+
+kaydet(s);
+
+say();
+
+alert("Ürün sepete eklendi 🛒");
+
+}
+
+function say(){
+
+let s=sepet();
+
+let toplam=0;
+
+s.forEach(x=>{
+toplam+=Number(x.adet)||0;
+});
+
+document.getElementById("sayi").innerText=toplam;
+
+}
+
+function filtrele(){
+
+let arama=
+document.getElementById("arama")
+.value
+.toLowerCase();
+
+document.querySelectorAll(".urun")
+.forEach(x=>{
+
+let metin=x.dataset.ara;
+
+x.style.display=
+metin.includes(arama)
+?"block"
+:"none";
+
+});
+
+}
+
+function kategori(k){
+
+document.querySelectorAll(".urun")
+.forEach(x=>{
+
+if(k==="hepsi"){
+x.style.display="block";
+}else{
+x.style.display=
+x.dataset.kategori===k
+?"block"
+:"none";
+}
+
+});
+
+}
+
+say();
 
 </script>
 
