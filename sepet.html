@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepet - Yonca Baharat</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+        }
+
+        header {
+            background: #2f6b3f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sepet {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .urun {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .urun img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+        }
+
+        .urun-bilgi {
+            flex: 1;
+        }
+
+        .urun-bilgi h3 {
+            margin: 0 0 8px;
+        }
+
+        .adet {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .adet button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: #2f6b3f;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .toplam {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .odeme {
+            margin-top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .odeme label {
+            display: block;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .devam {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            background: #2f6b3f;
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .bos {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Yonca Baharat</h1>
+    <p>Sepetim</p>
+</header>
+
+<div class="sepet">
+
+    <div id="urunler"></div>
+
+    <div id="bos" class="bos" style="display:none;">
+        <h2>Sepetiniz boş</h2>
+        <a href="urunler.html">Ürünlere Git</a>
+    </div>
+
+    <div id="toplam" class="toplam"></div>
+
+    <div id="odeme" class="odeme">
+
+        <h2>Ödeme Yöntemi</h2>
+
+        <label>
+            <input type="radio" name="odeme" value="kapida" checked>
+            🚚 Kapıda Ödeme
+        </label>
+
+        <label>
+            <input type="radio" name="odeme" value="kart">
+            💳 Kredi / Banka Kartı
+        </label>
+
+        <label>
+            <input type="radio" name="odeme" value="whatsapp">
+            💬 WhatsApp ile Sipariş
+        </label>
+
+        <button class="devam" onclick="siparisVer()">
+            Siparişi Devam Ettir
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+let sepet = JSON.parse(localStorage.getItem("sepet")) || [];
+
+const urunler = {
+    holistrakt: {
+        ad: "HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML",
+        fiyat: 925,
+        foto: "images/holistrakt.jpg"
+    },
+
+    kantaroid: {
+        ad: "KANTA ROIT KREM 20 ML",
+        fiyat: 190,
+        foto: "images/kantaroid.jpg"
+    },
+
+    akzer: {
+        ad: "Saf Nar Ekşisi",
+        fiyat: 349,
+        foto: "images/akzer.jpg"
+    },
+
+    kudretnari: {
+        ad: "Kudret Narı Ekstraktlı Macun 300 gr",
+        fiyat: 600,
+        foto: "images/yeni-kudret-nari-83.jpg"
+    }
+};
+
+function goster() {
+
+    const alan = document.getElementById("urunler");
+    const bos = document.getElementById("bos");
+    const toplam = document.getElementById("toplam");
+
+    alan.innerHTML = "";
+
+    if (sepet.length === 0) {
+        bos.style.display = "block";
+        toplam.style.display = "none";
+        document.getElementById("odeme").style.display = "none";
+        return;
+    }
+
+    bos.style.display = "none";
+    toplam.style.display = "block";
+    document.getElementById("odeme").style.display = "block";
+
+    let toplamFiyat = 0;
+
+    sepet.forEach((item, index) => {
+
+        const urun = urunler[item.id];
+
+        if (!urun) return;
+
+        toplamFiyat += urun.fiyat * item.adet;
+
+        alan.innerHTML += `
+            <div class="urun">
+
+                <img src="${urun.foto}" alt="${urun.ad}">
+
+                <div class="urun-bilgi">
+                    <h3>${urun.ad}</h3>
+                    <strong>${urun.fiyat} TL</strong>
+                </div>
+
+                <div class="adet">
+                    <button onclick="azalt(${index})">−</button>
+                    <span>${item.adet}</span>
+                    <button onclick="arttir(${index})">+</button>
+                </div>
+
+            </div>
+        `;
+    });
+
+    toplam.innerHTML = "Toplam: " + toplamFiyat.toLocaleString("tr-TR") + " TL";
+}
+
+function arttir(index) {
+    sepet[index].adet++;
+    kaydet();
+}
+
+function azalt(index) {
+
+    if (sepet[index].adet > 1) {
+        sepet[index].adet--;
+    } else {
+        sepet.splice(index, 1);
+    }
+
+    kaydet();
+}
+
+function kaydet() {
+    localStorage.setItem("sepet", JSON.stringify(sepet));
+    goster();
+}
+
+function siparisVer() {
+
+    const secilen = document.querySelector('input[name="odeme"]:checked').value;
+
+    if (secilen === "whatsapp") {
+
+        let mesaj = "Merhaba, Yonca Baharat'tan sipariş vermek istiyorum.%0A%0A";
+
+        sepet.forEach(item => {
+
+            const urun = urunler[item.id];
+
+            mesaj +=
+                urun.ad +
+                " x " +
+                item.adet +
+                " = " +
+                (urun.fiyat * item.adet) +
+                " TL%0A";
+        });
+
+        window.open(
+            "https://wa.me/?text=" + mesaj,
+            "_blank"
+        );
+
+    }
+
+    else if (secilen === "kapida") {
+
+        alert(
+            "Kapıda ödeme seçildi. Bir sonraki aşamada adres ve iletişim bilgilerini alacağımız sipariş formunu ekleyeceğiz."
+        );
+
+    }
+
+    else if (secilen === "kart") {
+
+        alert(
+            "Kart ödeme sistemi bir sonraki aşamada güvenli ödeme altyapısına bağlanacak."
+        );
+
+    }
+}
+
+goster();
+
+</script>
+
+</body>
+</html>
