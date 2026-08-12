@@ -1,200 +1,526 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sepet - Yonca Baharat</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
-            color: #222;
-        }
+<title>Sepetim | Yonca Baharat</title>
 
-        header {
-            background: #2f6b3f;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+<style>
 
-        .sepet {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        .urun {
-            background: white;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f2;
+    color: #26352b;
+}
 
-        .urun img {
-            width: 90px;
-            height: 90px;
-            object-fit: contain;
-        }
+/* HEADER */
 
-        .urun-bilgi {
-            flex: 1;
-        }
+header {
+    background: #174d2b;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .urun-bilgi h3 {
-            margin: 0 0 8px;
-        }
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
 
-        .adet {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+.logo span {
+    color: #c9df9c;
+}
 
-        .adet button {
-            width: 30px;
-            height: 30px;
-            border: none;
-            background: #2f6b3f;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+.urunlere-don {
+    color: white;
+    text-decoration: none;
+    background: rgba(255,255,255,0.12);
+    padding: 10px 16px;
+    border-radius: 8px;
+}
 
-        .toplam {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            font-size: 22px;
-            font-weight: bold;
-            text-align: right;
-        }
+/* ANA */
 
-        .form {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
+.container {
+    max-width: 1150px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
-        .form h2 {
-            margin-top: 0;
-        }
+.baslik {
+    margin-bottom: 25px;
+}
 
-        .form input,
-        .form textarea {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 13px;
-            margin: 8px 0;
-            border: 1px solid #ddd;
-            border-radius: 7px;
-            font-size: 16px;
-        }
+.baslik h1 {
+    margin: 0;
+    font-size: 30px;
+}
 
-        .form textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
+.baslik p {
+    color: #6c756e;
+}
 
-        .odeme {
-            margin-top: 20px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-        }
+/* GRID */
 
-        .odeme label {
-            display: block;
-            padding: 15px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            cursor: pointer;
-        }
+.siparis-alani {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 25px;
+}
 
-        .devam {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin-top: 20px;
-            border: none;
-            background: #2f6b3f;
-            color: white;
-            font-size: 18px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
+/* KART */
 
-        .bos {
-            background: white;
-            padding: 30px;
-            text-align: center;
-            border-radius: 10px;
-        }
-    </style>
+.kart {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+}
+
+.kart-baslik {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* ÜRÜN */
+
+.urun {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid #edf0ec;
+}
+
+.urun:last-child {
+    border-bottom: none;
+}
+
+.urun img {
+    width: 95px;
+    height: 95px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #f7f8f6;
+    padding: 8px;
+}
+
+.urun-bilgi {
+    flex: 1;
+}
+
+.urun-bilgi h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.urun-fiyat {
+    font-weight: 700;
+    color: #174d2b;
+}
+
+/* ADET */
+
+.adet {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dce2dc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.adet button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #f1f4f0;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.adet span {
+    min-width: 35px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* TOPLAM */
+
+.toplam-kutu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-top: 10px;
+    border-top: 2px solid #edf0ec;
+}
+
+.toplam-yazi {
+    font-size: 16px;
+    color: #68736b;
+}
+
+.toplam-fiyat {
+    font-size: 27px;
+    font-weight: 800;
+    color: #174d2b;
+}
+
+/* FORM */
+
+.form-grup {
+    margin-bottom: 15px;
+}
+
+.form-grup label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.form-grup input,
+.form-grup textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce2dc;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+}
+
+.form-grup input:focus,
+.form-grup textarea:focus {
+    border-color: #174d2b;
+}
+
+.form-grup textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+/* ÖDEME */
+
+.odeme-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.odeme-sec label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid #dce2dc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.odeme-sec label:hover {
+    border-color: #174d2b;
+    background: #f7faf6;
+}
+
+.odeme-sec input {
+    accent-color: #174d2b;
+}
+
+/* BUTON */
+
+.siparis-butonu {
+    width: 100%;
+    border: none;
+    padding: 16px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background: #174d2b;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.siparis-butonu:hover {
+    background: #0e3b20;
+}
+
+/* BOŞ SEPET */
+
+.bos {
+    background: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 16px;
+}
+
+.bos-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.bos h2 {
+    margin-bottom: 10px;
+}
+
+.bos a {
+    display: inline-block;
+    margin-top: 15px;
+    background: #174d2b;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* ALT */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #7a827c;
+    font-size: 14px;
+}
+
+/* MOBİL */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 16px 20px;
+    }
+
+    .siparis-alani {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        margin-top: 25px;
+    }
+
+    .urun {
+        flex-wrap: wrap;
+    }
+
+    .urun img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .urun-bilgi {
+        min-width: calc(100% - 110px);
+    }
+
+    .adet {
+        margin-left: 98px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Yonca Baharat</h1>
-    <p>Sipariş Oluştur</p>
-</header>
 
-<div class="sepet">
-
-    <div id="urunler"></div>
-
-    <div id="bos" class="bos" style="display:none;">
-        <h2>Sepetiniz boş</h2>
-        <a href="urunler.html">Ürünlere Git</a>
+    <div class="logo">
+        🌿 Yonca <span>Baharat</span>
     </div>
 
-    <div id="toplam" class="toplam"></div>
+    <a href="urunler.html" class="urunlere-don">
+        ← Ürünlere Dön
+    </a>
 
-    <div id="siparisFormu">
+</header>
 
-        <div class="form">
 
-            <h2>📦 Teslimat Bilgileri</h2>
+<div class="container">
 
-            <input id="adsoyad" type="text" placeholder="Ad Soyad" required>
+    <div class="baslik">
 
-            <input id="telefon" type="tel" placeholder="Telefon" required>
+        <h1>Sepetim</h1>
 
-            <textarea id="adres" placeholder="Açık adresiniz" required></textarea>
+        <p>Siparişinizi kontrol edin ve teslimat bilgilerinizi girin.</p>
+
+    </div>
+
+
+    <div id="bos" class="bos" style="display:none;">
+
+        <div class="bos-icon">🛒</div>
+
+        <h2>Sepetiniz boş</h2>
+
+        <p>Henüz sepetinize ürün eklemediniz.</p>
+
+        <a href="urunler.html">
+            Ürünleri Gör
+        </a>
+
+    </div>
+
+
+    <div id="siparisAlani" class="siparis-alani">
+
+        <!-- SOL TARAF -->
+
+        <div>
+
+            <div class="kart">
+
+                <div class="kart-baslik">
+                    🛒 Sepetiniz
+                </div>
+
+                <div id="urunler"></div>
+
+                <div class="toplam-kutu">
+
+                    <div class="toplam-yazi">
+                        Sipariş Toplamı
+                    </div>
+
+                    <div id="toplam" class="toplam-fiyat">
+                        0 TL
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="kart">
+
+                <div class="kart-baslik">
+                    📦 Teslimat Bilgileri
+                </div>
+
+
+                <div class="form-grup">
+
+                    <label>Ad Soyad</label>
+
+                    <input
+                        id="adsoyad"
+                        type="text"
+                        placeholder="Adınız ve soyadınız"
+                    >
+
+                </div>
+
+
+                <div class="form-grup">
+
+                    <label>Telefon</label>
+
+                    <input
+                        id="telefon"
+                        type="tel"
+                        placeholder="05XX XXX XX XX"
+                    >
+
+                </div>
+
+
+                <div class="form-grup">
+
+                    <label>Adres</label>
+
+                    <textarea
+                        id="adres"
+                        placeholder="Mahalle, sokak, bina no, daire no..."
+                    ></textarea>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="odeme">
 
-            <h2>💳 Ödeme Yöntemi</h2>
+        <!-- SAĞ TARAF -->
 
-            <label>
-                <input type="radio" name="odeme" value="kapida" checked>
-                🚚 Kapıda Ödeme
-            </label>
+        <div>
 
-            <label>
-                <input type="radio" name="odeme" value="kart">
-                💳 Kredi / Banka Kartı
-            </label>
+            <div class="kart">
 
-            <label>
-                <input type="radio" name="odeme" value="whatsapp">
-                💬 WhatsApp ile Sipariş
-            </label>
+                <div class="kart-baslik">
+                    💳 Ödeme Yöntemi
+                </div>
 
-            <button class="devam" onclick="siparisVer()">
-                Siparişi Tamamla
-            </button>
+
+                <div class="odeme-sec">
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="odeme"
+                            value="kapida"
+                            checked
+                        >
+
+                        <span>
+                            🚚 Kapıda Ödeme
+                        </span>
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="odeme"
+                            value="kart"
+                        >
+
+                        <span>
+                            💳 Kredi / Banka Kartı
+                        </span>
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="odeme"
+                            value="whatsapp"
+                        >
+
+                        <span>
+                            💬 WhatsApp ile Sipariş
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <button
+                    class="siparis-butonu"
+                    onclick="siparisVer()"
+                >
+                    Siparişi Tamamla
+                </button>
+
+            </div>
 
         </div>
 
@@ -202,101 +528,185 @@
 
 </div>
 
+
+<footer>
+
+    Yonca Baharat © 2026
+
+</footer>
+
+
 <script>
 
-let sepet = JSON.parse(localStorage.getItem("sepet")) || [];
+let sepet =
+    JSON.parse(localStorage.getItem("sepet")) || [];
+
 
 const urunler = {
 
     holistrakt: {
+
         ad: "HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML",
+
         fiyat: 925,
+
         foto: "images/holistrakt.jpg"
+
     },
+
 
     kantaroid: {
+
         ad: "KANTA ROIT KREM 20 ML",
+
         fiyat: 190,
+
         foto: "images/kantaroid.jpg"
+
     },
+
 
     akzer: {
+
         ad: "Saf Nar Ekşisi",
+
         fiyat: 349,
+
         foto: "images/akzer.jpg"
+
     },
 
+
     kudretnari: {
+
         ad: "Kudret Narı Ekstraktlı Macun 300 gr",
+
         fiyat: 600,
+
         foto: "images/yeni-kudret-nari-83.jpg"
+
     }
 
 };
 
+
 function goster() {
 
-    const alan = document.getElementById("urunler");
-    const bos = document.getElementById("bos");
-    const toplam = document.getElementById("toplam");
+    const alan =
+        document.getElementById("urunler");
+
+    const bos =
+        document.getElementById("bos");
+
+    const siparisAlani =
+        document.getElementById("siparisAlani");
+
+    const toplam =
+        document.getElementById("toplam");
+
 
     alan.innerHTML = "";
+
 
     if (sepet.length === 0) {
 
         bos.style.display = "block";
-        toplam.style.display = "none";
-        document.getElementById("siparisFormu").style.display = "none";
+
+        siparisAlani.style.display = "none";
 
         return;
+
     }
 
+
     bos.style.display = "none";
-    toplam.style.display = "block";
-    document.getElementById("siparisFormu").style.display = "block";
+
+    siparisAlani.style.display = "grid";
+
 
     let toplamFiyat = 0;
 
+
     sepet.forEach((item, index) => {
 
-        const urun = urunler[item.id];
+        const urun =
+            urunler[item.id];
+
 
         if (!urun) return;
 
-        toplamFiyat += urun.fiyat * item.adet;
+
+        const araToplam =
+            urun.fiyat * item.adet;
+
+
+        toplamFiyat += araToplam;
+
 
         alan.innerHTML += `
+
             <div class="urun">
 
-                <img src="${urun.foto}" alt="${urun.ad}">
+                <img
+                    src="${urun.foto}"
+                    alt="${urun.ad}"
+                >
 
                 <div class="urun-bilgi">
-                    <h3>${urun.ad}</h3>
-                    <strong>${urun.fiyat} TL</strong>
+
+                    <h3>
+                        ${urun.ad}
+                    </h3>
+
+                    <div class="urun-fiyat">
+                        ${urun.fiyat.toLocaleString("tr-TR")} TL
+                    </div>
+
                 </div>
 
+
                 <div class="adet">
-                    <button onclick="azalt(${index})">−</button>
-                    <span>${item.adet}</span>
-                    <button onclick="arttir(${index})">+</button>
+
+                    <button
+                        onclick="azalt(${index})"
+                    >
+                        −
+                    </button>
+
+                    <span>
+                        ${item.adet}
+                    </span>
+
+                    <button
+                        onclick="arttir(${index})"
+                    >
+                        +
+                    </button>
+
                 </div>
 
             </div>
+
         `;
+
     });
 
+
     toplam.innerHTML =
-        "Toplam: " +
         toplamFiyat.toLocaleString("tr-TR") +
         " TL";
+
 }
+
 
 function arttir(index) {
 
     sepet[index].adet++;
 
     kaydet();
+
 }
+
 
 function azalt(index) {
 
@@ -311,7 +721,9 @@ function azalt(index) {
     }
 
     kaydet();
+
 }
+
 
 function kaydet() {
 
@@ -321,64 +733,82 @@ function kaydet() {
     );
 
     goster();
+
 }
+
 
 function siparisVer() {
 
     const adsoyad =
         document.getElementById("adsoyad").value.trim();
 
+
     const telefon =
         document.getElementById("telefon").value.trim();
 
+
     const adres =
         document.getElementById("adres").value.trim();
+
 
     const odeme =
         document.querySelector(
             'input[name="odeme"]:checked'
         ).value;
 
+
     if (!adsoyad || !telefon || !adres) {
 
         alert(
-            "Lütfen ad soyad, telefon ve adres bilgilerinizi doldurun."
+            "Lütfen teslimat bilgilerinizi eksiksiz doldurun."
         );
 
         return;
+
     }
+
 
     let toplamFiyat = 0;
 
+
     let mesaj =
-        "🛒 YONCA BAHARAT SİPARİŞİ\n\n";
+        "🌿 YONCA BAHARAT SİPARİŞİ\n\n";
+
 
     mesaj +=
         "👤 Ad Soyad: " +
         adsoyad +
         "\n";
 
+
     mesaj +=
         "📞 Telefon: " +
         telefon +
         "\n";
+
 
     mesaj +=
         "📍 Adres: " +
         adres +
         "\n\n";
 
+
     mesaj +=
-        "📦 Ürünler:\n";
+        "🛒 Ürünler:\n";
+
 
     sepet.forEach(item => {
 
-        const urun = urunler[item.id];
+        const urun =
+            urunler[item.id];
+
 
         const araToplam =
             urun.fiyat * item.adet;
 
+
         toplamFiyat += araToplam;
+
 
         mesaj +=
             "- " +
@@ -388,12 +818,15 @@ function siparisVer() {
             " = " +
             araToplam +
             " TL\n";
+
     });
+
 
     mesaj +=
         "\n💰 TOPLAM: " +
         toplamFiyat +
         " TL\n";
+
 
     if (odeme === "kapida") {
 
@@ -404,29 +837,33 @@ function siparisVer() {
 
     }
 
+
     else if (odeme === "whatsapp") {
 
         mesaj +=
-            "💬 Ödeme: WHATSAPP ÜZERİNDEN";
+            "💬 Ödeme: WHATSAPP";
 
         whatsappGonder(mesaj);
 
     }
 
+
     else if (odeme === "kart") {
 
         alert(
-            "Online kart ödeme altyapısı henüz bağlanmadı. Bir sonraki aşamada güvenli ödeme sistemi ekleyeceğiz."
+            "Online kart ödeme sistemi henüz bağlanmadı."
         );
 
     }
 
 }
 
+
 function whatsappGonder(mesaj) {
 
     const telefonNumarasi =
         "905XXXXXXXXX";
+
 
     const url =
         "https://wa.me/" +
@@ -434,8 +871,14 @@ function whatsappGonder(mesaj) {
         "?text=" +
         encodeURIComponent(mesaj);
 
-    window.open(url, "_blank");
+
+    window.open(
+        url,
+        "_blank"
+    );
+
 }
+
 
 goster();
 
