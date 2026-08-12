@@ -76,6 +76,33 @@
             text-align: right;
         }
 
+        .form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .form h2 {
+            margin-top: 0;
+        }
+
+        .form input,
+        .form textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        .form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
         .odeme {
             margin-top: 20px;
             background: white;
@@ -118,7 +145,7 @@
 
 <header>
     <h1>Yonca Baharat</h1>
-    <p>Sepetim</p>
+    <p>Sipariş Oluştur</p>
 </header>
 
 <div class="sepet">
@@ -132,28 +159,44 @@
 
     <div id="toplam" class="toplam"></div>
 
-    <div id="odeme" class="odeme">
+    <div id="siparisFormu">
 
-        <h2>Ödeme Yöntemi</h2>
+        <div class="form">
 
-        <label>
-            <input type="radio" name="odeme" value="kapida" checked>
-            🚚 Kapıda Ödeme
-        </label>
+            <h2>📦 Teslimat Bilgileri</h2>
 
-        <label>
-            <input type="radio" name="odeme" value="kart">
-            💳 Kredi / Banka Kartı
-        </label>
+            <input id="adsoyad" type="text" placeholder="Ad Soyad" required>
 
-        <label>
-            <input type="radio" name="odeme" value="whatsapp">
-            💬 WhatsApp ile Sipariş
-        </label>
+            <input id="telefon" type="tel" placeholder="Telefon" required>
 
-        <button class="devam" onclick="siparisVer()">
-            Siparişi Devam Ettir
-        </button>
+            <textarea id="adres" placeholder="Açık adresiniz" required></textarea>
+
+        </div>
+
+        <div class="odeme">
+
+            <h2>💳 Ödeme Yöntemi</h2>
+
+            <label>
+                <input type="radio" name="odeme" value="kapida" checked>
+                🚚 Kapıda Ödeme
+            </label>
+
+            <label>
+                <input type="radio" name="odeme" value="kart">
+                💳 Kredi / Banka Kartı
+            </label>
+
+            <label>
+                <input type="radio" name="odeme" value="whatsapp">
+                💬 WhatsApp ile Sipariş
+            </label>
+
+            <button class="devam" onclick="siparisVer()">
+                Siparişi Tamamla
+            </button>
+
+        </div>
 
     </div>
 
@@ -164,6 +207,7 @@
 let sepet = JSON.parse(localStorage.getItem("sepet")) || [];
 
 const urunler = {
+
     holistrakt: {
         ad: "HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML",
         fiyat: 925,
@@ -187,6 +231,7 @@ const urunler = {
         fiyat: 600,
         foto: "images/yeni-kudret-nari-83.jpg"
     }
+
 };
 
 function goster() {
@@ -198,15 +243,17 @@ function goster() {
     alan.innerHTML = "";
 
     if (sepet.length === 0) {
+
         bos.style.display = "block";
         toplam.style.display = "none";
-        document.getElementById("odeme").style.display = "none";
+        document.getElementById("siparisFormu").style.display = "none";
+
         return;
     }
 
     bos.style.display = "none";
     toplam.style.display = "block";
-    document.getElementById("odeme").style.display = "block";
+    document.getElementById("siparisFormu").style.display = "block";
 
     let toplamFiyat = 0;
 
@@ -238,73 +285,156 @@ function goster() {
         `;
     });
 
-    toplam.innerHTML = "Toplam: " + toplamFiyat.toLocaleString("tr-TR") + " TL";
+    toplam.innerHTML =
+        "Toplam: " +
+        toplamFiyat.toLocaleString("tr-TR") +
+        " TL";
 }
 
 function arttir(index) {
+
     sepet[index].adet++;
+
     kaydet();
 }
 
 function azalt(index) {
 
     if (sepet[index].adet > 1) {
+
         sepet[index].adet--;
+
     } else {
+
         sepet.splice(index, 1);
+
     }
 
     kaydet();
 }
 
 function kaydet() {
-    localStorage.setItem("sepet", JSON.stringify(sepet));
+
+    localStorage.setItem(
+        "sepet",
+        JSON.stringify(sepet)
+    );
+
     goster();
 }
 
 function siparisVer() {
 
-    const secilen = document.querySelector('input[name="odeme"]:checked').value;
+    const adsoyad =
+        document.getElementById("adsoyad").value.trim();
 
-    if (secilen === "whatsapp") {
+    const telefon =
+        document.getElementById("telefon").value.trim();
 
-        let mesaj = "Merhaba, Yonca Baharat'tan sipariş vermek istiyorum.%0A%0A";
+    const adres =
+        document.getElementById("adres").value.trim();
 
-        sepet.forEach(item => {
+    const odeme =
+        document.querySelector(
+            'input[name="odeme"]:checked'
+        ).value;
 
-            const urun = urunler[item.id];
-
-            mesaj +=
-                urun.ad +
-                " x " +
-                item.adet +
-                " = " +
-                (urun.fiyat * item.adet) +
-                " TL%0A";
-        });
-
-        window.open(
-            "https://wa.me/?text=" + mesaj,
-            "_blank"
-        );
-
-    }
-
-    else if (secilen === "kapida") {
+    if (!adsoyad || !telefon || !adres) {
 
         alert(
-            "Kapıda ödeme seçildi. Bir sonraki aşamada adres ve iletişim bilgilerini alacağımız sipariş formunu ekleyeceğiz."
+            "Lütfen ad soyad, telefon ve adres bilgilerinizi doldurun."
         );
+
+        return;
+    }
+
+    let toplamFiyat = 0;
+
+    let mesaj =
+        "🛒 YONCA BAHARAT SİPARİŞİ\n\n";
+
+    mesaj +=
+        "👤 Ad Soyad: " +
+        adsoyad +
+        "\n";
+
+    mesaj +=
+        "📞 Telefon: " +
+        telefon +
+        "\n";
+
+    mesaj +=
+        "📍 Adres: " +
+        adres +
+        "\n\n";
+
+    mesaj +=
+        "📦 Ürünler:\n";
+
+    sepet.forEach(item => {
+
+        const urun = urunler[item.id];
+
+        const araToplam =
+            urun.fiyat * item.adet;
+
+        toplamFiyat += araToplam;
+
+        mesaj +=
+            "- " +
+            urun.ad +
+            " x" +
+            item.adet +
+            " = " +
+            araToplam +
+            " TL\n";
+    });
+
+    mesaj +=
+        "\n💰 TOPLAM: " +
+        toplamFiyat +
+        " TL\n";
+
+    if (odeme === "kapida") {
+
+        mesaj +=
+            "🚚 Ödeme: KAPIDA ÖDEME";
+
+        whatsappGonder(mesaj);
 
     }
 
-    else if (secilen === "kart") {
+    else if (odeme === "whatsapp") {
+
+        mesaj +=
+            "💬 Ödeme: WHATSAPP ÜZERİNDEN";
+
+        whatsappGonder(mesaj);
+
+    }
+
+    else if (odeme === "kart") {
 
         alert(
-            "Kart ödeme sistemi bir sonraki aşamada güvenli ödeme altyapısına bağlanacak."
+            "Online kart ödeme altyapısı henüz bağlanmadı. Bir sonraki aşamada güvenli ödeme sistemi ekleyeceğiz."
         );
 
     }
+
+}
+
+function whatsappGonder(mesaj) {
+
+    const telefonNumarasi =
+        "905XXXXXXXXX";
+
+    const url =
+        "https://wa.me/" +
+        telefonNumarasi +
+        "?text=" +
+        encodeURIComponent(mesaj);
+
+    window.open(url, "_blank");
 }
 
 goster();
