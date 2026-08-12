@@ -1,236 +1,433 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ürünler | Yonca Baharat</title>
 
 <style>
-
 *{box-sizing:border-box}
-
+html{scroll-behavior:smooth}
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f7f7f2;
-color:#26372b;
+margin:0;background:#f6f7f3;color:#26372b;
+font-family:Arial,Helvetica,sans-serif
 }
+a{text-decoration:none}
+button,input{font-family:inherit}
 
 .top{
-background:#173f27;
-color:white;
-padding:10px;
-text-align:center;
-font-size:13px;
-font-weight:bold;
+height:38px;background:#173d26;color:#fff;
+display:flex;align-items:center;overflow:hidden;
+font-size:12px;font-weight:bold
+}
+.ticker{
+white-space:nowrap;padding-left:100%;
+animation:move 25s linear infinite
+}
+@keyframes move{
+to{transform:translateX(-100%)}
 }
 
 header{
-background:white;
-border-bottom:1px solid #ddd;
-position:sticky;
-top:0;
-z-index:1000;
+position:sticky;top:0;z-index:1000;
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(12px);
+border-bottom:1px solid #e4e8e2
 }
 
 .header{
-max-width:1200px;
-margin:auto;
-height:72px;
-padding:0 20px;
-display:flex;
-align-items:center;
-gap:30px;
+max-width:1250px;height:74px;margin:auto;
+padding:0 20px;display:flex;
+align-items:center;gap:25px
 }
 
 .logo{
-font-size:23px;
-font-weight:900;
-text-decoration:none;
-color:#173f27;
+display:flex;align-items:center;gap:9px;
+color:#173d26
 }
-
-.logo span{
-color:#789653;
+.logo-icon{
+width:42px;height:42px;background:#edf3e9;
+border-radius:12px;display:flex;
+align-items:center;justify-content:center;
+font-size:22px
 }
-
-nav{
-display:flex;
-gap:5px;
+.logo-text{
+font:700 23px Georgia,serif
 }
+.logo-text span{color:#789653}
 
+nav{display:flex;gap:3px}
 nav a{
-text-decoration:none;
-color:#39453d;
-padding:10px 14px;
-border-radius:8px;
+padding:10px 12px;border-radius:8px;
+color:#38483d;font-size:13px;font-weight:bold
+}
+nav a:hover{background:#edf3e9}
+
+.actions{
+margin-left:auto;display:flex;
+align-items:center;gap:10px
 }
 
-nav a:hover{
-background:#edf2e9;
+.whatsapp-head{
+padding:10px 13px;
+border:1px solid #dfe5dc;
+border-radius:9px;
+color:#173d26;font-size:12px;font-weight:bold
 }
 
-.sag{
-margin-left:auto;
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.arama{
-width:230px;
-padding:11px 15px;
-border:1px solid #ddd;
-border-radius:22px;
-outline:none;
-}
-
-.sepet{
-position:relative;
-font-size:23px;
-text-decoration:none;
-}
-
-.sayi{
-position:absolute;
-top:-6px;
-right:-8px;
-background:#c78b24;
-color:white;
-width:18px;
-height:18px;
-border-radius:50%;
-font-size:10px;
-display:flex;
-align-items:center;
+.cart{
+width:45px;height:45px;border-radius:10px;
+background:#173d26;color:#fff;
+display:flex;align-items:center;
 justify-content:center;
+font-size:20px;position:relative
 }
 
-.container{
-max-width:1200px;
-margin:45px auto;
-padding:0 20px;
+.cart-count{
+position:absolute;right:-5px;top:-6px;
+width:19px;height:19px;border-radius:50%;
+background:#c58b29;color:#fff;
+font-size:10px;display:flex;
+align-items:center;justify-content:center;
+font-weight:bold
 }
 
-.baslik h1{
-font-family:Georgia,serif;
-font-size:40px;
-margin-bottom:8px;
+/* SAYFA BAŞLANGIÇ */
+
+.page{
+max-width:1250px;
+margin:0 auto;
+padding:45px 20px 70px
 }
 
-.baslik p{
-color:#717971;
-}
-
-.filtre{
-margin:30px 0;
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-}
-
-.filtre button{
-border:1px solid #dce1d9;
-background:white;
-padding:10px 15px;
-border-radius:20px;
-cursor:pointer;
-}
-
-.filtre button:hover{
-background:#173f27;
-color:white;
-}
-
-.urunler{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-}
-
-.urun{
-background:white;
-border-radius:17px;
-overflow:hidden;
-border:1px solid #e4e8e1;
-transition:.2s;
-}
-
-.urun:hover{
-transform:translateY(-5px);
-box-shadow:0 12px 30px rgba(0,0,0,.08);
-}
-
-.foto{
-height:245px;
-background:#f2f4ee;
-padding:15px;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.foto img{
-width:100%;
-height:100%;
-object-fit:contain;
-}
-
-.bilgi{
-padding:17px;
-}
-
-.marka{
-font-size:11px;
-color:#899189;
-text-transform:uppercase;
-}
-
-h3{
-font-size:15px;
-line-height:1.45;
-min-height:45px;
-}
-
-.alt{
+.page-head{
 display:flex;
 justify-content:space-between;
+align-items:end;
+gap:20px;
+margin-bottom:30px
+}
+
+.page-head h1{
+font:700 42px Georgia,serif;
+color:#173d26;margin:0 0 8px
+}
+
+.page-head p{
+margin:0;color:#788078;
+font-size:13px
+}
+
+.price-message{
+background:#fff3d5;
+border:1px solid #ecd8a5;
+border-radius:12px;
+padding:12px 16px;
+font-size:11px;
+font-weight:bold;
+color:#795c25
+}
+
+/* ÜRÜN */
+
+.product-detail{
+background:#fff;
+border:1px solid #e0e5de;
+border-radius:22px;
+overflow:hidden;
+margin-bottom:30px;
+box-shadow:0 10px 30px rgba(23,61,38,.04)
+}
+
+.product-top{
+display:grid;
+grid-template-columns:43% 57%;
+min-height:430px
+}
+
+.product-image{
+background:#f2f4ee;
+display:flex;
 align-items:center;
-gap:8px;
+justify-content:center;
+padding:40px;
+position:relative
 }
 
-.fiyat{
-font-size:20px;
-font-weight:bold;
-color:#173f27;
+.product-image img{
+width:100%;
+height:350px;
+object-fit:contain
 }
 
-.ekle{
-border:0;
-background:#173f27;
-color:white;
-padding:10px 12px;
+.price-badge{
+position:absolute;
+left:20px;
+top:20px;
+background:#173d26;
+color:#fff;
+padding:9px 12px;
 border-radius:8px;
-cursor:pointer;
-font-weight:bold;
+font-size:10px;
+font-weight:bold
 }
 
-footer{
-margin-top:70px;
-background:#112f1d;
-color:white;
-padding:40px 20px;
-text-align:center;
+.product-main{
+padding:38px
 }
+
+.brand{
+font-size:10px;
+font-weight:bold;
+text-transform:uppercase;
+letter-spacing:1px;
+color:#8b948c
+}
+
+.product-main h2{
+font:700 32px/1.2 Georgia,serif;
+color:#173d26;
+margin:10px 0 12px
+}
+
+.short{
+font-size:13px;
+line-height:1.7;
+color:#667069;
+margin-bottom:20px
+}
+
+.price{
+font-size:29px;
+font-weight:bold;
+color:#173d26;
+margin:10px 0
+}
+
+.price-note{
+display:inline-block;
+background:#edf3e9;
+color:#557344;
+padding:7px 10px;
+border-radius:7px;
+font-size:10px;
+font-weight:bold;
+margin-bottom:20px
+}
+
+.buy-row{
+display:flex;
+gap:10px;
+align-items:center;
+margin-top:12px
+}
+
+.qty{
+width:48px;height:47px;
+border:1px solid #dce2da;
+border-radius:9px;
+text-align:center
+}
+
+.add{
+height:47px;
+border:0;
+background:#173d26;
+color:#fff;
+border-radius:9px;
+padding:0 24px;
+font-size:12px;
+font-weight:bold;
+cursor:pointer;
+flex:1
+}
+
+.add:hover{
+background:#285c3c
+}
+
+.wa-product{
+display:block;
+text-align:center;
+margin-top:12px;
+color:#34794a;
+font-size:11px;
+font-weight:bold
+}
+
+/* ÖZELLİKLER */
+
+.details{
+padding:38px;
+border-top:1px solid #e5e9e3
+}
+
+.details-title{
+font:700 27px Georgia,serif;
+color:#173d26;
+margin:0 0 24px
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+margin-bottom:30px
+}
+
+.info-box{
+background:#f7f9f5;
+border:1px solid #e3e8e0;
+border-radius:12px;
+padding:16px
+}
+
+.info-box span{
+display:block;
+font-size:9px;
+color:#89918a;
+text-transform:uppercase;
+letter-spacing:.7px;
+margin-bottom:7px
+}
+
+.info-box strong{
+font-size:12px;
+color:#314337
+}
+
+.content-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px
+}
+
+.content-box{
+border:1px solid #e1e6df;
+border-radius:14px;
+padding:22px;
+background:#fff
+}
+
+.content-box h3{
+font-size:15px;
+color:#173d26;
+margin:0 0 13px
+}
+
+.content-box p,
+.content-box li{
+font-size:12px;
+line-height:1.75;
+color:#5e685f
+}
+
+.content-box ul{
+padding-left:18px;
+margin:0
+}
+
+.ingredients{
+background:#f7f9f5
+}
+
+.ingredients strong{
+color:#314337
+}
+
+.warning{
+background:#fff8e8;
+border-color:#eed9a5
+}
+
+.warning h3{
+color:#795c25
+}
+
+/* HOLISTRAKT TABLO */
+
+.nutrition{
+margin-top:18px;
+border:1px solid #e1e6df;
+border-radius:14px;
+overflow:hidden
+}
+
+.nutrition-title{
+padding:17px;
+background:#edf3e9;
+font-weight:bold;
+font-size:13px;
+color:#173d26
+}
+
+table{
+width:100%;
+border-collapse:collapse
+}
+
+th,td{
+padding:12px;
+text-align:left;
+font-size:11px;
+border-bottom:1px solid #e5e9e2
+}
+
+th{
+background:#fafbf9;
+color:#6e786f
+}
+
+td{
+color:#38483d
+}
+
+/* SEPET BAR */
+
+.cart-bar{
+position:fixed;
+bottom:18px;
+left:50%;
+transform:translateX(-50%);
+width:min(600px,calc(100% - 30px));
+background:#173d26;
+color:#fff;
+padding:13px 17px;
+border-radius:14px;
+z-index:2000;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+box-shadow:0 12px 35px rgba(0,0,0,.22)
+}
+
+.cart-bar strong{
+font-size:12px
+}
+
+.cart-bar small{
+font-size:10px;
+opacity:.75
+}
+
+.cart-button{
+background:#d8e8b7;
+color:#173d26;
+border:0;
+border-radius:8px;
+padding:10px 14px;
+font-size:10px;
+font-weight:bold
+}
+
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
 right:20px;
-bottom:20px;
-width:56px;
-height:56px;
+bottom:85px;
+width:55px;height:55px;
 border-radius:50%;
 background:#25d366;
 color:white;
@@ -238,416 +435,885 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:25px;
-text-decoration:none;
-z-index:2000;
+z-index:2100;
+box-shadow:0 8px 20px #0002
 }
 
-.mobil{
-display:none;
+footer{
+background:#112f1d;
+color:#fff;
+padding:40px 20px 100px
 }
+
+.footer{
+max-width:1250px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+
+.footer-logo{
+font:700 21px Georgia,serif
+}
+
+.footer small{
+opacity:.7
+}
+
+/* MOBİL */
 
 @media(max-width:800px){
 
-nav{
-display:none;
+.header{
+height:64px;
+padding:0 12px
 }
 
-.arama{
-width:140px;
+nav,
+.whatsapp-head{
+display:none
 }
 
-.urunler{
-grid-template-columns:1fr 1fr;
-gap:10px;
+.logo-text{
+font-size:19px
 }
 
-.foto{
-height:175px;
+.page{
+padding:30px 12px 80px
 }
 
-.bilgi{
-padding:11px;
+.page-head{
+display:block
 }
 
-h3{
-font-size:13px;
+.page-head h1{
+font-size:32px
 }
 
-.fiyat{
-font-size:16px;
+.price-message{
+margin-top:15px
 }
 
-.ekle{
-font-size:11px;
-padding:8px;
+.product-top{
+grid-template-columns:1fr
 }
 
-.mobil{
-position:fixed;
-display:flex;
-bottom:0;
-left:0;
-right:0;
-height:62px;
-background:white;
-border-top:1px solid #ddd;
-z-index:1500;
+.product-image{
+height:330px;
+padding:25px
 }
 
-.mobil a{
-flex:1;
-text-align:center;
-text-decoration:none;
-color:#405046;
-font-size:11px;
-padding-top:8px;
+.product-image img{
+height:280px
 }
 
-.mobil b{
-display:block;
-font-size:18px;
+.product-main{
+padding:25px
+}
+
+.product-main h2{
+font-size:25px
+}
+
+.details{
+padding:25px
+}
+
+.info-grid{
+grid-template-columns:1fr 1fr
+}
+
+.content-grid{
+grid-template-columns:1fr
+}
+
+.buy-row{
+flex-wrap:wrap
+}
+
+.add{
+width:100%;
+flex:auto
+}
+
+.cart-bar{
+bottom:10px
 }
 
 .whatsapp{
-bottom:75px;
+right:15px;
+bottom:78px
+}
+
+.footer{
+display:block;
+text-align:center
+}
+
+.footer small{
+display:block;
+margin-top:15px
 }
 
 }
-
 </style>
 </head>
 
 <body>
 
 <div class="top">
-🚚 1.500 TL ÜZERİ KARGO BEDAVA • 🎁 İLK ALIŞVERİŞ %10 YONCA10
+<div class="ticker">
+🚚 1.500 TL ÜZERİ SİPARİŞLERDE KARGO BEDAVA
+&nbsp;&nbsp; • &nbsp;&nbsp;
+🎁 İLK ALIŞVERİŞE %10 İNDİRİM — YONCA10
+&nbsp;&nbsp; • &nbsp;&nbsp;
+🌿 YETKİLİ SATICI
+&nbsp;&nbsp; • &nbsp;&nbsp;
+💬 WHATSAPP DESTEK
+</div>
 </div>
 
 <header>
-
 <div class="header">
 
 <a href="index.html" class="logo">
-🌿 Yonca <span>Baharat</span>
+<div class="logo-icon">🌿</div>
+<div class="logo-text">Yonca <span>Baharat</span></div>
 </a>
 
 <nav>
 <a href="index.html">Ana Sayfa</a>
 <a href="urunler.html">Ürünler</a>
-<a href="sepet.html">Sepetim</a>
+<a href="index.html#markalar">Markalar</a>
+<a href="index.html#hakkimizda">Hakkımızda</a>
 </nav>
 
-<div class="sag">
+<div class="actions">
 
-<input
-id="arama"
-class="arama"
-placeholder="Ürün ara..."
-oninput="filtrele()">
+<a class="whatsapp-head"
+href="https://wa.me/905525102881"
+target="_blank">
+💬 WhatsApp
+</a>
 
-<a href="sepet.html" class="sepet">
+<a class="cart" href="sepet.html">
 🛒
-<span id="sayi" class="sayi">0</span>
+<span id="cartCount" class="cart-count">0</span>
 </a>
 
 </div>
+</div>
+</header>
+
+<main class="page">
+
+<div class="page-head">
+
+<div>
+<h1>Ürünlerimiz</h1>
+<p>Özenle seçilmiş ürünleri detaylı şekilde inceleyebilirsiniz.</p>
+</div>
+
+<div class="price-message">
+🏷️ Uygun fiyat • Güvenilir alışveriş • Yetkili satıcı
+</div>
 
 </div>
 
-</header>
 
-<div class="container">
+<!-- ================================================= -->
+<!-- HOLİSTRAKT -->
+<!-- ================================================= -->
 
-<div class="baslik">
+<section class="product-detail">
 
-<h1>
-Ürünler
-</h1>
+<div class="product-top">
+
+<div class="product-image">
+
+<div class="price-badge">FİYAT AVANTAJI</div>
+
+<img src="images/holistrakt.jpg"
+alt="Shiffa Home Holistrakt">
+
+</div>
+
+<div class="product-main">
+
+<div class="brand">Shiffa Home</div>
+
+<h2>HOLİSTRAKT</h2>
+
+<p class="short">
+Enginar, devedikeni ve karahindiba ekstraktları ile
+kolin içeren sıvı ekstrakt formülasyonu.
+</p>
+
+<div class="price">925 TL</div>
+
+<div class="price-note">
+✓ Avantajlı fiyat
+</div>
+
+<div class="buy-row">
+
+<input id="qtyHol" class="qty" type="number" value="1" min="1">
+
+<button class="add"
+onclick="sepeteEkle(
+'HOLİSTRAKT',
+925,
+parseInt(document.getElementById('qtyHol').value)
+)">
+🛒 Sepete Ekle
+</button>
+
+</div>
+
+<a class="wa-product"
+target="_blank"
+href="https://wa.me/905525102881?text=Merhaba%2C%20Holistrakt%20%C3%BCr%C3%BCn%C3%BC%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">
+💬 Bu ürün hakkında WhatsApp'tan bilgi al
+</a>
+
+</div>
+</div>
+
+<div class="details">
+
+<h3 class="details-title">Ürün Özellikleri</h3>
+
+<div class="info-grid">
+
+<div class="info-box">
+<span>Marka</span>
+<strong>Shiffa Home</strong>
+</div>
+
+<div class="info-box">
+<span>Form</span>
+<strong>Sıvı ekstrakt</strong>
+</div>
+
+<div class="info-box">
+<span>Net miktar</span>
+<strong>250 ml</strong>
+</div>
+
+<div class="info-box">
+<span>Onay No</span>
+<strong>026310</strong>
+</div>
+
+</div>
+
+<div class="content-grid">
+
+<div class="content-box">
+
+<h3>🌿 Ne İçin?</h3>
 
 <p>
-Yonca Baharat'ın seçkin ürünlerini keşfedin.
+Metabolik süreçlerin dengelenmesine destek olmak üzere
+geliştirilmiş bitkisel ekstrakt formülasyonudur.
+Bitkisel ekstraktlar ve kolin içeriğiyle çok yönlü
+bir destek sunar.
+</p>
+
+<h3>🎯 Hedef Kullanım</h3>
+
+<ul>
+<li>Metabolik dengeyi desteklemek isteyenler</li>
+<li>Günlük beslenme düzenini desteklemek isteyenler</li>
+<li>Bitkisel içeriklerle rutin oluşturmak isteyen yetişkinler</li>
+</ul>
+
+</div>
+
+<div class="content-box ingredients">
+
+<h3>🌱 Öne Çıkan İçerikler</h3>
+
+<ul>
+<li><strong>Enginar ekstresi</strong> — 160 mg / 10 ml</li>
+<li><strong>Devedikeni ekstresi</strong> — 160 mg / 10 ml</li>
+<li><strong>Karahindiba ekstresi</strong> — 80 mg / 10 ml</li>
+<li><strong>Kolin</strong> — 50 mg / 10 ml</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="nutrition">
+
+<div class="nutrition-title">
+10 ml'deki Etken Madde Miktarları
+</div>
+
+<table>
+
+<tr>
+<th>Etken madde</th>
+<th>Miktar</th>
+</tr>
+
+<tr>
+<td>Enginar Ekstresi</td>
+<td>160 mg</td>
+</tr>
+
+<tr>
+<td>Devedikeni Ekstresi</td>
+<td>160 mg</td>
+</tr>
+
+<tr>
+<td>Kolin</td>
+<td>50 mg</td>
+</tr>
+
+<tr>
+<td>Karahindiba Ekstresi</td>
+<td>80 mg</td>
+</tr>
+
+</table>
+</div>
+
+<div class="content-grid" style="margin-top:18px">
+
+<div class="content-box">
+
+<h3>🥄 Kullanım Önerisi</h3>
+
+<p>
+11 yaş ve üzeri yetişkinlerden günde
+<strong>2 ölçek (10 ml)</strong> alınması tavsiye edilir.
 </p>
 
 </div>
 
-<div class="filtre">
+<div class="content-box">
 
-<button onclick="kategori('hepsi')">
-Tümü
-</button>
+<h3>🔬 Formül Avantajı</h3>
 
-<button onclick="kategori('baharat')">
-🌶️ Baharat
-</button>
-
-<button onclick="kategori('cay')">
-🍵 Çay
-</button>
-
-<button onclick="kategori('dogal')">
-🍯 Doğal Ürünler
-</button>
-
-<button onclick="kategori('bitkisel')">
-🌿 Bitkisel
-</button>
-
-</div>
-
-<div id="urunler" class="urunler">
-
-<div class="urun" data-kategori="bitkisel" data-ara="holistrakt enginar devedikeni karahindiba shiffa home">
-
-<div class="foto">
-<img src="images/holistrakt.jpg">
-</div>
-
-<div class="bilgi">
-
-<div class="marka">Shiffa Home</div>
-
-<h3>
-HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML
-</h3>
-
-<div class="alt">
-
-<div class="fiyat">925 TL</div>
-
-<button class="ekle"
-onclick="ekle('holistrakt')">
-Sepete Ekle
-</button>
+<ul>
+<li>Sıvı ekstrakt form</li>
+<li>Standardize içerik</li>
+<li>Homojen dağılım</li>
+<li>Düşük yardımcı madde ihtiyacı</li>
+</ul>
 
 </div>
 
 </div>
 
-</div>
+<div class="content-box" style="margin-top:18px">
 
+<h3>🧪 Üretim ve Standardizasyon</h3>
 
-<div class="urun" data-kategori="bitkisel" data-ara="kanta roit krem shiffa">
-
-<div class="foto">
-<img src="images/kantaroid.jpg">
-</div>
-
-<div class="bilgi">
-
-<div class="marka">Shiffa Home</div>
-
-<h3>
-KANTA ROIT KREM 20 ML
-</h3>
-
-<div class="alt">
-
-<div class="fiyat">190 TL</div>
-
-<button class="ekle"
-onclick="ekle('kantaroid')">
-Sepete Ekle
-</button>
+<p>
+Holistrakt serisinde ultrason destekli ekstraksiyon
+teknolojisinin kullanıldığı; üretim sonrasında
+pastörizasyon, otomatik şişeleme ve parti bazlı
+kalite kontrollerinin uygulandığı belirtilmektedir.
+Kontrol edilen parametreler arasında toplam fenolik
+bileşikler ve antioksidan kapasite yer almaktadır.
+</p>
 
 </div>
 
-</div>
+<div class="content-box warning" style="margin-top:18px">
+
+<h3>⚠️ Önemli Bilgilendirme</h3>
+
+<p>
+Takviye edici gıdalar normal beslenmenin yerine geçmez.
+Ürünün kullanımında ambalaj üzerindeki güncel bilgiler
+esas alınmalıdır.
+</p>
+
+<p>
+<strong>Takviye Edici Gıda Onay No:</strong>
+026310 – 26.02.2026
+</p>
 
 </div>
 
+</div>
+</section>
 
-<div class="urun" data-kategori="dogal" data-ara="akzer saf nar ekşisi">
 
-<div class="foto">
-<img src="images/akzer.jpg">
+<!-- ================================================= -->
+<!-- KANTAROIT -->
+<!-- ================================================= -->
+
+<section class="product-detail">
+
+<div class="product-top">
+
+<div class="product-image">
+
+<div class="price-badge">FİYAT AVANTAJI</div>
+
+<img src="images/kantaroid.jpg"
+alt="KantaRoit Krem">
+
 </div>
 
-<div class="bilgi">
+<div class="product-main">
 
-<div class="marka">Akzer</div>
+<div class="brand">Softem</div>
 
-<h3>
-Saf Nar Ekşisi
-</h3>
+<h2>KANTAROIT KREM</h2>
 
-<div class="alt">
+<p class="short">
+Sarı kantaron yağı, çörekotu yağı, bal ve propolis
+gibi çeşitli içeriklerin yer aldığı bakım kremidir.
+</p>
 
-<div class="fiyat">349 TL</div>
+<div class="price">190 TL</div>
 
-<button class="ekle"
-onclick="ekle('akzer')">
-Sepete Ekle
+<div class="price-note">
+✓ Avantajlı fiyat
+</div>
+
+<div class="buy-row">
+
+<input id="qtyKant" class="qty" type="number" value="1" min="1">
+
+<button class="add"
+onclick="sepeteEkle(
+'KANTAROIT KREM',
+190,
+parseInt(document.getElementById('qtyKant').value)
+)">
+🛒 Sepete Ekle
 </button>
 
 </div>
 
-</div>
-
-</div>
-
-
-<div class="urun" data-kategori="dogal" data-ara="aksu vital kudret narı macun">
-
-<div class="foto">
-<img src="images/yeni-kudret-nari-83.jpg">
-</div>
-
-<div class="bilgi">
-
-<div class="marka">Aksu Vital</div>
-
-<h3>
-Kudret Narı Ekstraktlı Macun 300 gr
-</h3>
-
-<div class="alt">
-
-<div class="fiyat">600 TL</div>
-
-<button class="ekle"
-onclick="ekle('kudretnari')">
-Sepete Ekle
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<footer>
-🌿 Yonca Baharat © 2026
-</footer>
-
-<a
-href="https://wa.me/905525102881"
+<a class="wa-product"
 target="_blank"
-class="whatsapp">
+href="https://wa.me/905525102881?text=Merhaba%2C%20KantaRoit%20Krem%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">
+💬 Bu ürün hakkında WhatsApp'tan bilgi al
+</a>
+
+</div>
+</div>
+
+<div class="details">
+
+<h3 class="details-title">Ürün Özellikleri</h3>
+
+<div class="info-grid">
+
+<div class="info-box">
+<span>Marka</span>
+<strong>Softem</strong>
+</div>
+
+<div class="info-box">
+<span>Ürün tipi</span>
+<strong>Bakım kremi</strong>
+</div>
+
+<div class="info-box">
+<span>Net miktar</span>
+<strong>20 ml</strong>
+</div>
+
+<div class="info-box">
+<span>Raf ömrü</span>
+<strong>3 yıl</strong>
+</div>
+
+</div>
+
+<div class="content-grid">
+
+<div class="content-box">
+
+<h3>🌿 Öne Çıkan İçerikler</h3>
+
+<ul>
+<li>Sarı kantaron</li>
+<li>Çörekotu yağı</li>
+<li>Bal</li>
+<li>Propolis</li>
+<li>Elma sirkesi</li>
+<li>Ozonize zeytinyağı</li>
+</ul>
+
+</div>
+
+<div class="content-box ingredients">
+
+<h3>🧴 İçindekiler</h3>
+
+<p>
+Petrolatum, Hypericum Perforatum Flower/Leaf Extract,
+Pyrus Malus Juice, Honey, Propolis Extract,
+Nigella Sativa Seed Oil, Ozonized Olive Oil, PEG-8,
+Citrus Limon Juice, Chlorhexidine Digluconate.
+</p>
+
+</div>
+
+</div>
+
+<div class="content-box" style="margin-top:18px">
+
+<h3>🖐️ Kullanım Önerisi</h3>
+
+<p>
+Elinize yeterli miktarda alarak uygulamak istediğiniz
+bölgeye dairesel hareketlerle masaj yaparak uygulayınız.
+Uygulama yapılacak bölgenin temiz ve kuru olmasına
+özen gösteriniz.
+</p>
+
+</div>
+
+<div class="content-box">
+
+<h3>🌡️ Saklama Koşulları</h3>
+
+<p>
+Oda sıcaklığında, ağzı kapalı olarak; doğrudan ısı ve
+ışık görmeyecek şekilde muhafaza ediniz.
+</p>
+
+</div>
+
+<div class="content-box warning" style="margin-top:18px">
+
+<h3>⚠️ Ürün Bilgilendirmesi</h3>
+
+<p>
+Ürün bakım amaçlıdır. Kullanım sırasında ürün ambalajı
+üzerindeki güncel bilgiler ve uyarılar dikkate alınmalıdır.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ================================================= -->
+<!-- KUDRET NARI -->
+<!-- ================================================= -->
+
+<section class="product-detail">
+
+<div class="product-top">
+
+<div class="product-image">
+
+<div class="price-badge">FİYAT AVANTAJI</div>
+
+<img src="images/yeni-kudret-nari-83.jpg"
+alt="Aksu Vital Kudret Narı Ekstraktlı Macun">
+
+</div>
+
+<div class="product-main">
+
+<div class="brand">Aksu Vital</div>
+
+<h2>KUDRET NARI EKSTRAKTLı MACUN</h2>
+
+<p class="short">
+Kudret narı, propolis, polen, melisa ve çeşitli
+bitkisel içeriklerin bal bazlı karışımda bir araya
+getirildiği macun formunda üründür.
+</p>
+
+<div class="price">600 TL</div>
+
+<div class="price-note">
+✓ Avantajlı fiyat
+</div>
+
+<div class="buy-row">
+
+<input id="qtyKudret" class="qty" type="number" value="1" min="1">
+
+<button class="add"
+onclick="sepeteEkle(
+'KUDRET NARI EKSTRAKTLı MACUN',
+600,
+parseInt(document.getElementById('qtyKudret').value)
+)">
+🛒 Sepete Ekle
+</button>
+
+</div>
+
+<a class="wa-product"
+target="_blank"
+href="https://wa.me/905525102881?text=Merhaba%2C%20Kudret%20Nari%20Ekstraktli%20Macun%20hakkinda%20bilgi%20almak%20istiyorum.">
+💬 Bu ürün hakkında WhatsApp'tan bilgi al
+</a>
+
+</div>
+</div>
+
+<div class="details">
+
+<h3 class="details-title">Ürün Özellikleri</h3>
+
+<div class="info-grid">
+
+<div class="info-box">
+<span>Marka</span>
+<strong>Aksu Vital</strong>
+</div>
+
+<div class="info-box">
+<span>Ürün tipi</span>
+<strong>Bitki karışımlı macun</strong>
+</div>
+
+<div class="info-box">
+<span>Net miktar</span>
+<strong>300 g</strong>
+</div>
+
+<div class="info-box">
+<span>İşletme Kayıt No</span>
+<strong>TR-34-K-048026</strong>
+</div>
+
+</div>
+
+<div class="content-grid">
+
+<div class="content-box ingredients">
+
+<h3>🌿 İçerik</h3>
+
+<ul>
+<li>Bal (%82,6)</li>
+<li>Susam tahini</li>
+<li>Dut pekmezi</li>
+<li>Kudret narı (%3,9)</li>
+<li>Oğul otu yaprağı</li>
+<li>Meyan kökü</li>
+<li>Damla sakızı oleosini</li>
+<li>Fesleğen</li>
+<li>Polen</li>
+<li>Mayıs papatyası</li>
+<li>Sarı kantaron</li>
+<li>Propolis (%0,43)</li>
+<li>Kudret narı ekstraktı (%0,3)</li>
+<li>Hatmi çiçeği</li>
+<li>Günlük / sığla ağacı reçinesi</li>
+</ul>
+
+</div>
+
+<div class="content-box">
+
+<h3>🍯 Ürün Hakkında</h3>
+
+<p>
+Mevsiminde toplanan kudret narı meyvesi ile propolis,
+polen ve çeşitli bitkisel içeriklerin bal bazlı
+formülasyonda bir araya getirildiği bir macundur.
+</p>
+
+<p>
+Ürün içerisinde koruyucu ve katkı maddesi bulunmadığı
+belirtilmektedir.
+</p>
+
+</div>
+
+</div>
+
+<div class="content-box" style="margin-top:18px">
+
+<h3>🥄 Kullanım Önerisi</h3>
+
+<p>
+<strong>Yetişkinlerin kullanımına uygundur.</strong>
+Bir yemek kaşığı alınması tavsiye edilir.
+</p>
+
+</div>
+
+<div class="content-grid" style="margin-top:18px">
+
+<div class="content-box">
+
+<h3>🌡️ Saklama Koşulları</h3>
+
+<p>
+Isı, ışık ve nemden koruyunuz.
+Çocukların ulaşamayacağı yerde saklayınız.
+</p>
+
+</div>
+
+<div class="content-box">
+
+<h3>🏭 Üretim & Kalite</h3>
+
+<ul>
+<li>ISO 22000</li>
+<li>ISO 9001</li>
+<li>Helal standartları</li>
+<li>GDO içermez</li>
+<li>Silikon içermez</li>
+<li>Renklendirici içermez</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="content-box warning" style="margin-top:18px">
+
+<h3>⚠️ Önemli Bilgilendirme</h3>
+
+<p>
+Takviye edici gıda ve bitkisel içerikli ürünlerde
+ambalaj üzerindeki güncel kullanım ve uyarı bilgileri
+esas alınmalıdır. Ürünler normal beslenmenin yerine
+geçmez.
+</p>
+
+<p>
+<strong>İşletme Kayıt No:</strong> TR-34-K-048026
+</p>
+
+</div>
+
+</div>
+</section>
+
+</main>
+
+
+<!-- SEPET ÖZETİ -->
+
+<div class="cart-bar">
+
+<div>
+<strong>🛒 Sepet: <span id="cartTotal">0 TL</span></strong>
+<br>
+<small id="shippingText">1.500 TL üzeri kargo ücretsiz</small>
+</div>
+
+<a href="sepet.html" class="cart-button">
+Sepete Git →
+</a>
+
+</div>
+
+
+<a class="whatsapp"
+href="https://wa.me/905525102881"
+target="_blank">
 💬
 </a>
 
-<div class="mobil">
 
-<a href="index.html">
-<b>⌂</b>
-Ana Sayfa
-</a>
+<footer>
 
-<a href="urunler.html">
-<b>🛍️</b>
-Ürünler
-</a>
+<div class="footer">
 
-<a href="sepet.html">
-<b>🛒</b>
-Sepet
-</a>
+<div class="footer-logo">
+🌿 Yonca Baharat
+</div>
 
-<a href="https://wa.me/905525102881">
-<b>💬</b>
-WhatsApp
-</a>
+<small>
+Yetkili satıcı • Güvenilir alışveriş • Özenli hizmet<br><br>
+© 2026 Yonca Baharat
+</small>
 
 </div>
 
+</footer>
+
+
 <script>
 
-const urunler={
-holistrakt:925,
-kantaroid:190,
-akzer:349,
-kudretnari:600
-};
-
-function sepet(){
-return JSON.parse(localStorage.getItem("sepet"))||[];
+function getCart(){
+return JSON.parse(localStorage.getItem("sepet") || "[]");
 }
 
-function kaydet(s){
-localStorage.setItem("sepet",JSON.stringify(s));
+function saveCart(cart){
+localStorage.setItem("sepet",JSON.stringify(cart));
 }
 
-function ekle(id){
+function sepeteEkle(ad,fiyat,adet){
 
-let s=sepet();
+adet=parseInt(adet)||1;
 
-let mevcut=s.find(x=>x.id===id);
+let cart=getCart();
 
-if(mevcut){
-mevcut.adet++;
+let existing=cart.find(x=>x.ad===ad);
+
+if(existing){
+existing.adet+=adet;
 }else{
-s.push({
-id:id,
-adet:1
+cart.push({
+ad:ad,
+fiyat:fiyat,
+adet:adet
 });
 }
 
-kaydet(s);
+saveCart(cart);
 
-say();
+updateCart();
 
-alert("Ürün sepete eklendi 🛒");
-
-}
-
-function say(){
-
-let s=sepet();
-
-let toplam=0;
-
-s.forEach(x=>{
-toplam+=Number(x.adet)||0;
-});
-
-document.getElementById("sayi").innerText=toplam;
+alert("🛒 Ürün sepete eklendi!");
 
 }
 
-function filtrele(){
+function updateCart(){
 
-let arama=
-document.getElementById("arama")
-.value
-.toLowerCase();
+let cart=getCart();
 
-document.querySelectorAll(".urun")
-.forEach(x=>{
+let count=cart.reduce(
+(total,item)=>total+(Number(item.adet)||1),0
+);
 
-let metin=x.dataset.ara;
+let total=cart.reduce(
+(total,item)=>total+
+(Number(item.fiyat)*Number(item.adet||1)),0
+);
 
-x.style.display=
-metin.includes(arama)
-?"block"
-:"none";
+document.getElementById("cartCount").innerText=count;
 
-});
+document.getElementById("cartTotal").innerText=
+total.toLocaleString("tr-TR")+" TL";
 
-}
+let remaining=1500-total;
 
-function kategori(k){
+if(total>=1500){
 
-document.querySelectorAll(".urun")
-.forEach(x=>{
+document.getElementById("shippingText").innerText=
+"🎉 Kargonuz ücretsiz!";
 
-if(k==="hepsi"){
-x.style.display="block";
 }else{
-x.style.display=
-x.dataset.kategori===k
-?"block"
-:"none";
-}
 
-});
+document.getElementById("shippingText").innerText=
+"Kargo bedava için "+
+remaining.toLocaleString("tr-TR")+
+" TL kaldı.";
 
 }
 
-say();
+}
+
+updateCart();
 
 </script>
 
