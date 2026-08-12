@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Detayı - Yonca Baharat</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+        }
+
+        header {
+            background: #2f6b3f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .urun-detay {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .urun-detay img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        .marka {
+            color: #666;
+        }
+
+        .fiyat {
+            color: #2f6b3f;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .whatsapp {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .geri {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2f6b3f;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>Yonca Baharat</h2>
+</header>
+
+<div class="urun-detay">
+
+    <img id="urunFoto" src="" alt="Ürün">
+
+    <div class="marka" id="urunMarka"></div>
+
+    <h1 id="urunAdi"></h1>
+
+    <div class="fiyat" id="urunFiyat"></div>
+
+    <p id="urunAciklama"></p>
+
+    <a id="whatsapp" class="whatsapp" href="#" target="_blank">
+        WhatsApp'tan Sipariş Ver
+    </a>
+
+    <br>
+
+    <a class="geri" href="urunler.html">
+        ← Ürünlere Geri Dön
+    </a>
+
+</div>
+
+<script>
+
+const urunler = {
+
+    holistrakt: {
+        marka: "Shiffa Home",
+        ad: "HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML",
+        fiyat: "925 TL",
+        foto: "images/holistrakt.jpg",
+        aciklama: "Enginar, devedikeni ve karahindiba içeren sıvı ekstrat."
+    },
+
+    kantaroid: {
+        marka: "Shiffa Home",
+        ad: "KANTA ROIT KREM 20 ML",
+        fiyat: "190 TL",
+        foto: "images/kantaroid.jpg",
+        aciklama: "Kanta Roit Krem 20 ML."
+    },
+
+    akzer: {
+        marka: "Akzer",
+        ad: "Saf Nar Ekşisi",
+        fiyat: "349 TL",
+        foto: "images/akzer.jpg",
+        aciklama: "Akzer Saf Nar Ekşisi."
+    },
+
+    kudretnari: {
+        marka: "Aksu Vital",
+        ad: "Kudret Narı Ekstraktlı Macun 300 gr",
+        fiyat: "600 TL",
+        foto: "images/yeni-kudret-nari-83.jpg",
+        aciklama: "Aksu Vital Kudret Narı Ekstraktlı Macun 300 gr."
+    }
+
+};
+
+const params = new URLSearchParams(window.location.search);
+const urun = params.get("urun");
+
+if (urunler[urun]) {
+
+    document.getElementById("urunFoto").src = urunler[urun].foto;
+    document.getElementById("urunMarka").textContent = urunler[urun].marka;
+    document.getElementById("urunAdi").textContent = urunler[urun].ad;
+    document.getElementById("urunFiyat").textContent = urunler[urun].fiyat;
+    document.getElementById("urunAciklama").textContent = urunler[urun].aciklama;
+
+    const mesaj = "Merhaba, " + urunler[urun].ad + " ürünü hakkında bilgi almak istiyorum.";
+
+    document.getElementById("whatsapp").href =
+        "https://wa.me/?text=" + encodeURIComponent(mesaj);
+
+} else {
+
+    document.querySelector(".urun-detay").innerHTML =
+        "<h1>Ürün bulunamadı</h1><a href='urunler.html'>Ürünlere dön</a>";
+
+}
+
+</script>
+
+</body>
+</html>
