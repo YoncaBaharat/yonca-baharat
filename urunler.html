@@ -24,6 +24,14 @@
             margin: 0;
         }
 
+        .sepet-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
         .urunler {
             max-width: 1200px;
             margin: 30px auto;
@@ -67,12 +75,18 @@
 
         .buton {
             display: inline-block;
-            margin-top: 15px;
-            padding: 10px 18px;
+            margin-top: 12px;
+            padding: 10px 15px;
             background: #2f6b3f;
             color: white;
             text-decoration: none;
             border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .sepete-ekle {
+            background: #d08b00;
         }
     </style>
 </head>
@@ -82,6 +96,7 @@
 <header>
     <h1>Yonca Baharat</h1>
     <p>Ürünlerimiz</p>
+    <a class="sepet-link" href="sepet.html">🛒 Sepetimi Gör</a>
 </header>
 
 <div class="urunler">
@@ -91,34 +106,81 @@
         <div class="marka">Shiffa Home</div>
         <h2>HOLİSTRAKT - Enginar, Devedikeni ve Karahindiba İçeren Sıvı Ekstrat 250 ML</h2>
         <div class="fiyat">925 TL</div>
+
         <a href="urun.html?urun=holistrakt" class="buton">İncele</a>
+
+        <button class="buton sepete-ekle" onclick="sepeteEkle('holistrakt')">
+            🛒 Sepete Ekle
+        </button>
     </div>
+
 
     <div class="urun">
         <img src="images/kantaroid.jpg" alt="Kanta Roit Krem">
         <div class="marka">Shiffa Home</div>
         <h2>KANTA ROIT KREM 20 ML</h2>
         <div class="fiyat">190 TL</div>
+
         <a href="urun.html?urun=kantaroid" class="buton">İncele</a>
+
+        <button class="buton sepete-ekle" onclick="sepeteEkle('kantaroid')">
+            🛒 Sepete Ekle
+        </button>
     </div>
+
 
     <div class="urun">
         <img src="images/akzer.jpg" alt="Akzer Saf Nar Ekşisi">
         <div class="marka">Akzer</div>
         <h2>Saf Nar Ekşisi</h2>
         <div class="fiyat">349 TL</div>
+
         <a href="urun.html?urun=akzer" class="buton">İncele</a>
+
+        <button class="buton sepete-ekle" onclick="sepeteEkle('akzer')">
+            🛒 Sepete Ekle
+        </button>
     </div>
+
 
     <div class="urun">
         <img src="images/yeni-kudret-nari-83.jpg" alt="Kudret Narı Ekstraktlı Macun">
         <div class="marka">Aksu Vital</div>
         <h2>Kudret Narı Ekstraktlı Macun 300 gr</h2>
         <div class="fiyat">600 TL</div>
+
         <a href="urun.html?urun=kudretnari" class="buton">İncele</a>
+
+        <button class="buton sepete-ekle" onclick="sepeteEkle('kudretnari')">
+            🛒 Sepete Ekle
+        </button>
     </div>
 
 </div>
+
+<script>
+
+function sepeteEkle(id) {
+
+    let sepet = JSON.parse(localStorage.getItem("sepet")) || [];
+
+    let mevcut = sepet.find(urun => urun.id === id);
+
+    if (mevcut) {
+        mevcut.adet++;
+    } else {
+        sepet.push({
+            id: id,
+            adet: 1
+        });
+    }
+
+    localStorage.setItem("sepet", JSON.stringify(sepet));
+
+    alert("Ürün sepete eklendi! 🛒");
+}
+
+</script>
 
 </body>
 </html>
